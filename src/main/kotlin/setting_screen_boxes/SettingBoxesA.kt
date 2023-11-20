@@ -18,116 +18,42 @@ import engine_logic.*
 
 @Composable
 @Preview
-fun settingBoxesA() {
-    var ipAddressA0 by remember { mutableStateOf(readIpFile0()) }
-    var ipAddressA1 by remember { mutableStateOf(readIpFile1()) }
-    var ipAddressA2 by remember { mutableStateOf(readIpFile2()) }
-    var ipAddressA3 by remember { mutableStateOf(readIpFile3()) }
+fun settingBoxesA(ipAddressA0: String, ipAddressA1: String, ipAddressA2: String, ipAddressA3: String) {
+
+    val ipList = mutableListOf(ipAddressA0, ipAddressA1, ipAddressA2, ipAddressA3)
+    val writeList = listOf(::writeIpToFile0, ::writeIpToFile1, ::writeIpToFile2, ::writeIpToFile3)
 
     Column(
         modifier = Modifier.padding(bottom = 15.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-// Edit Box 0A
         Spacer(modifier = Modifier.height(15.dp))
-        Box(
-            modifier = Modifier
-                .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
-                .padding(5.dp)
-                .weight(1f)
-                .aspectRatio(1.5f)
-                .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
-            contentAlignment = Alignment.Center
-        ) {
-            BasicTextField(
-                value = ipAddressA0,
-                onValueChange = { newValue ->
-                    ipAddressA0 = newValue
-                    writeIpToFile0(newValue)
-                },
-                modifier = Modifier.fillMaxWidth(),
-                textStyle = TextStyle(
-                    fontSize = 20.sp,
-                    color = Color.White,
-                    textAlign = TextAlign.Center,
+        repeat(4) {
+            Box(
+                modifier = Modifier
+                    .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
+                    .padding(5.dp)
+                    .weight(1f)
+                    .aspectRatio(1.5f)
+                    .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
+                contentAlignment = Alignment.Center
+            ) {
+                BasicTextField(
+                    value = ipList[it],
+                    onValueChange = { newValue ->
+                        ipList[it] = newValue
+                        writeList[it](newValue)
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    textStyle = TextStyle(
+                        fontSize = 20.sp,
+                        color = Color.White,
+                        textAlign = TextAlign.Center,
+                    )
                 )
-            )
-        }
-// Edit Box 1A
-        Spacer(modifier = Modifier.height(15.dp))
-        Box(
-            modifier = Modifier
-                .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
-                .padding(5.dp)
-                .weight(1f)
-                .aspectRatio(1.5f)
-                .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
-            contentAlignment = Alignment.Center
-        ) {
-            BasicTextField(
-                value = ipAddressA1,
-                onValueChange = { newValue ->
-                    ipAddressA1 = newValue
-                    writeIpToFile1(newValue)
-                },
-                modifier = Modifier.fillMaxWidth(),
-                textStyle = TextStyle(
-                    fontSize = 20.sp,
-                    color = Color.White,
-                    textAlign = TextAlign.Center,
-                )
-            )
-        }
-// Edit Box 2A
-        Spacer(modifier = Modifier.height(15.dp))
-        Box(
-            modifier = Modifier
-                .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
-                .padding(5.dp)
-                .weight(1f)
-                .aspectRatio(1.5f)
-                .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
-            contentAlignment = Alignment.Center
-        ) {
-            BasicTextField(
-                value = ipAddressA2,
-                onValueChange = { newValue ->
-                    ipAddressA2 = newValue
-                    writeIpToFile2(newValue)
-                },
-                modifier = Modifier.fillMaxWidth(),
-                textStyle = TextStyle(
-                    fontSize = 20.sp,
-                    color = Color.White,
-                    textAlign = TextAlign.Center,
-                )
-            )
-        }
-// Edit Box 3A
-        Spacer(modifier = Modifier.height(15.dp))
-        Box(
-            modifier = Modifier
-                .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
-                .padding(5.dp)
-                .weight(1f)
-                .aspectRatio(1.5f)
-                .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
-            contentAlignment = Alignment.Center
-        ) {
-            BasicTextField(
-                value = ipAddressA3,
-                onValueChange = { newValue ->
-                    ipAddressA3 = newValue
-                    writeIpToFile3(newValue)
-                },
-                modifier = Modifier.fillMaxWidth(),
-                textStyle = TextStyle(
-                    fontSize = 20.sp,
-                    color = Color.White,
-                    textAlign = TextAlign.Center,
-                )
-            )
+            }
+            Spacer(modifier = Modifier.height(12.dp))
         }
     }
 }
