@@ -25,6 +25,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import mainscreen_boxes.*
 
+// Navi Connector
 sealed class Screen {
     data object Main : Screen()
     data object Setting : Screen()
@@ -32,6 +33,7 @@ sealed class Screen {
 @Composable
 @Preview
 fun mainScreen() {
+
 // Screen Navi Ram
     var currentScreen by remember { mutableStateOf<Screen>(Screen.Main) }
 // Ping Result Ram
@@ -54,19 +56,24 @@ fun mainScreen() {
 
     Box(
         modifier = Modifier.fillMaxSize().background(ErgoGray)
-    ){
-        TopAppBar(backgroundColor = NbtColor,
+    ) {
+        TopAppBar(
+            backgroundColor = NbtColor,
             modifier = Modifier.fillMaxWidth()
         ) {
 // Clickable Title
-            Text("Monotool Client", fontSize = 20.sp, color = Color.White, fontWeight = FontWeight.Bold, modifier = Modifier
-                .fillMaxWidth()
-                .wrapContentSize(Alignment.Center)
-                .clickable(
-                    interactionSource = remember { MutableInteractionSource() },
-                    indication = null,
-                    onClick = { currentScreen = Screen.Main }
-                )
+            Text("Monotool Client",
+                fontSize = 20.sp,
+                color = Color.White,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentSize(Alignment.Center)
+                    .clickable(
+                        interactionSource = remember { MutableInteractionSource() },
+                        indication = null,
+                        onClick = { currentScreen = Screen.Main }
+                    )
             )
         }
 // Home Button
@@ -95,7 +102,7 @@ fun mainScreen() {
         Box(
             modifier = Modifier
                 .align(Alignment.TopEnd)
-                .padding(top = 20.dp, end = 20.dp),
+                .padding(top = 20.dp, end = 22.dp),
         ) {
             Box(
                 modifier = Modifier
@@ -155,6 +162,7 @@ fun mainScreen() {
                 delay(10000) // delay for 10 second
             }
         }
+// Navi Head
         when (currentScreen) {
             is Screen.Main -> {
                 Row(
@@ -176,11 +184,13 @@ fun mainScreen() {
                     Spacer(modifier = Modifier.width(20.dp))
 // Box Set D
                     pingBoxesD(pingSuccessful12, pingSuccessful13, pingSuccessful14, pingSuccessful15)
-                    Spacer(modifier = Modifier.width(20.dp))
+                    //Spacer(modifier = Modifier.width(20.dp))
                 }
             }
+// Navi Tail
             is Screen.Setting -> {
                 settingScreen()
+
             }
         }
     }

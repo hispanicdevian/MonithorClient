@@ -19,10 +19,10 @@ import engine_logic.*
 @Composable
 @Preview
 fun pingSettingBoxesA() {
-    var ipAddressA0 by remember { mutableStateOf(readIpFile4()) }
-    var ipAddressA1 by remember { mutableStateOf(readIpFile5()) }
-    var ipAddressA2 by remember { mutableStateOf(readIpFile6()) }
-    var ipAddressA3 by remember { mutableStateOf(readIpFile7()) }
+    var ipAddressA0 by remember { mutableStateOf(readIpFile0()) }
+    var ipAddressA1 by remember { mutableStateOf(readIpFile1()) }
+    var ipAddressA2 by remember { mutableStateOf(readIpFile2()) }
+    var ipAddressA3 by remember { mutableStateOf(readIpFile3()) }
 
     Column(
         modifier = Modifier.padding(bottom = 15.dp),
