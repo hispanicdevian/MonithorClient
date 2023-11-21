@@ -1,4 +1,4 @@
-package setting_screen_boxes
+package pingsetting_boxes
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.background
@@ -18,7 +18,7 @@ import engine_logic.*
 
 @Composable
 @Preview
-fun settingBoxesC() {
+fun pingSettingBoxesC() {
     var ipAddressC8 by remember { mutableStateOf(readIpFile8()) }
     var ipAddressC9 by remember { mutableStateOf(readIpFile9()) }
     var ipAddressC10 by remember { mutableStateOf(readIpFile10()) }

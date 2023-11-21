@@ -1,4 +1,4 @@
-package main_screen_boxes
+package mainscreen_boxes
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.background
@@ -16,10 +16,10 @@ import custom_resources.ErgoRed
 
 @Composable
 @Preview
-fun pingBoxesD(pingSuccessfulD12: Boolean, pingSuccessfulD13: Boolean, pingSuccessfulD14: Boolean, pingSuccessfulD15: Boolean) {
+fun pingBoxesA(pingSuccessfulA0: Boolean, pingSuccessfulA1: Boolean, pingSuccessfulA2: Boolean, pingSuccessfulA3: Boolean) {
 
-    val pingSuccessfulList = listOf(pingSuccessfulD12, pingSuccessfulD13, pingSuccessfulD14, pingSuccessfulD15)
-    val titleList = listOf("12", "13", "14", "15")
+    val pingSuccessfulList = listOf(pingSuccessfulA0, pingSuccessfulA1, pingSuccessfulA2, pingSuccessfulA3)
+    val titleList = listOf("0", "1", "2", "3")
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,

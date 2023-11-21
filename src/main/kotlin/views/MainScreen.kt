@@ -23,7 +23,7 @@ import engine_logic.*
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
-import main_screen_boxes.*
+import mainscreen_boxes.*
 
 sealed class Screen {
     data object Main : Screen()
@@ -32,9 +32,9 @@ sealed class Screen {
 @Composable
 @Preview
 fun mainScreen() {
-
+// Screen Navi Ram
     var currentScreen by remember { mutableStateOf<Screen>(Screen.Main) }
-
+// Ping Result Ram
     var pingSuccessful0 by remember { mutableStateOf(false) }
     var pingSuccessful1 by remember { mutableStateOf(false) }
     var pingSuccessful2 by remember { mutableStateOf(false) }
@@ -58,6 +58,7 @@ fun mainScreen() {
         TopAppBar(backgroundColor = NbtColor,
             modifier = Modifier.fillMaxWidth()
         ) {
+// Clickable Title
             Text("Monotool Client", fontSize = 20.sp, color = Color.White, fontWeight = FontWeight.Bold, modifier = Modifier
                 .fillMaxWidth()
                 .wrapContentSize(Alignment.Center)
@@ -112,6 +113,7 @@ fun mainScreen() {
                 )
             }
         }
+// Ping Engine Call
         LaunchedEffect(Unit) {
             while (isActive) {
                 val resultsA = listOf(
@@ -132,8 +134,7 @@ fun mainScreen() {
                     async { pingEngineAPI(ipAddress14) },
                     async { pingEngineAPI(ipAddress15) }
                 )
-
-                // Ping
+// Ping Result Return From API
                 pingSuccessful0 = resultsA[0].await()
                 pingSuccessful1 = resultsA[1].await()
                 pingSuccessful2 = resultsA[2].await()

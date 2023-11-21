@@ -1,4 +1,4 @@
-package setting_screen_boxes
+package pingsetting_boxes
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.background
@@ -18,11 +18,11 @@ import engine_logic.*
 
 @Composable
 @Preview
-fun settingBoxesB() {
-    var ipAddressB4 by remember { mutableStateOf(readIpFile4()) }
-    var ipAddressB5 by remember { mutableStateOf(readIpFile5()) }
-    var ipAddressB6 by remember { mutableStateOf(readIpFile6()) }
-    var ipAddressB7 by remember { mutableStateOf(readIpFile7()) }
+fun pingSettingBoxesA() {
+    var ipAddressA0 by remember { mutableStateOf(readIpFile4()) }
+    var ipAddressA1 by remember { mutableStateOf(readIpFile5()) }
+    var ipAddressA2 by remember { mutableStateOf(readIpFile6()) }
+    var ipAddressA3 by remember { mutableStateOf(readIpFile7()) }
 
     Column(
         modifier = Modifier.padding(bottom = 15.dp),
@@ -41,10 +41,10 @@ fun settingBoxesB() {
             contentAlignment = Alignment.Center
         ) {
             BasicTextField(
-                value = ipAddressB4,
+                value = ipAddressA0,
                 onValueChange = { newValue ->
-                    ipAddressB4 = newValue
-                    writeIpToFile4(newValue)
+                    ipAddressA0 = newValue
+                    writeIpToFile0(newValue)
                 },
                 modifier = Modifier.fillMaxWidth(),
                 textStyle = TextStyle(
@@ -66,10 +66,10 @@ fun settingBoxesB() {
             contentAlignment = Alignment.Center
         ) {
             BasicTextField(
-                value = ipAddressB5,
+                value = ipAddressA1,
                 onValueChange = { newValue ->
-                    ipAddressB5 = newValue
-                    writeIpToFile5(newValue)
+                    ipAddressA1 = newValue
+                    writeIpToFile1(newValue)
                 },
                 modifier = Modifier.fillMaxWidth(),
                 textStyle = TextStyle(
@@ -91,10 +91,10 @@ fun settingBoxesB() {
             contentAlignment = Alignment.Center
         ) {
             BasicTextField(
-                value = ipAddressB6,
+                value = ipAddressA2,
                 onValueChange = { newValue ->
-                    ipAddressB6 = newValue
-                    writeIpToFile6(newValue)
+                    ipAddressA2 = newValue
+                    writeIpToFile2(newValue)
                 },
                 modifier = Modifier.fillMaxWidth(),
                 textStyle = TextStyle(
@@ -116,10 +116,10 @@ fun settingBoxesB() {
             contentAlignment = Alignment.Center
         ) {
             BasicTextField(
-                value = ipAddressB7,
+                value = ipAddressA3,
                 onValueChange = { newValue ->
-                    ipAddressB7 = newValue
-                    writeIpToFile7(newValue)
+                    ipAddressA3 = newValue
+                    writeIpToFile3(newValue)
                 },
                 modifier = Modifier.fillMaxWidth(),
                 textStyle = TextStyle(
