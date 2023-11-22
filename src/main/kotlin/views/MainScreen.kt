@@ -51,11 +51,6 @@ fun mainScreen() {
     var pingSuccessful14 by remember { mutableStateOf(false) }
     var pingSuccessful15 by remember { mutableStateOf(false) }
 
-    var snmpTempResultA by remember { mutableStateOf("") }
-    var snmpHumidResultA by remember { mutableStateOf("") }
-    var snmpTempResultB by remember { mutableStateOf("") }
-    var snmpHumidResultB by remember { mutableStateOf("") }
-
     // Ping Engine Call
     LaunchedEffect(Unit) {
         while (isActive) {
@@ -77,12 +72,7 @@ fun mainScreen() {
                 async { pingEngineAPI(ipAddress14) },
                 async { pingEngineAPI(ipAddress15) }
             )
-            val resultsB = listOf(
-                async { snmpTempEngineA() },
-                async { snmpHumidEngineA() },
-                async { snmpTempEngineB() },
-                async { snmpHumidEngineB() }
-            )
+
 // Ping Result Return From API
             pingSuccessful0 = resultsA[0].await()
             pingSuccessful1 = resultsA[1].await()
@@ -100,11 +90,6 @@ fun mainScreen() {
             pingSuccessful13 = resultsA[13].await()
             pingSuccessful14 = resultsA[14].await()
             pingSuccessful15 = resultsA[15].await()
-
-            snmpTempResultA = resultsB[0].await()
-            snmpHumidResultA = resultsB[1].await()
-            snmpTempResultB = resultsB[2].await()
-            snmpHumidResultB = resultsB[3].await()
 
             delay(10000) // delay for 10 second
         }
@@ -197,7 +182,7 @@ fun mainScreen() {
                     pingBoxesC(pingSuccessful8, pingSuccessful9, pingSuccessful10, pingSuccessful11)
                     Spacer(modifier = Modifier.width(20.dp))
 // Box Set D
-                    tempHumidBoxes(snmpTempResultA, snmpHumidResultA, snmpTempResultB, snmpHumidResultB)
+                    pingBoxesD(pingSuccessful12, pingSuccessful13, pingSuccessful14, pingSuccessful15)
 
                 }
             }
