@@ -1,5 +1,7 @@
 package engine_logic
 
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import okhttp3.FormBody
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -29,7 +31,7 @@ fun pingEngineAPI(ip: String): Boolean {
         .build()
 
     val request = Request.Builder()
-        .url("http://192.168.75.62:8080/pingMotor") // Replace with your server's URL
+        .url("http://xxxxxxxxx:8080/pingMotor") // API IP
         .post(formBody)
         .build()
 
@@ -40,5 +42,70 @@ fun pingEngineAPI(ip: String): Boolean {
     } catch (e: IOException) {
         println("Error in pingEngineAPI: ${e.message}")
         false
+    }
+}
+// 701
+suspend fun snmpTempEngineA(): String = withContext(Dispatchers.IO) {
+    try {
+        val client = OkHttpClient.Builder().build()
+        val request = Request.Builder()
+            .url("http://xxxxxxxxx:8080/snmpTempRequestA") // Temp API IP A
+            .build()
+
+        val response = client.newCall(request).execute()
+
+        return@withContext response.body?.string() ?: ""
+    } catch (e: IOException) {
+        println("Error in snmpTempEngineA: ${e.message}")
+        return@withContext ""
+    }
+}
+
+suspend fun snmpHumidEngineA(): String = withContext(Dispatchers.IO) {
+    try {
+        val client = OkHttpClient.Builder().build()
+        val request = Request.Builder()
+            .url("http://xxxxxxxxx:8080/snmpHumidRequestA") // Humid API IP A
+            .build()
+
+        val response = client.newCall(request).execute()
+
+        return@withContext response.body?.string() ?: ""
+    } catch (e: IOException) {
+        println("Error in snmpHumidEngineA: ${e.message}")
+        return@withContext ""
+    }
+}
+
+// BB
+suspend fun snmpTempEngineB(): String = withContext(Dispatchers.IO) {
+    try {
+        val client = OkHttpClient.Builder().build()
+        val request = Request.Builder()
+            .url("http://xxxxxxxxx:8080/snmpTempRequestB") // Temp API IP B
+            .build()
+
+        val response = client.newCall(request).execute()
+
+        return@withContext response.body?.string() ?: ""
+    } catch (e: IOException) {
+        println("Error in snmpTempEngineB: ${e.message}")
+        return@withContext ""
+    }
+}
+
+suspend fun snmpHumidEngineB(): String = withContext(Dispatchers.IO) {
+    try {
+        val client = OkHttpClient.Builder().build()
+        val request = Request.Builder()
+            .url("http://xxxxxxxxx:8080/snmpHumidRequestB") // Humid API IP B
+            .build()
+
+        val response = client.newCall(request).execute()
+
+        return@withContext response.body?.string() ?: ""
+    } catch (e: IOException) {
+        println("Error in snmpHumidEngineB: ${e.message}")
+        return@withContext ""
     }
 }

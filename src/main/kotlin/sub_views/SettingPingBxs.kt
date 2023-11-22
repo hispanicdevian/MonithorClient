@@ -9,9 +9,11 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import custom_resources.ErgoGray
+import custom_resources.NbtColor
 import engine_logic.Navi
 import pingsetting_boxes.pingSettingBoxesA
 import pingsetting_boxes.pingSettingBoxesB
@@ -29,7 +31,7 @@ fun settingPingBxs() {
         is Navi.SettingsPingBoxes -> {
 
             Box(
-                modifier = Modifier.fillMaxSize().padding(start = 15.dp, end = 15.dp, top = 4.dp)
+                modifier = Modifier.fillMaxSize().padding(start = 4.dp, end = 4.dp, top = 3.dp)
             ) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
@@ -39,7 +41,7 @@ fun settingPingBxs() {
                         colors = ButtonDefaults.buttonColors(ErgoGray),
                         onClick = { currentScreen = Navi.Settings }
                     ) {
-                        Text("Done", color = Color.White)
+                        Text("Done", color = NbtColor, fontSize = 25.sp, fontWeight = FontWeight.Bold)
                     }
                 }
                 Box(

@@ -38,7 +38,7 @@ fun settingScreen() {
                 .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)),
             contentAlignment = Alignment.Center
         ) {
-            val itemsList = listOf("IP Settings", "", "", "")
+            val itemsList = listOf("IP Settings")
             LazyColumn(
                 modifier = Modifier.fillMaxHeight(),
                 state = rememberLazyListState(),
