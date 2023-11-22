@@ -9,6 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import custom_resources.ErgoGray
 import engine_logic.Navi
@@ -38,7 +39,7 @@ fun settingPingBxs() {
                         colors = ButtonDefaults.buttonColors(ErgoGray),
                         onClick = { currentScreen = Navi.Settings }
                     ) {
-                        Text("Done")
+                        Text("Done", color = Color.White)
                     }
                 }
                 Box(

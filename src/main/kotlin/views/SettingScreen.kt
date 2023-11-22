@@ -29,7 +29,7 @@ fun settingScreen() {
         settingPingBxs()
     } else {
         Box(
-            modifier = Modifier.fillMaxSize().padding(top = 30.dp).padding(vertical = 100.dp).padding(horizontal = 300.dp)
+            modifier = Modifier.fillMaxSize().padding(top = 30.dp).padding(vertical = 100.dp).padding(horizontal = 250.dp)
                 .background(
                     Color.Black, shape = AbsoluteRoundedCornerShape(8.dp)
                 )
@@ -46,6 +46,7 @@ fun settingScreen() {
             ) {
                 items(itemsList) { item ->
                     Text(
+                        color = Color.White,
                         text = item,
                         modifier = Modifier
                             .clickable {
