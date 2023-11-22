@@ -29,7 +29,7 @@ fun pingEngineAPI(ip: String): Boolean {
         .build()
 
     val request = Request.Builder()
-        .url("http://192.168.203.74:8080/pingMotor") // API IP
+        .url("http://xxxxxxxxx:8080/pingMotor") // API IP
         .post(formBody)
         .build()
 
