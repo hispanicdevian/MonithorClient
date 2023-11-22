@@ -23,9 +23,9 @@ import sub_views.settingPingBxs
 @Composable
 @Preview
 fun settingScreen() {
-    var naviSettingPingBxs by remember { mutableStateOf(false) }
+    var currentScreen by remember { mutableStateOf(false) }
 
-    if (naviSettingPingBxs) {
+    if (currentScreen) {
         settingPingBxs()
     } else {
         Box(
@@ -50,7 +50,7 @@ fun settingScreen() {
                         modifier = Modifier
                             .clickable {
                                 if (item == "IP Settings") {
-                                    naviSettingPingBxs = true // Set the flag to show PingBoxes screen
+                                    currentScreen = true
                                 }
                             }
                             .padding(16.dp)

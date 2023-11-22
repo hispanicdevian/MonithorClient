@@ -1,9 +1,9 @@
 package engine_logic
 
 // Navi Connector
-sealed class Screen {
-    data object Main : Screen()
-    data object Setting : Screen()
+sealed class Navi {
+    data object Main : Navi()
+    data object Settings : Navi()
 
-    //data object SettingPingBoxes : Screen()
+    data object SettingsPingBoxes : Navi()
 }

@@ -24,13 +24,14 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import mainscreen_boxes.*
+import sub_views.settingPingBxs
 
 @Composable
 @Preview
 fun mainScreen() {
 
 // engine_logic.Screen Navi Ram
-    var currentScreen by remember { mutableStateOf<Screen>(Screen.Main) }
+    var currentScreen by remember { mutableStateOf<Navi>(Navi.Main) }
 
 // Ping Result Ram
     var pingSuccessful0 by remember { mutableStateOf(false) }
@@ -111,7 +112,7 @@ fun mainScreen() {
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = null,
-                        onClick = { currentScreen = Screen.Main }
+                        onClick = { currentScreen = Navi.Main }
                     )
             )
         }
@@ -119,15 +120,15 @@ fun mainScreen() {
         Box(
             modifier = Modifier
                 .align(Alignment.TopStart)
-                .padding(top = 20.dp, start = 20.dp),
+                .padding(top = 18.dp, start = 20.dp),
         ) {
             Box(
                 modifier = Modifier
-                    .size(20.dp)
+                    .size(24.dp)
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = rememberRipple(bounded = false, radius = 15.dp),
-                        onClick = { currentScreen = Screen.Main }
+                        onClick = { currentScreen = Navi.Main }
                     )
             ) {
                 Image(
@@ -141,15 +142,15 @@ fun mainScreen() {
         Box(
             modifier = Modifier
                 .align(Alignment.TopEnd)
-                .padding(top = 20.dp, end = 22.dp),
+                .padding(top = 17.dp, end = 22.dp),
         ) {
             Box(
                 modifier = Modifier
-                    .size(20.dp)
+                    .size(24.dp)
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = rememberRipple(bounded = false, radius = 15.dp),
-                        onClick = { currentScreen = Screen.Setting }
+                        onClick = { currentScreen = Navi.Settings }
                     )
             ) {
                 Image(
@@ -161,7 +162,7 @@ fun mainScreen() {
         }
 // Navi Head
         when (currentScreen) {
-            is Screen.Main -> {
+            is Navi.Main -> {
                 Row(
                     modifier = Modifier
                         .fillMaxSize()
@@ -185,10 +186,8 @@ fun mainScreen() {
                 }
             }
 // Navi Tail
-            is Screen.Setting -> {
-                settingScreen()
-
-            }
+            Navi.Settings -> settingScreen()
+            Navi.SettingsPingBoxes -> settingPingBxs()
         }
     }
 }
