@@ -12,7 +12,7 @@ import pingsetting_boxes.*
 
 @Composable
 @Preview
-fun settingScreenPingBoxes() {
+fun settingPingBxs() {
 
     Box(
         modifier = Modifier.fillMaxSize().padding(top = 60.dp)
@@ -25,7 +25,6 @@ fun settingScreenPingBoxes() {
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Spacer(modifier = Modifier.width(12.dp))
 // Box Set A
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,

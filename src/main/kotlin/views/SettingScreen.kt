@@ -18,15 +18,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.ErgoGray
-import sub_views.settingScreenPingBoxes
+import sub_views.settingPingBxs
 
 @Composable
 @Preview
 fun settingScreen() {
-    var showPingBoxes by remember { mutableStateOf(false) }
+    var naviSettingPingBxs by remember { mutableStateOf(false) }
 
-    if (showPingBoxes) {
-        settingScreenPingBoxes()
+    if (naviSettingPingBxs) {
+        settingPingBxs()
     } else {
         Box(
             modifier = Modifier.fillMaxSize().padding(top = 30.dp).padding(vertical = 100.dp).padding(horizontal = 300.dp)
@@ -50,7 +50,7 @@ fun settingScreen() {
                         modifier = Modifier
                             .clickable {
                                 if (item == "IP Settings") {
-                                    showPingBoxes = true // Set the flag to show PingBoxes screen
+                                    naviSettingPingBxs = true // Set the flag to show PingBoxes screen
                                 }
                             }
                             .padding(16.dp)

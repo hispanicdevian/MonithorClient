@@ -25,17 +25,13 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import mainscreen_boxes.*
 
-// Navi Connector
-sealed class Screen {
-    data object Main : Screen()
-    data object Setting : Screen()
-}
 @Composable
 @Preview
 fun mainScreen() {
 
-// Screen Navi Ram
+// engine_logic.Screen Navi Ram
     var currentScreen by remember { mutableStateOf<Screen>(Screen.Main) }
+
 // Ping Result Ram
     var pingSuccessful0 by remember { mutableStateOf(false) }
     var pingSuccessful1 by remember { mutableStateOf(false) }
@@ -53,6 +49,49 @@ fun mainScreen() {
     var pingSuccessful13 by remember { mutableStateOf(false) }
     var pingSuccessful14 by remember { mutableStateOf(false) }
     var pingSuccessful15 by remember { mutableStateOf(false) }
+
+    // Ping Engine Call
+    LaunchedEffect(Unit) {
+        while (isActive) {
+            val resultsA = listOf(
+                async { pingEngineAPI(ipAddress0) },
+                async { pingEngineAPI(ipAddress1) },
+                async { pingEngineAPI(ipAddress2) },
+                async { pingEngineAPI(ipAddress3) },
+                async { pingEngineAPI(ipAddress4) },
+                async { pingEngineAPI(ipAddress5) },
+                async { pingEngineAPI(ipAddress6) },
+                async { pingEngineAPI(ipAddress7) },
+                async { pingEngineAPI(ipAddress8) },
+                async { pingEngineAPI(ipAddress9) },
+                async { pingEngineAPI(ipAddress10) },
+                async { pingEngineAPI(ipAddress11) },
+                async { pingEngineAPI(ipAddress12) },
+                async { pingEngineAPI(ipAddress13) },
+                async { pingEngineAPI(ipAddress14) },
+                async { pingEngineAPI(ipAddress15) }
+            )
+// Ping Result Return From API
+            pingSuccessful0 = resultsA[0].await()
+            pingSuccessful1 = resultsA[1].await()
+            pingSuccessful2 = resultsA[2].await()
+            pingSuccessful3 = resultsA[3].await()
+            pingSuccessful4 = resultsA[4].await()
+            pingSuccessful5 = resultsA[5].await()
+            pingSuccessful6 = resultsA[6].await()
+            pingSuccessful7 = resultsA[7].await()
+            pingSuccessful8 = resultsA[8].await()
+            pingSuccessful9 = resultsA[9].await()
+            pingSuccessful10 = resultsA[10].await()
+            pingSuccessful11 = resultsA[11].await()
+            pingSuccessful12 = resultsA[12].await()
+            pingSuccessful13 = resultsA[13].await()
+            pingSuccessful14 = resultsA[14].await()
+            pingSuccessful15 = resultsA[15].await()
+
+            delay(10000) // delay for 10 second
+        }
+    }
 
     Box(
         modifier = Modifier.fillMaxSize().background(ErgoGray)
@@ -118,48 +157,6 @@ fun mainScreen() {
                     contentDescription = "Sample",
                     modifier = Modifier.fillMaxSize()
                 )
-            }
-        }
-// Ping Engine Call
-        LaunchedEffect(Unit) {
-            while (isActive) {
-                val resultsA = listOf(
-                    async { pingEngineAPI(ipAddress0) },
-                    async { pingEngineAPI(ipAddress1) },
-                    async { pingEngineAPI(ipAddress2) },
-                    async { pingEngineAPI(ipAddress3) },
-                    async { pingEngineAPI(ipAddress4) },
-                    async { pingEngineAPI(ipAddress5) },
-                    async { pingEngineAPI(ipAddress6) },
-                    async { pingEngineAPI(ipAddress7) },
-                    async { pingEngineAPI(ipAddress8) },
-                    async { pingEngineAPI(ipAddress9) },
-                    async { pingEngineAPI(ipAddress10) },
-                    async { pingEngineAPI(ipAddress11) },
-                    async { pingEngineAPI(ipAddress12) },
-                    async { pingEngineAPI(ipAddress13) },
-                    async { pingEngineAPI(ipAddress14) },
-                    async { pingEngineAPI(ipAddress15) }
-                )
-// Ping Result Return From API
-                pingSuccessful0 = resultsA[0].await()
-                pingSuccessful1 = resultsA[1].await()
-                pingSuccessful2 = resultsA[2].await()
-                pingSuccessful3 = resultsA[3].await()
-                pingSuccessful4 = resultsA[4].await()
-                pingSuccessful5 = resultsA[5].await()
-                pingSuccessful6 = resultsA[6].await()
-                pingSuccessful7 = resultsA[7].await()
-                pingSuccessful8 = resultsA[8].await()
-                pingSuccessful9 = resultsA[9].await()
-                pingSuccessful10 = resultsA[10].await()
-                pingSuccessful11 = resultsA[11].await()
-                pingSuccessful12 = resultsA[12].await()
-                pingSuccessful13 = resultsA[13].await()
-                pingSuccessful14 = resultsA[14].await()
-                pingSuccessful15 = resultsA[15].await()
-
-                delay(10000) // delay for 10 second
             }
         }
 // Navi Head
