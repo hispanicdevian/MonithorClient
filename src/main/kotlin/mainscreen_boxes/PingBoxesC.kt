@@ -16,13 +16,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.ErgoGray
 import custom_resources.NbtColor
-import custom_resources.NbtRedBright
 import engine_logic.Navi
 import engine_logic.SLOnOffHandlerC
 import engine_logic.loadFontSizeV1A
-import sub_views.settingFontSize
-import sub_views.settingOnOffBoxes
-import sub_views.settingPingBoxes
 import views.settingScreen
 
 //////////////////////////////////////////////////////////// Ping Boxes Shown in the Third Column of the Main Screen
