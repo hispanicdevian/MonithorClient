@@ -2,10 +2,10 @@ package engine_logic
 
 import java.io.File
 
-// 04
+//////////////////////////////////////////////////////////// Read/Write File for IPs value, Boxes 04
 fun readIpFile4(): String {
     return try {
-        val file4 = File("file4.txt").readText()
+        val file4 = File("rwIP04.hdi").readText()
         file4
     } catch (e: Exception) {
         ""
@@ -13,18 +13,19 @@ fun readIpFile4(): String {
 }
 fun writeIpToFile4(ipAddress: String) {
     try {
-        val file4 = File("file4.txt")
+        val file4 = File("rwIP04.hdi")
         file4.writeText(ipAddress)
         ipAddress4 = ipAddress // Update the in-memory value
     } catch (e: Exception) {
-        // Handle exceptions
+        // Log the exception
+        e.printStackTrace()
     }
 }
 
-// 05
+//////////////////////////////////////////////////////////// Read/Write File for IPs value, Boxes 05
 fun readIpFile5(): String {
     return try {
-        val file5 = File("file5.txt").readText()
+        val file5 = File("rwIP05.hdi").readText()
         file5
     } catch (e: Exception) {
         ""
@@ -32,18 +33,19 @@ fun readIpFile5(): String {
 }
 fun writeIpToFile5(ipAddress: String) {
     try {
-        val file5 = File("file5.txt")
+        val file5 = File("rwIP05.hdi")
         file5.writeText(ipAddress)
         ipAddress5 = ipAddress // Update the in-memory value
     } catch (e: Exception) {
-        // Handle exceptions
+        // Log the exception
+        e.printStackTrace()
     }
 }
 
-// 06
+//////////////////////////////////////////////////////////// Read/Write File for IPs value, Boxes 06
 fun readIpFile6(): String {
     return try {
-        val file6 = File("file6.txt").readText()
+        val file6 = File("rwIP06.hdi").readText()
         file6
     } catch (e: Exception) {
         ""
@@ -51,18 +53,19 @@ fun readIpFile6(): String {
 }
 fun writeIpToFile6(ipAddress: String) {
     try {
-        val file6 = File("file6.txt")
+        val file6 = File("rwIP06.hdi")
         file6.writeText(ipAddress)
         ipAddress6 = ipAddress // Update the in-memory value
     } catch (e: Exception) {
-        // Handle exceptions
+        // Log the exception
+        e.printStackTrace()
     }
 }
 
-//07
+//////////////////////////////////////////////////////////// Read/Write File for IPs value, Boxes 07
 fun readIpFile7(): String {
     return try {
-        val file7 = File("file7.txt").readText()
+        val file7 = File("rwIP07.hdi").readText()
         file7
     } catch (e: Exception) {
         ""
@@ -70,10 +73,11 @@ fun readIpFile7(): String {
 }
 fun writeIpToFile7(ipAddress: String) {
     try {
-        val file7 = File("file7.txt")
+        val file7 = File("rwIP07.hdi")
         file7.writeText(ipAddress)
         ipAddress7 = ipAddress // Update the in-memory value
     } catch (e: Exception) {
-        // Handle exceptions
+        // Log the exception
+        e.printStackTrace()
     }
 }
