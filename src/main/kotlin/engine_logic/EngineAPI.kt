@@ -5,6 +5,8 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.IOException
 
+
+//////////////////////////////////////////////////////////// IP List that passes into the APIs function
 var ipAddress0 = readIpFile0()
 var ipAddress1 = readIpFile1()
 var ipAddress2 = readIpFile2()
@@ -17,11 +19,8 @@ var ipAddress8 = readIpFile8()
 var ipAddress9 = readIpFile9()
 var ipAddress10 = readIpFile10()
 var ipAddress11 = readIpFile11()
-var ipAddress12 = readIpFile12()
-var ipAddress13 = readIpFile13()
-var ipAddress14 = readIpFile14()
-var ipAddress15 = readIpFile15()
 
+//////////////////////////////////////////////////////////// Ping API (Adjust to match APIs IP address)
 fun pingEngineAPI(ip: String): Boolean {
     val client = OkHttpClient()
     val formBody = FormBody.Builder()
@@ -29,7 +28,7 @@ fun pingEngineAPI(ip: String): Boolean {
         .build()
 
     val request = Request.Builder()
-        .url("http://xxxxxxxxx:8080/pingMotor") // API IP
+        .url("http://192.168.:8080/pingMotor") // API IP
         .post(formBody)
         .build()
 
@@ -42,3 +41,5 @@ fun pingEngineAPI(ip: String): Boolean {
         false
     }
 }
+
+//////////////////////////////////////////////////////////// Weather API
