@@ -29,6 +29,7 @@ fun loadFontSizeV1A(): Float {
         20.0f // Return default value if file doesn't exist
     }
 }
+
 //////////////////////////////////////////////////////////// Save and Write B
 fun saveFontSizeV1B(fontSize: Float) {
     val file = File("fontSizeB.hdi")
@@ -43,6 +44,7 @@ fun loadFontSizeV1B(): Float {
         20.0f
     }
 }
+
 //////////////////////////////////////////////////////////// Save and Write C
 fun saveFontSizeV1C(fontSize: Float) {
     val file = File("fontSizeC.hdi")
@@ -57,6 +59,7 @@ fun loadFontSizeV1C(): Float {
         20.0f
     }
 }
+
 //////////////////////////////////////////////////////////// Save and Write D
 fun saveFontSizeV1D(fontSize: Float) {
     val file = File("fontSizeD.hdi")

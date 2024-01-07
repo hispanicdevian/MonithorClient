@@ -38,6 +38,7 @@ object SLOnOffHandlerA {
         }
     }
 }
+
 //////////////////////////////////////////////////////////// Save and Load B
 object SLOnOffHandlerB {
     private const val FILEPATH2 = "msStateB.hdi"
@@ -74,6 +75,7 @@ object SLOnOffHandlerB {
         }
     }
 }
+
 //////////////////////////////////////////////////////////// Save and Load C
 object SLOnOffHandlerC {
     private const val FILEPATH3 = "msStateC.hdi"
