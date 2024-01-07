@@ -14,8 +14,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_resources.ErgoGray
-import custom_resources.NbtColor
+import custom_resources.CustomGrayA
+import custom_resources.CustomRedA
+import custom_resources.MainColorA
 import engine_logic.Navi
 import engine_logic.SLOnOffHandlerA
 import engine_logic.loadFontSizeV1A
@@ -30,7 +31,7 @@ fun pingBoxesA(pingSuccessfulA0: Boolean, pingSuccessfulA1: Boolean, pingSuccess
 // Pass through ram for ping state
     val pingSuccessfulList = listOf(pingSuccessfulA0, pingSuccessfulA1, pingSuccessfulA2, pingSuccessfulA3)
 // Title list ram, need to be replaced so that the user can modify it live
-    val titleList = listOf("Google", "tel_svc_int", "tel_usr_int", "LibreNMS")
+    val titleList = listOf("0", "1", "2", "3")
 // Font size ram
     val fontSizedA by remember { mutableStateOf(loadFontSizeV1A().sp) }
 // Loads the last state of On/Off settings
@@ -62,7 +63,7 @@ fun pingBoxesA(pingSuccessfulA0: Boolean, pingSuccessfulA1: Boolean, pingSuccess
                                 */
                                 .weight(1f)
                                 .aspectRatio(1.5f)
-                                .background((if (pingSuccessfulList[index]) NbtColor else NbtRedBright), shape = AbsoluteRoundedCornerShape(8.dp)),
+                                .background((if (pingSuccessfulList[index]) MainColorA else CustomRedA), shape = AbsoluteRoundedCornerShape(8.dp)),
                             contentAlignment = Alignment.Center
                         ) {
                             Column(
@@ -71,14 +72,14 @@ fun pingBoxesA(pingSuccessfulA0: Boolean, pingSuccessfulA1: Boolean, pingSuccess
                             ) {
                                 Text(
                                     text = titleList[index],
-                                    color = ErgoGray,
+                                    color = CustomGrayA,
                                     fontWeight = FontWeight.W900,
                                     fontSize = fontSizedA
                                 )
                                 Spacer(modifier = Modifier.height(8.dp))
                                 Text(
                                     text = if (pingSuccessfulList[index]) "On" else "Off",
-                                    color = ErgoGray,
+                                    color = CustomGrayA,
                                     fontWeight = FontWeight.W800,
                                     fontSize = fontSizedA
                                 )
