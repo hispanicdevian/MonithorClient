@@ -5,7 +5,6 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.IOException
 
-
 //////////////////////////////////////////////////////////// IP List that passes into the APIs function
 var ipAddress0 = readIpFile0()
 var ipAddress1 = readIpFile1()

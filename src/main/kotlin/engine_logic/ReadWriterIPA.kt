@@ -15,9 +15,8 @@ fun writeIpToFile0(ipAddress: String) {
     try {
         val file0 = File("rwIP00.hdi")
         file0.writeText(ipAddress)
-        ipAddress0 = ipAddress // Update the in-memory value
-    } catch (e: Exception) {
-        // Log the exception
+        ipAddress0 = ipAddress // Updates the in-memory value
+    } catch (e: Exception) { // Log the exception
         e.printStackTrace()
     }
 }
@@ -35,9 +34,8 @@ fun writeIpToFile1(ipAddress: String) {
     try {
         val file1 = File("rwIP01.hdi")
         file1.writeText(ipAddress)
-        ipAddress1 = ipAddress // Update the in-memory value
-    } catch (e: Exception) {
-        // Log the exception
+        ipAddress1 = ipAddress // Updates the in-memory value
+    } catch (e: Exception) { // Log the exception
         e.printStackTrace()
     }
 }
