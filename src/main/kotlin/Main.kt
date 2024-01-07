@@ -2,13 +2,14 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import views.mainScreen
 
+//////////////////////////////////////////////////////////// Start Normal Screen Mode
 fun main() = application {
     Window(onCloseRequest = ::exitApplication) {
         mainScreen()
     }
 }
 
-// to start in full screen mode
+//////////////////////////////////////////////////////////// Start Full Screen Mode
 /*
 fun main() {
     application {
@@ -18,4 +19,4 @@ fun main() {
         }
     }
 }
- */
+*/
