@@ -20,8 +20,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_resources.ErgoGray
-import custom_resources.NbtColor
+import custom_resources.CustomGrayA
+import custom_resources.MainColorA
 import engine_logic.Navi
 import engine_logic.saveFontSizeV1A
 import views.mainScreen
@@ -37,8 +37,8 @@ fun settingFontSize() {
     var fontSizedB: TextUnit
     var fontSizedC: TextUnit
     var fontSizedD: TextUnit
-
      */
+
 //////////////////////////////////////////////////////////// Lists of shown buttons
     val fontSizeMapA = mapOf(
         "Default" to 20.sp,
@@ -70,6 +70,7 @@ fun settingFontSize() {
         "None" to 0.sp
     )
      */
+
 //////////////////////////////////////////////////////////// Navi Head (Navi = Navigation)
     when (currentScreen) {
         is Navi.SettingFontSz -> {
@@ -82,10 +83,10 @@ fun settingFontSize() {
                     verticalArrangement = Arrangement.Top
                 ) {
                     Button(modifier = Modifier.fillMaxWidth(),
-                        colors = ButtonDefaults.buttonColors(ErgoGray),
+                        colors = ButtonDefaults.buttonColors(CustomGrayA),
                         onClick = { currentScreen = Navi.SettingScn }
                     ) {
-                        Text("Done", color = NbtColor, fontSize = 25.sp, fontWeight = FontWeight.Bold)
+                        Text("Done", color = MainColorA, fontSize = 25.sp, fontWeight = FontWeight.Bold)
                     }
                 }
             }
@@ -105,7 +106,7 @@ fun settingFontSize() {
                             .background(Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
                             .padding(5.dp)
                             .size(300.dp)
-                            .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp))
+                            .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp))
                     ) {
                         val itemsListA = listOf("Default", "Small", "Medium", "Large", "None")
                         LazyColumn(

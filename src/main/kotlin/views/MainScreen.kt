@@ -12,28 +12,30 @@ import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_resources.ErgoGray
-import custom_resources.NbtColor
+import custom_resources.CustomGrayA
+import custom_resources.MainColorA
 import engine_logic.*
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
-import mainscreen_boxes.*
-import sub_views.settingPingBxs
+import mainscreen_boxes.pingBoxesA
+import mainscreen_boxes.pingBoxesB
+import mainscreen_boxes.pingBoxesC
+import sub_views.settingFontSize
+import sub_views.settingOnOffBoxes
+import sub_views.settingPingBoxes
 
+//////////////////////////////////////////////////////////// Main/First Screen of the App
 @Composable
 @Preview
 fun mainScreen() {
+    var currentScreen by remember { mutableStateOf<Navi>(Navi.MainScn) }
 
-// engine_logic.Screen Navi Ram
-    var currentScreen by remember { mutableStateOf<Navi>(Navi.Main) }
-
-// Ping Result Ram
+//////////////////////////////////////////////////////////// Ping Results Ram
     var pingSuccessful0 by remember { mutableStateOf(false) }
     var pingSuccessful1 by remember { mutableStateOf(false) }
     var pingSuccessful2 by remember { mutableStateOf(false) }
@@ -46,12 +48,8 @@ fun mainScreen() {
     var pingSuccessful9 by remember { mutableStateOf(false) }
     var pingSuccessful10 by remember { mutableStateOf(false) }
     var pingSuccessful11 by remember { mutableStateOf(false) }
-    var pingSuccessful12 by remember { mutableStateOf(false) }
-    var pingSuccessful13 by remember { mutableStateOf(false) }
-    var pingSuccessful14 by remember { mutableStateOf(false) }
-    var pingSuccessful15 by remember { mutableStateOf(false) }
 
-    // Ping Engine Call
+//////////////////////////////////////////////////////////// Ping Engine Call
     LaunchedEffect(Unit) {
         while (isActive) {
             val resultsA = listOf(
@@ -66,14 +64,10 @@ fun mainScreen() {
                 async { pingEngineAPI(ipAddress8) },
                 async { pingEngineAPI(ipAddress9) },
                 async { pingEngineAPI(ipAddress10) },
-                async { pingEngineAPI(ipAddress11) },
-                async { pingEngineAPI(ipAddress12) },
-                async { pingEngineAPI(ipAddress13) },
-                async { pingEngineAPI(ipAddress14) },
-                async { pingEngineAPI(ipAddress15) }
+                async { pingEngineAPI(ipAddress11) }
             )
 
-// Ping Result Return From API
+//////////////////////////////////////////////////////////// Ping Result Return From API
             pingSuccessful0 = resultsA[0].await()
             pingSuccessful1 = resultsA[1].await()
             pingSuccessful2 = resultsA[2].await()
@@ -86,38 +80,34 @@ fun mainScreen() {
             pingSuccessful9 = resultsA[9].await()
             pingSuccessful10 = resultsA[10].await()
             pingSuccessful11 = resultsA[11].await()
-            pingSuccessful12 = resultsA[12].await()
-            pingSuccessful13 = resultsA[13].await()
-            pingSuccessful14 = resultsA[14].await()
-            pingSuccessful15 = resultsA[15].await()
 
-            delay(10000) // delay for 10 second
+            delay(10000)
         }
     }
-
+//////////////////////////////////////////////////////////// UI Container
     Box(
-        modifier = Modifier.fillMaxSize().background(ErgoGray)
+        modifier = Modifier.fillMaxSize().background(CustomGrayA)
     ) {
         TopAppBar(
-            backgroundColor = NbtColor,
+            backgroundColor = MainColorA,
             modifier = Modifier.fillMaxWidth()
         ) {
-// Clickable Title
-            Text("Monotool Client",
-                fontSize = 20.sp,
-                color = Color.White,
-                fontWeight = FontWeight.Bold,
+//////////////////////////////////////////////////////////// Clickable Title
+            Text("NBT Lights Client",
+                fontSize = 26.sp,
+                color = CustomGrayA,
+                fontWeight = FontWeight.W900,
                 modifier = Modifier
                     .fillMaxWidth()
                     .wrapContentSize(Alignment.Center)
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = null,
-                        onClick = { currentScreen = Navi.Main }
+                        onClick = { currentScreen = Navi.MainScn }
                     )
             )
         }
-// Home Button
+//////////////////////////////////////////////////////////// Home Button
         Box(
             modifier = Modifier
                 .align(Alignment.TopStart)
@@ -129,7 +119,7 @@ fun mainScreen() {
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = rememberRipple(bounded = false, radius = 15.dp),
-                        onClick = { currentScreen = Navi.Main }
+                        onClick = { currentScreen = Navi.MainScn }
                     )
             ) {
                 Image(
@@ -139,7 +129,7 @@ fun mainScreen() {
                 )
             }
         }
-// Settings Button
+//////////////////////////////////////////////////////////// Settings Button
         Box(
             modifier = Modifier
                 .align(Alignment.TopEnd)
@@ -151,44 +141,63 @@ fun mainScreen() {
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = rememberRipple(bounded = false, radius = 15.dp),
-                        onClick = { currentScreen = Navi.Settings }
+                        onClick = { currentScreen = Navi.SettingScn }
                     )
             ) {
                 Image(
                     painter = painterResource("SettingsPng240F.png"),
-                    contentDescription = "Sample",
+                    contentDescription = "",
                     modifier = Modifier.fillMaxSize()
                 )
             }
         }
-// Navi Head
-        when (currentScreen) {
-            is Navi.Main -> {
-                Row(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(top = 55.dp)
-                        .padding(horizontal = 15.dp),
-                    horizontalArrangement = Arrangement.Center,
-                    verticalAlignment = Alignment.CenterVertically
+    }
+//////////////////////////////////////////////////////////// Navi Head
+    when (currentScreen) {
+        is Navi.MainScn -> {
+            Row(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(top = 55.dp)
+                    .padding(horizontal = 15.dp),
+                horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+//////////////////////////////////////////////////////////// Box Set A
+                Column(modifier = Modifier
+                    .padding(5.dp)
+                    .weight(1f)
+                    //.aspectRatio(1f)
+                ) { pingBoxesA(pingSuccessful0, pingSuccessful1, pingSuccessful2, pingSuccessful3) }
+                Spacer(modifier = Modifier.width(20.dp))
+//////////////////////////////////////////////////////////// Box Set B
+                Column(modifier = Modifier
+                    .padding(5.dp)
+                    .weight(1f)
+                    //.aspectRatio(1f)
+                ) { pingBoxesB(pingSuccessful4, pingSuccessful5, pingSuccessful6, pingSuccessful7) }
+                Spacer(modifier = Modifier.width(20.dp))
+//////////////////////////////////////////////////////////// Box Set C
+                Column(modifier = Modifier
+                    .padding(5.dp)
+                    .weight(1f)
+                    //.aspectRatio(1f)
+                ) { pingBoxesC(pingSuccessful8, pingSuccessful9, pingSuccessful10, pingSuccessful11) }
+                Spacer(modifier = Modifier.width(20.dp))
+//////////////////////////////////////////////////////////// Box Set D
+                Column(modifier = Modifier
+                    .padding(5.dp)
+                    .weight(1f)
+                    //.aspectRatio(1f)
                 ) {
-// Box Set A
-                    pingBoxesA(pingSuccessful0, pingSuccessful1, pingSuccessful2, pingSuccessful3)
-                    Spacer(modifier = Modifier.width(20.dp))
-// Box Set B
-                    pingBoxesB(pingSuccessful4, pingSuccessful5, pingSuccessful6, pingSuccessful7)
-                    Spacer(modifier = Modifier.width(20.dp))
-// Box Set C
-                    pingBoxesC(pingSuccessful8, pingSuccessful9, pingSuccessful10, pingSuccessful11)
-                    Spacer(modifier = Modifier.width(20.dp))
-// Box Set D
-                    pingBoxesD(pingSuccessful12, pingSuccessful13, pingSuccessful14, pingSuccessful15)
-
                 }
             }
-// Navi Tail
-            Navi.Settings -> settingScreen()
-            Navi.SettingsPingBoxes -> settingPingBxs()
         }
+//////////////////////////////////////////////////////////// Navi Tail
+        Navi.MainScn -> mainScreen()
+        Navi.SettingFontSz -> settingFontSize()
+        Navi.SettingOnOffBxs -> settingOnOffBoxes()
+        Navi.SettingPingBxs -> settingPingBoxes()
+        Navi.SettingScn -> settingScreen()
     }
 }
