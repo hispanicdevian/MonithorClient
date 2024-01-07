@@ -1,213 +1,86 @@
 package sub_views
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
-import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_resources.ErgoGray
-import engine_logic.*
-import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.isActive
-import mainscreen_boxes.pingBoxesA
-import mainscreen_boxes.pingBoxesB
-import mainscreen_boxes.pingBoxesC
+import custom_resources.CustomGrayA
+import custom_resources.MainColorA
+import engine_logic.Navi
+import onoffsetting_boxes.onOffSettingBoxesA
+import onoffsetting_boxes.onOffSettingBoxesB
+import onoffsetting_boxes.onOffSettingBoxesC
+import views.mainScreen
+import views.settingScreen
 
-//////////////////////////////////////////////////////////// Main/First Screen of the App
 @Composable
 @Preview
-fun mainScreen() {
-    var currentScreen by remember { mutableStateOf<Navi>(Navi.MainScn) }
-
-//////////////////////////////////////////////////////////// Ping Results Ram
-    var pingSuccessful0 by remember { mutableStateOf(false) }
-    var pingSuccessful1 by remember { mutableStateOf(false) }
-    var pingSuccessful2 by remember { mutableStateOf(false) }
-    var pingSuccessful3 by remember { mutableStateOf(false) }
-    var pingSuccessful4 by remember { mutableStateOf(false) }
-    var pingSuccessful5 by remember { mutableStateOf(false) }
-    var pingSuccessful6 by remember { mutableStateOf(false) }
-    var pingSuccessful7 by remember { mutableStateOf(false) }
-    var pingSuccessful8 by remember { mutableStateOf(false) }
-    var pingSuccessful9 by remember { mutableStateOf(false) }
-    var pingSuccessful10 by remember { mutableStateOf(false) }
-    var pingSuccessful11 by remember { mutableStateOf(false) }
-
-    var snmpTempResultA by remember { mutableStateOf("") }
-    var snmpHumidResultA by remember { mutableStateOf("") }
-    var snmpTempResultB by remember { mutableStateOf("") }
-    var snmpHumidResultB by remember { mutableStateOf("") }
-
-//////////////////////////////////////////////////////////// Ping Engine Call
-    LaunchedEffect(Unit) {
-        while (isActive) {
-            val resultsA = listOf(
-                async { pingEngineAPI(ipAddress0) },
-                async { pingEngineAPI(ipAddress1) },
-                async { pingEngineAPI(ipAddress2) },
-                async { pingEngineAPI(ipAddress3) },
-                async { pingEngineAPI(ipAddress4) },
-                async { pingEngineAPI(ipAddress5) },
-                async { pingEngineAPI(ipAddress6) },
-                async { pingEngineAPI(ipAddress7) },
-                async { pingEngineAPI(ipAddress8) },
-                async { pingEngineAPI(ipAddress9) },
-                async { pingEngineAPI(ipAddress10) },
-                async { pingEngineAPI(ipAddress11) }
-            )
-            val resultsB = listOf(
-                async { snmpTempEngineA() },
-                async { snmpHumidEngineA() },
-                async { snmpTempEngineB() },
-                async { snmpHumidEngineB() }
-            )
-//////////////////////////////////////////////////////////// Ping Result Return From API
-            pingSuccessful0 = resultsA[0].await()
-            pingSuccessful1 = resultsA[1].await()
-            pingSuccessful2 = resultsA[2].await()
-            pingSuccessful3 = resultsA[3].await()
-            pingSuccessful4 = resultsA[4].await()
-            pingSuccessful5 = resultsA[5].await()
-            pingSuccessful6 = resultsA[6].await()
-            pingSuccessful7 = resultsA[7].await()
-            pingSuccessful8 = resultsA[8].await()
-            pingSuccessful9 = resultsA[9].await()
-            pingSuccessful10 = resultsA[10].await()
-            pingSuccessful11 = resultsA[11].await()
-
-            snmpTempResultA = resultsB[0].await()
-            snmpHumidResultA = resultsB[1].await()
-            snmpTempResultB = resultsB[2].await()
-            snmpHumidResultB = resultsB[3].await()
-
-            delay(10000)
-        }
-    }
-//////////////////////////////////////////////////////////// UI Container
-    Box(
-        modifier = Modifier.fillMaxSize().background(ErgoGray)
-    ) {
-        TopAppBar(
-            backgroundColor = NbtColorBright,
-            modifier = Modifier.fillMaxWidth()
-        ) {
-//////////////////////////////////////////////////////////// Clickable Title
-            Text("NBT Lights Client",
-                fontSize = 26.sp,
-                color = ErgoGray,
-                fontWeight = FontWeight.W900,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .wrapContentSize(Alignment.Center)
-                    .clickable(
-                        interactionSource = remember { MutableInteractionSource() },
-                        indication = null,
-                        onClick = { currentScreen = Navi.MainScn }
-                    )
-            )
-        }
-//////////////////////////////////////////////////////////// Home Button
-        Box(
-            modifier = Modifier
-                .align(Alignment.TopStart)
-                .padding(top = 17.dp, start = 20.dp),
-        ) {
-            Box(
-                modifier = Modifier
-                    .size(24.dp)
-                    .clickable(
-                        interactionSource = remember { MutableInteractionSource() },
-                        indication = rememberRipple(bounded = false, radius = 15.dp),
-                        onClick = { currentScreen = Navi.MainScn }
-                    )
-            ) {
-                Image(
-                    painter = painterResource("HomePng240.png"),
-                    contentDescription = "",
-                    modifier = Modifier.fillMaxSize()
-                )
-            }
-        }
-//////////////////////////////////////////////////////////// Settings Button
-        Box(
-            modifier = Modifier
-                .align(Alignment.TopEnd)
-                .padding(top = 17.dp, end = 22.dp),
-        ) {
-            Box(
-                modifier = Modifier
-                    .size(24.dp)
-                    .clickable(
-                        interactionSource = remember { MutableInteractionSource() },
-                        indication = rememberRipple(bounded = false, radius = 15.dp),
-                        onClick = { currentScreen = Navi.SettingScn }
-                    )
-            ) {
-                Image(
-                    painter = painterResource("SettingsPng240F.png"),
-                    contentDescription = "",
-                    modifier = Modifier.fillMaxSize()
-                )
-            }
-        }
-    }
-//////////////////////////////////////////////////////////// Navi Head
+fun settingOnOffBoxes() {
+/////////////// Ram for active View/Screen
+    var currentScreen by remember { mutableStateOf<Navi>(Navi.SettingOnOffBxs) }
+//////////////////////////////////////////////////////////// Navi head
     when (currentScreen) {
-        is Navi.MainScn -> {
-            Row(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(top = 55.dp)
-                    .padding(horizontal = 15.dp),
-                horizontalArrangement = Arrangement.Center,
-                verticalAlignment = Alignment.CenterVertically
+        is Navi.SettingOnOffBxs -> {
+////////////////////////////// Done button -> Setting screen
+            Box(
+                modifier = Modifier.fillMaxSize().padding(start = 4.dp, end = 4.dp, top = 3.dp)
             ) {
-//////////////////////////////////////////////////////////// Box Set A
-                Column(modifier = Modifier
-                    .padding(5.dp)
-                    .weight(1f)
-                    //.aspectRatio(1f)
-                ) { pingBoxesA(pingSuccessful0, pingSuccessful1, pingSuccessful2, pingSuccessful3) }
-                Spacer(modifier = Modifier.width(20.dp))
-//////////////////////////////////////////////////////////// Box Set B
-                Column(modifier = Modifier
-                    .padding(5.dp)
-                    .weight(1f)
-                    //.aspectRatio(1f)
-                ) { pingBoxesB(pingSuccessful4, pingSuccessful5, pingSuccessful6, pingSuccessful7) }
-                Spacer(modifier = Modifier.width(20.dp))
-//////////////////////////////////////////////////////////// Box Set C
-                Column(modifier = Modifier
-                    .padding(5.dp)
-                    .weight(1f)
-                    //.aspectRatio(1f)
-                ) { pingBoxesC(pingSuccessful8, pingSuccessful9, pingSuccessful10, pingSuccessful11) }
-                Spacer(modifier = Modifier.width(20.dp))
-//////////////////////////////////////////////////////////// Box Set D
-                Column(modifier = Modifier
-                    .padding(5.dp)
-                    .weight(1f)
-                    //.aspectRatio(1f)
-                ) { tempHumidBoxes(snmpTempResultA, snmpHumidResultA, snmpTempResultB, snmpHumidResultB)
+                Column(
+                    modifier = Modifier.fillMaxSize(),
+                    verticalArrangement = Arrangement.Top
+                ) {
+                    Button(modifier = Modifier.fillMaxWidth(),
+                        colors = ButtonDefaults.buttonColors(CustomGrayA),
+                        onClick = { currentScreen = Navi.SettingScn }
+                    ) {
+                        Text("Done", color = MainColorA, fontSize = 25.sp, fontWeight = FontWeight.Bold)
+                    }
+                }
+            }
+//////////////////////////////////////////////////////////// UI container
+            Box(
+                modifier = Modifier.fillMaxSize().padding(top = 60.dp)
+                    .background(CustomGrayA)
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(horizontal = 15.dp),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+////////////////////////////// Box set A
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) { onOffSettingBoxesA() }
+                    Spacer(modifier = Modifier.width(12.dp))
+////////////////////////////// Box set B
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) { onOffSettingBoxesB() }
+                    Spacer(modifier = Modifier.width(12.dp))
+////////////////////////////// Box set C
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) { onOffSettingBoxesC() }
+                    Spacer(modifier = Modifier.width(12.dp))
                 }
             }
         }
-//////////////////////////////////////////////////////////// Navi Tail
+//////////////////////////////////////////////////////////// Navi tail
         Navi.MainScn -> mainScreen()
         Navi.SettingFontSz -> settingFontSize()
-        Navi.SettingOnOffBxs -> settingOnOffBoxes()
         Navi.SettingPingBxs -> settingPingBoxes()
         Navi.SettingScn -> settingScreen()
     }

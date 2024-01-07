@@ -20,6 +20,8 @@ import custom_resources.MainColorA
 import engine_logic.Navi
 import engine_logic.SLOnOffHandlerA
 import engine_logic.loadFontSizeV1A
+import sub_views.settingFontSize
+import sub_views.settingPingBoxes
 import views.settingScreen
 
 //////////////////////////////////////////////////////////// Ping boxes shown in the first column of the main screen
