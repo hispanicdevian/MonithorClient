@@ -21,6 +21,7 @@ import onoffsetting_boxes.onOffSettingBoxesC
 import views.mainScreen
 import views.settingScreen
 
+//////////////////////////////////////////////////////////// Screen/View for On/Off Boxes Settings
 @Composable
 @Preview
 fun settingOnOffBoxes() {
