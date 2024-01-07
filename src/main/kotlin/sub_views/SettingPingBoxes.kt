@@ -12,8 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_resources.ErgoGray
-import custom_resources.NbtColor
+import custom_resources.CustomGrayA
+import custom_resources.MainColorA
 import engine_logic.Navi
 import pingsetting_boxes.pingSettingBoxesA
 import pingsetting_boxes.pingSettingBoxesB
@@ -39,17 +39,17 @@ fun settingPingBoxes() {
                     verticalArrangement = Arrangement.Top
                 ) {
                     Button(modifier = Modifier.fillMaxWidth(),
-                        colors = ButtonDefaults.buttonColors(ErgoGray),
+                        colors = ButtonDefaults.buttonColors(CustomGrayA),
                         onClick = { currentScreen = Navi.SettingScn }
                     ) {
-                        Text("Done", color = NbtColor, fontSize = 25.sp, fontWeight = FontWeight.Bold)
+                        Text("Done", color = MainColorA, fontSize = 25.sp, fontWeight = FontWeight.Bold)
                     }
                 }
             }
 //////////////////////////////////////////////////////////// UI Container
             Box(
                 modifier = Modifier.fillMaxSize().padding(top = 60.dp)
-                    .background(ErgoGray)
+                    .background(CustomGrayA)
             ) {
                 Row(
                     modifier = Modifier

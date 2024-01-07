@@ -13,7 +13,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_resources.ErgoGray
+import custom_resources.CustomGrayA
 import engine_logic.*
 
 @Composable
@@ -37,7 +37,7 @@ fun pingSettingBoxesC() {
                 .padding(5.dp)
                 .weight(1f)
                 .aspectRatio(1.5f)
-                .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
+                .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {
             BasicTextField(
@@ -62,7 +62,7 @@ fun pingSettingBoxesC() {
                 .padding(5.dp)
                 .weight(1f)
                 .aspectRatio(1.5f)
-                .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
+                .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {
             BasicTextField(
@@ -87,7 +87,7 @@ fun pingSettingBoxesC() {
                 .padding(5.dp)
                 .weight(1f)
                 .aspectRatio(1.5f)
-                .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
+                .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {
             BasicTextField(
@@ -112,7 +112,7 @@ fun pingSettingBoxesC() {
                 .padding(5.dp)
                 .weight(1f)
                 .aspectRatio(1.5f)
-                .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
+                .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {
             BasicTextField(

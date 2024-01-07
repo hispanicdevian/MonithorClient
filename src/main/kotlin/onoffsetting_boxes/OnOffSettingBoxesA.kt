@@ -11,8 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_resources.ErgoGray
-import custom_resources.NbtColor
+import custom_resources.CustomGrayA
+import custom_resources.MainColorA
 import engine_logic.SLOnOffHandlerA
 
 @Composable
@@ -31,10 +31,10 @@ fun onOffSettingBoxesA() {
             Box(
                 modifier = Modifier
                     .background(
-                        color = if (isVisible) NbtColor else Color.Black, shape = AbsoluteRoundedCornerShape(8.dp)
+                        color = if (isVisible) MainColorA else Color.Black, shape = AbsoluteRoundedCornerShape(8.dp)
                     )
                     .padding(5.dp)
-                    .background(color = ErgoGray, shape = AbsoluteRoundedCornerShape(5.dp))
+                    .background(color = CustomGrayA, shape = AbsoluteRoundedCornerShape(5.dp))
                     .weight(1f)
                     .aspectRatio(1.5f)
                     .clickable {

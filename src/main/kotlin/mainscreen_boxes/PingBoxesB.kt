@@ -15,11 +15,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_resources.ErgoGray
-import custom_resources.NbtColor
+import custom_resources.CustomGrayA
+import custom_resources.CustomRedA
+import custom_resources.MainColorA
 import engine_logic.Navi
 import engine_logic.SLOnOffHandlerB
 import engine_logic.loadFontSizeV1A
+import sub_views.settingFontSize
+import sub_views.settingOnOffBoxes
+import sub_views.settingPingBoxes
 import views.settingScreen
 
 //////////////////////////////////////////////////////////// Ping boxes shown in the first column of the main screen
@@ -63,7 +67,7 @@ fun pingBoxesB(pingSuccessfulB4: Boolean, pingSuccessfulB5: Boolean, pingSuccess
                                 */
                                 .weight(1f)
                                 .aspectRatio(1.5f)
-                                .background((if (pingSuccessfulList[index]) NbtColor else NbtRedBright), shape = AbsoluteRoundedCornerShape(8.dp)),
+                                .background((if (pingSuccessfulList[index]) MainColorA else CustomRedA), shape = AbsoluteRoundedCornerShape(8.dp)),
                             contentAlignment = Alignment.Center
                         ) {
                             Column(
@@ -72,14 +76,14 @@ fun pingBoxesB(pingSuccessfulB4: Boolean, pingSuccessfulB5: Boolean, pingSuccess
                             ) {
                                 Text(
                                     text = titleList[index],
-                                    color = ErgoGray,
+                                    color = CustomGrayA,
                                     fontWeight = FontWeight.W900,
                                     fontSize = fontSizedA
                                 )
                                 Spacer(modifier = Modifier.height(8.dp))
                                 Text(
                                     text = if (pingSuccessfulList[index]) "On" else "Off",
-                                    color = ErgoGray,
+                                    color = CustomGrayA,
                                     fontWeight = FontWeight.W800,
                                     fontSize = fontSizedA
                                 )
