@@ -26,9 +26,7 @@ fun pingSettingBoxesA() {
     var ipAddressA3 by remember { mutableStateOf(readIpFile3()) }
 
     var ipTitle0A by remember { mutableStateOf(readTiFile0()) }
-    var ipTitle0B by remember { mutableStateOf(readTiFile0()) }
-    var ipTitle0C by remember { mutableStateOf(readTiFile0()) }
-    var ipTitle0D by remember { mutableStateOf(readTiFile0()) }
+
 
     Column(
         modifier = Modifier.padding(bottom = 15.dp),
