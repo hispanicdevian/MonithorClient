@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.AbsoluteRoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.material.Divider
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -40,19 +41,44 @@ fun pingSettingBoxesA() {
                 .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {
-            BasicTextField(
-                value = ipAddressA0,
-                onValueChange = { newValue ->
-                    ipAddressA0 = newValue
-                    writeIpToFile0(newValue)
-                },
-                modifier = Modifier.fillMaxWidth(),
-                textStyle = TextStyle(
-                    fontSize = 20.sp,
-                    color = Color.White,
-                    textAlign = TextAlign.Center,
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Center
+            ) {
+                BasicTextField(
+                    value = ipAddressA0,
+                    onValueChange = { newValue ->
+                        ipAddressA0 = newValue
+                        writeIpToFile0(newValue)
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    textStyle = TextStyle(
+                        fontSize = 20.sp,
+                        color = Color.White,
+                        textAlign = TextAlign.Center,
+                    )
                 )
-            )
+                Spacer(modifier = Modifier.height(10.dp))
+                Divider(
+                    modifier = Modifier.fillMaxWidth(),
+                    color = Color.Black,
+                    thickness = 1.5.dp
+                )
+                Spacer(modifier = Modifier.height(10.dp))
+                BasicTextField(
+                    value = ipAddressA0,
+                    onValueChange = { newValue ->
+                        ipAddressA0 = newValue
+                        writeIpToFile0(newValue)
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    textStyle = TextStyle(
+                        fontSize = 20.sp,
+                        color = Color.White,
+                        textAlign = TextAlign.Center,
+                    )
+                )
+            }
         }
 // Edit Box 5B
         Spacer(modifier = Modifier.height(15.dp))
