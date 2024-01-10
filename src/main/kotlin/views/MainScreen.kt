@@ -93,7 +93,7 @@ fun mainScreen() {
             modifier = Modifier.fillMaxWidth()
         ) {
 //////////////////////////////////////////////////////////// Clickable Title
-            Text("NBT Lights Client",
+            Text("Monotool",
                 fontSize = 26.sp,
                 color = CustomGrayA,
                 fontWeight = FontWeight.W900,
