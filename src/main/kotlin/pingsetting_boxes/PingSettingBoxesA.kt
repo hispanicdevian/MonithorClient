@@ -50,7 +50,7 @@ fun pingSettingBoxesA() {
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.Center
             ) {
-////////////////////////////// title input
+////////////////////////////// title input 1A
                 BasicTextField(
                     value = ipTitle0A,
                     onValueChange = { newValue ->
@@ -72,7 +72,7 @@ fun pingSettingBoxesA() {
                     thickness = 1.5.dp
                 )
                 Spacer(modifier = Modifier.height(10.dp))
-////////////////////////////// ip input
+////////////////////////////// ip input 1A
                 BasicTextField(
                     value = ipAddressA0,
                     onValueChange = { newValue ->
@@ -88,7 +88,7 @@ fun pingSettingBoxesA() {
                 )
             }
         }
-//////////////////////////////////////////////////////////// Edit Box 5B
+//////////////////////////////////////////////////////////// Edit Box 2A
         Spacer(modifier = Modifier.height(15.dp))
         Box(
             modifier = Modifier
@@ -103,7 +103,7 @@ fun pingSettingBoxesA() {
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.Center
             ) {
-////////////////////////////// title input
+////////////////////////////// title input 2A
                 BasicTextField(
                     value = ipTitle0A,
                     onValueChange = { newValue ->
@@ -125,7 +125,7 @@ fun pingSettingBoxesA() {
                     thickness = 1.5.dp
                 )
                 Spacer(modifier = Modifier.height(10.dp))
-////////////////////////////// ip input
+////////////////////////////// ip input 2A
             BasicTextField(
                 value = ipAddressA1,
                 onValueChange = { newValue ->
