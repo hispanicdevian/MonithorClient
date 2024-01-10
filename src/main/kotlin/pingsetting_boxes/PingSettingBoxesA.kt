@@ -25,6 +25,8 @@ fun pingSettingBoxesA() {
     var ipAddressA2 by remember { mutableStateOf(readIpFile2()) }
     var ipAddressA3 by remember { mutableStateOf(readIpFile3()) }
 
+    var ipTitle0A by remember { mutableStateOf(readTiFile0()) }
+
     Column(
         modifier = Modifier.padding(bottom = 15.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -45,11 +47,12 @@ fun pingSettingBoxesA() {
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.Center
             ) {
+/////////////// title input
                 BasicTextField(
-                    value = ipAddressA0,
+                    value = ipTitle0A,
                     onValueChange = { newValue ->
-                        ipAddressA0 = newValue
-                        writeIpToFile0(newValue)
+                        ipTitle0A = newValue
+                        writeTiToFile0(newValue)
                     },
                     modifier = Modifier.fillMaxWidth(),
                     textStyle = TextStyle(
@@ -58,7 +61,7 @@ fun pingSettingBoxesA() {
                         textAlign = TextAlign.Center,
                     )
                 )
-/////////////// title input
+/////////////// Spacer/Separator
                 Spacer(modifier = Modifier.height(10.dp))
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
