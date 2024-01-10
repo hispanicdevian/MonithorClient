@@ -58,6 +58,7 @@ fun pingSettingBoxesA() {
                         textAlign = TextAlign.Center,
                     )
                 )
+/////////////// title input
                 Spacer(modifier = Modifier.height(10.dp))
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
@@ -65,6 +66,7 @@ fun pingSettingBoxesA() {
                     thickness = 1.5.dp
                 )
                 Spacer(modifier = Modifier.height(10.dp))
+/////////////// ip input
                 BasicTextField(
                     value = ipAddressA0,
                     onValueChange = { newValue ->
