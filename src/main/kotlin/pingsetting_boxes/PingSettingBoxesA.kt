@@ -46,47 +46,42 @@ fun pingSettingBoxesA() {
                 .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
 ////////////////////////////// title input A0
-                BasicTextField(
-                    value = ipTitleA0,
-                    onValueChange = { newValue ->
-                        ipTitleA0 = newValue
-                        writeTiToFile0(newValue)
-                    },
-                    modifier = Modifier.fillMaxWidth(),
-                    textStyle = TextStyle(
-                        fontSize = 20.sp,
-                        color = Color.White,
-                        textAlign = TextAlign.Center
-                    )
+            BasicTextField(
+                value = ipTitleA0,
+                onValueChange = { newValue ->
+                    ipTitleA0 = newValue
+                    writeTiToFile0(newValue)
+                },
+                modifier = Modifier.fillMaxWidth(),
+                textStyle = TextStyle(
+                    fontSize = 20.sp,
+                    color = Color.White,
+                    textAlign = TextAlign.Center
                 )
+            )
 /////////////// Spacer/Separator
-                Spacer(modifier = Modifier.height(10.dp))
-                Divider(
-                    modifier = Modifier.fillMaxWidth(),
-                    color = Color.Black,
-                    thickness = 1.5.dp
-                )
-                Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(10.dp))
+            Divider(
+                modifier = Modifier.fillMaxWidth(),
+                color = Color.Black,
+                thickness = 1.5.dp
+            )
+            Spacer(modifier = Modifier.height(10.dp))
 ////////////////////////////// ip input A0
-                BasicTextField(
-                    value = ipAddressA0,
-                    onValueChange = { newValue ->
-                        ipAddressA0 = newValue
-                        writeIpToFile0(newValue)
-                    },
-                    modifier = Modifier.fillMaxWidth(),
-                    textStyle = TextStyle(
-                        fontSize = 20.sp,
-                        color = Color.White,
-                        textAlign = TextAlign.Center
-                    )
+            BasicTextField(
+                value = ipAddressA0,
+                onValueChange = { newValue ->
+                    ipAddressA0 = newValue
+                    writeIpToFile0(newValue)
+                },
+                modifier = Modifier.fillMaxWidth(),
+                textStyle = TextStyle(
+                    fontSize = 20.sp,
+                    color = Color.White,
+                    textAlign = TextAlign.Center
                 )
-            }
+            )
         }
 //////////////////////////////////////////////////////////// Edit Box A1
         Spacer(modifier = Modifier.height(15.dp))
@@ -99,47 +94,138 @@ fun pingSettingBoxesA() {
                 .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
 ////////////////////////////// title input A1
-                BasicTextField(
-                    value = ipTitleA1,
-                    onValueChange = { newValue ->
-                        ipTitleA1 = newValue
-                        writeTiToFile1(newValue)
-                    },
-                    modifier = Modifier.fillMaxWidth(),
-                    textStyle = TextStyle(
-                        fontSize = 20.sp,
-                        color = Color.White,
-                        textAlign = TextAlign.Center
-                    )
+            BasicTextField(
+                value = ipTitleA1,
+                onValueChange = { newValue ->
+                    ipTitleA1 = newValue
+                    writeTiToFile1(newValue)
+                },
+                modifier = Modifier.fillMaxWidth(),
+                textStyle = TextStyle(
+                    fontSize = 20.sp,
+                    color = Color.White,
+                    textAlign = TextAlign.Center
                 )
+            )
 /////////////// Spacer/Separator
-                Spacer(modifier = Modifier.height(10.dp))
-                Divider(
-                    modifier = Modifier.fillMaxWidth(),
-                    color = Color.Black,
-                    thickness = 1.5.dp
-                )
-                Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(10.dp))
+            Divider(
+                modifier = Modifier.fillMaxWidth(),
+                color = Color.Black,
+                thickness = 1.5.dp
+            )
+            Spacer(modifier = Modifier.height(10.dp))
 ////////////////////////////// ip input A1
-                BasicTextField(
-                    value = ipAddressA1,
-                    onValueChange = { newValue ->
-                        ipAddressA1 = newValue
-                        writeIpToFile1(newValue)
-                    },
-                    modifier = Modifier.fillMaxWidth(),
-                    textStyle = TextStyle(
-                        fontSize = 20.sp,
-                        color = Color.White,
-                        textAlign = TextAlign.Center
-                    )
+            BasicTextField(
+                value = ipAddressA1,
+                onValueChange = { newValue ->
+                    ipAddressA1 = newValue
+                    writeIpToFile1(newValue)
+                },
+                modifier = Modifier.fillMaxWidth(),
+                textStyle = TextStyle(
+                    fontSize = 20.sp,
+                    color = Color.White,
+                    textAlign = TextAlign.Center
                 )
-            }
+            )
+        }
+//////////////////////////////////////////////////////////// Edit Box A2
+        Spacer(modifier = Modifier.height(15.dp))
+        Box(
+            modifier = Modifier
+                .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
+                .padding(5.dp)
+                .weight(1f)
+                .aspectRatio(1.5f)
+                .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
+            contentAlignment = Alignment.Center
+        ) {
+////////////////////////////// title input A2
+            BasicTextField(
+                value = ipTitleA2,
+                onValueChange = { newValue ->
+                    ipTitleA2 = newValue
+                    writeTiToFile2(newValue)
+                },
+                modifier = Modifier.fillMaxWidth(),
+                textStyle = TextStyle(
+                    fontSize = 20.sp,
+                    color = Color.White,
+                    textAlign = TextAlign.Center
+                )
+            )
+/////////////// Spacer/Separator
+            Spacer(modifier = Modifier.height(10.dp))
+            Divider(
+                modifier = Modifier.fillMaxWidth(),
+                color = Color.Black,
+                thickness = 1.5.dp
+            )
+            Spacer(modifier = Modifier.height(10.dp))
+////////////////////////////// ip input A2
+            BasicTextField(
+                value = ipAddressA2,
+                onValueChange = { newValue ->
+                    ipAddressA2 = newValue
+                    writeIpToFile2(newValue)
+                },
+                modifier = Modifier.fillMaxWidth(),
+                textStyle = TextStyle(
+                    fontSize = 20.sp,
+                    color = Color.White,
+                    textAlign = TextAlign.Center
+                )
+            )
+        }
+        //////////////////////////////////////////////////////////// Edit Box A3
+        Spacer(modifier = Modifier.height(15.dp))
+        Box(
+            modifier = Modifier
+                .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
+                .padding(5.dp)
+                .weight(1f)
+                .aspectRatio(1.5f)
+                .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
+            contentAlignment = Alignment.Center
+        ) {
+////////////////////////////// title input A3
+            BasicTextField(
+                value = ipTitleA3,
+                onValueChange = { newValue ->
+                    ipTitleA3 = newValue
+                    writeTiToFile3(newValue)
+                },
+                modifier = Modifier.fillMaxWidth(),
+                textStyle = TextStyle(
+                    fontSize = 20.sp,
+                    color = Color.White,
+                    textAlign = TextAlign.Center
+                )
+            )
+/////////////// Spacer/Separator
+            Spacer(modifier = Modifier.height(10.dp))
+            Divider(
+                modifier = Modifier.fillMaxWidth(),
+                color = Color.Black,
+                thickness = 1.5.dp
+            )
+            Spacer(modifier = Modifier.height(10.dp))
+////////////////////////////// ip input A3
+            BasicTextField(
+                value = ipAddressA3,
+                onValueChange = { newValue ->
+                    ipAddressA3 = newValue
+                    writeIpToFile3(newValue)
+                },
+                modifier = Modifier.fillMaxWidth(),
+                textStyle = TextStyle(
+                    fontSize = 20.sp,
+                    color = Color.White,
+                    textAlign = TextAlign.Center
+                )
+            )
         }
     }
 }
