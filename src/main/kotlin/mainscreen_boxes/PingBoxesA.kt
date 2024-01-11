@@ -17,9 +17,7 @@ import androidx.compose.ui.unit.sp
 import custom_resources.CustomGrayA
 import custom_resources.CustomRedA
 import custom_resources.MainColorA
-import engine_logic.Navi
-import engine_logic.SLOnOffHandlerA
-import engine_logic.loadFontSizeV1A
+import engine_logic.*
 import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
@@ -34,7 +32,8 @@ fun pingBoxesA(pingSuccessfulA0: Boolean, pingSuccessfulA1: Boolean, pingSuccess
 // Pass through ram for ping state
     val pingSuccessfulList = listOf(pingSuccessfulA0, pingSuccessfulA1, pingSuccessfulA2, pingSuccessfulA3)
 // Title list ram, need to be replaced so that the user can modify it live
-    val titleList = listOf("0", "1", "2", "3")
+    //val titleList = listOf("0", "1", "2", "3")
+    val titleList = listOf(ipTitle00, ipTitle01, ipTitle02, ipTitle03)
 // Font size ram
     val fontSizedA by remember { mutableStateOf(loadFontSizeV1A().sp) }
 // Loads the last state of On/Off settings

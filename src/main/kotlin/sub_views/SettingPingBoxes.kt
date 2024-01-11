@@ -54,14 +54,16 @@ fun settingPingBoxes() {
                 Row(
                     modifier = Modifier
                         .fillMaxSize()
+                        .padding(top = 55.dp)
                         .padding(horizontal = 15.dp),
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
 //////////////////////////////////////////////////////////// Box Set A
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.Center
+                    Column(modifier = Modifier
+                        .padding(5.dp)
+                        .weight(1f)
+                        //.aspectRatio(1f)
                     ) {
                         pingSettingBoxesA()
                     }
