@@ -35,7 +35,7 @@ fun pingSettingBoxesB() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-//////////////////////////////////////////////////////////// Edit Box B0
+//////////////////////////////////////////////////////////// Edit Box B0 - 4
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
@@ -73,10 +73,10 @@ fun pingSettingBoxesB() {
                 Spacer(modifier = Modifier.height(10.dp))
 ////////////////////////////// ip input B0
                 BasicTextField(
-                    value = ipAddressA0,
+                    value = ipAddressB0,
                     onValueChange = { newValue ->
-                        ipAddressA0 = newValue
-                        writeIpToFile0(newValue)
+                        ipAddressB0= newValue
+                        writeIpToFile4(newValue)
                     },
                     modifier = Modifier.fillMaxWidth(),
                     textStyle = TextStyle(
@@ -87,7 +87,7 @@ fun pingSettingBoxesB() {
                 )
             }
         }
-//////////////////////////////////////////////////////////// Edit Box A1
+//////////////////////////////////////////////////////////// Edit Box B1 - 5
         Spacer(modifier = Modifier.height(20.dp))
         Box(
             modifier = Modifier
@@ -102,12 +102,12 @@ fun pingSettingBoxesB() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-////////////////////////////// title input A1
+////////////////////////////// title input B1
                 BasicTextField(
-                    value = ipTitleA1,
+                    value = ipTitleB1,
                     onValueChange = { newValue ->
-                        ipTitleA1 = newValue
-                        writeTiToFile1(newValue)
+                        ipTitleB1 = newValue
+                        writeTiToFile5(newValue)
                     },
                     modifier = Modifier.fillMaxWidth(),
                     textStyle = TextStyle(
@@ -124,12 +124,12 @@ fun pingSettingBoxesB() {
                     thickness = 1.5.dp
                 )
                 Spacer(modifier = Modifier.height(10.dp))
-////////////////////////////// ip input A1
+////////////////////////////// ip input B1
                 BasicTextField(
-                    value = ipAddressA1,
+                    value = ipAddressB1,
                     onValueChange = { newValue ->
-                        ipAddressA1 = newValue
-                        writeIpToFile1(newValue)
+                        ipAddressB1 = newValue
+                        writeIpToFile5(newValue)
                     },
                     modifier = Modifier.fillMaxWidth(),
                     textStyle = TextStyle(
@@ -140,7 +140,7 @@ fun pingSettingBoxesB() {
                 )
             }
         }
-//////////////////////////////////////////////////////////// Edit Box A2
+//////////////////////////////////////////////////////////// Edit Box B2 - 6
         Spacer(modifier = Modifier.height(20.dp))
         Box(
             modifier = Modifier
@@ -155,12 +155,12 @@ fun pingSettingBoxesB() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-////////////////////////////// title input A2
+////////////////////////////// title input B2
                 BasicTextField(
-                    value = ipTitleA2,
+                    value = ipTitleB2,
                     onValueChange = { newValue ->
-                        ipTitleA2 = newValue
-                        writeTiToFile2(newValue)
+                        ipTitleB2 = newValue
+                        writeTiToFile6(newValue)
                     },
                     modifier = Modifier.fillMaxWidth(),
                     textStyle = TextStyle(
@@ -177,12 +177,12 @@ fun pingSettingBoxesB() {
                     thickness = 1.5.dp
                 )
                 Spacer(modifier = Modifier.height(10.dp))
-////////////////////////////// ip input A2
+////////////////////////////// ip input B2
                 BasicTextField(
-                    value = ipAddressA2,
+                    value = ipAddressB2,
                     onValueChange = { newValue ->
-                        ipAddressA2 = newValue
-                        writeIpToFile2(newValue)
+                        ipAddressB2 = newValue
+                        writeIpToFile6(newValue)
                     },
                     modifier = Modifier.fillMaxWidth(),
                     textStyle = TextStyle(
@@ -193,7 +193,7 @@ fun pingSettingBoxesB() {
                 )
             }
         }
-        //////////////////////////////////////////////////////////// Edit Box A3
+//////////////////////////////////////////////////////////// Edit Box B3 - 7
         Spacer(modifier = Modifier.height(20.dp))
         Box(
             modifier = Modifier
@@ -210,10 +210,10 @@ fun pingSettingBoxesB() {
             ) {
 ////////////////////////////// title input A3
                 BasicTextField(
-                    value = ipTitleA3,
+                    value = ipTitleB3,
                     onValueChange = { newValue ->
-                        ipTitleA3 = newValue
-                        writeTiToFile3(newValue)
+                        ipTitleB3 = newValue
+                        writeTiToFile7(newValue)
                     },
                     modifier = Modifier.fillMaxWidth(),
                     textStyle = TextStyle(
@@ -230,12 +230,12 @@ fun pingSettingBoxesB() {
                     thickness = 1.5.dp
                 )
                 Spacer(modifier = Modifier.height(10.dp))
-////////////////////////////// ip input A3
+////////////////////////////// ip input B3
                 BasicTextField(
-                    value = ipAddressA3,
+                    value = ipAddressB3,
                     onValueChange = { newValue ->
-                        ipAddressA3 = newValue
-                        writeIpToFile3(newValue)
+                        ipAddressB3 = newValue
+                        writeIpToFile7(newValue)
                     },
                     modifier = Modifier.fillMaxWidth(),
                     textStyle = TextStyle(

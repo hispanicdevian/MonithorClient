@@ -2,77 +2,77 @@ package engine_logic
 
 import java.io.File
 
-//////////////////////////////////////////////////////////// Read/Write File for Boxes IPs value 00
-fun readTiFile0(): String {
+//////////////////////////////////////////////////////////// Read/Write File for Boxes Title value 04
+fun readTiFile4(): String {
     return try {
-        val file0 = File("rwTi00.hdi").readText()
-        file0
+        val file4 = File("rwTi04.hdi").readText()
+        file4
     } catch (e: Exception) {
         ""
     }
 }
-fun writeTiToFile0(ipTitle: String) {
+fun writeTiToFile4(ipTitle: String) {
     try {
-        val file0 = File("rwTi00.hdi")
-        file0.writeText(ipTitle)
-        ipTitle00 = ipTitle // Updates the in-memory value
+        val file4 = File("rwTi04.hdi")
+        file4.writeText(ipTitle)
+        ipTitle04 = ipTitle // Updates the in-memory value
     } catch (e: Exception) { // Log the exception
         e.printStackTrace()
     }
 }
 
-//////////////////////////////////////////////////////////// Read/Write File for Boxes IPs value 01
-fun readTiFile1(): String {
+//////////////////////////////////////////////////////////// Read/Write File for Boxes IPs value 05
+fun readTiFile5(): String {
     return try {
-        val file1 = File("rwTi01.hdi").readText()
-        file1
+        val file5 = File("rwTi05.hdi").readText()
+        file5
     } catch (e: Exception) {
         ""
     }
 }
-fun writeTiToFile1(ipTitle: String) {
+fun writeTiToFile5(ipTitle: String) {
     try {
-        val file1 = File("rwTi01.hdi")
-        file1.writeText(ipTitle)
-        ipTitle01 = ipTitle // Updates the in-memory value
+        val file5 = File("rwTi05.hdi")
+        file5.writeText(ipTitle)
+        ipTitle05 = ipTitle // Updates the in-memory value
     } catch (e: Exception) { // Log the exception
         e.printStackTrace()
     }
 }
 
-//////////////////////////////////////////////////////////// Read/Write File for IPs value, Boxes 02
-fun readTiFile2(): String {
+//////////////////////////////////////////////////////////// Read/Write File for IPs value, Boxes 06
+fun readTiFile6(): String {
     return try {
-        val file2 = File("rwTi02.hdi").readText()
-        file2
+        val file6 = File("rwTi06.hdi").readText()
+        file6
     } catch (e: Exception) {
         ""
     }
 }
-fun writeTiToFile2(ipTitle: String) {
+fun writeTiToFile6(ipTitle: String) {
     try {
-        val file2 = File("rwTi02.hdi")
-        file2.writeText(ipTitle)
-        ipTitle02 = ipTitle // Updates the in-memory value
+        val file6 = File("rwTi06.hdi")
+        file6.writeText(ipTitle)
+        ipTitle06 = ipTitle // Updates the in-memory value
     } catch (e: Exception) { // Log the exception
         e.printStackTrace()
     }
 }
 
-//////////////////////////////////////////////////////////// Read/Write File for IPs value, Boxes 03
-fun readTiFile3(): String {
+//////////////////////////////////////////////////////////// Read/Write File for IPs value, Boxes 07
+fun readTiFile7(): String {
     return try {
-        val file3 = File("rwTi03.hdi").readText()
-        file3
+        val file7 = File("rwTi07.hdi").readText()
+        file7
     } catch (e: Exception) {
         ""
     }
 }
-fun writeTiToFile3(ipTitle: String) {
+fun writeTiToFile7(ipTitle: String) {
     try {
-        val file3 = File("rwTi03.hdi")
-        file3.writeText(ipTitle)
-        ipTitle03 = ipTitle // Updates the in-memory value
+        val file7 = File("rwTi07.hdi")
+        file7.writeText(ipTitle)
+        ipTitle07 = ipTitle // Updates the in-memory value
     } catch (e: Exception) { // Log the exception
         e.printStackTrace()
     }

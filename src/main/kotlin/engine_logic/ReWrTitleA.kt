@@ -2,7 +2,7 @@ package engine_logic
 
 import java.io.File
 
-//////////////////////////////////////////////////////////// Read/Write File for Boxes IPs value 00
+//////////////////////////////////////////////////////////// Read/Write File for Boxes Title value 00
 fun readTiFile0(): String {
     return try {
         val file0 = File("rwTi00.hdi").readText()
@@ -21,7 +21,7 @@ fun writeTiToFile0(ipTitle: String) {
     }
 }
 
-//////////////////////////////////////////////////////////// Read/Write File for Boxes IPs value 01
+//////////////////////////////////////////////////////////// Read/Write File for Boxes Title value 01
 fun readTiFile1(): String {
     return try {
         val file1 = File("rwTi01.hdi").readText()
@@ -40,7 +40,7 @@ fun writeTiToFile1(ipTitle: String) {
     }
 }
 
-//////////////////////////////////////////////////////////// Read/Write File for IPs value, Boxes 02
+//////////////////////////////////////////////////////////// Read/Write File for Boxes Title value 02
 fun readTiFile2(): String {
     return try {
         val file2 = File("rwTi02.hdi").readText()
@@ -59,7 +59,7 @@ fun writeTiToFile2(ipTitle: String) {
     }
 }
 
-//////////////////////////////////////////////////////////// Read/Write File for IPs value, Boxes 03
+//////////////////////////////////////////////////////////// Read/Write File for Boxes Title value 03
 fun readTiFile3(): String {
     return try {
         val file3 = File("rwTi03.hdi").readText()
