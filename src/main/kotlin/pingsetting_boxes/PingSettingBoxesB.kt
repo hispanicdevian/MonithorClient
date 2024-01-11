@@ -24,6 +24,13 @@ fun pingSettingBoxesB() {
     var ipAddressB6 by remember { mutableStateOf(readIpFile6()) }
     var ipAddressB7 by remember { mutableStateOf(readIpFile7()) }
 
+    /*
+    var ipTitleA4 by remember { mutableStateOf(readTiFile4()) }
+    var ipTitleA5 by remember { mutableStateOf(readTiFile5()) }
+    var ipTitleA6 by remember { mutableStateOf(readTiFile6()) }
+    var ipTitleA7 by remember { mutableStateOf(readTiFile7()) }
+     */
+
     Column(
         modifier = Modifier.padding(bottom = 30.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
