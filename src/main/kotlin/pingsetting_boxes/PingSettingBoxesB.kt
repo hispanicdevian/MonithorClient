@@ -53,8 +53,8 @@ fun pingSettingBoxesB() {
                 BasicTextField(
                     value = ipTitleB0,
                     onValueChange = { newValue ->
-                        ipTitleA0 = newValue
-                        writeTiToFile0(newValue)
+                        ipTitleB0 = newValue
+                        writeTiToFile4(newValue)
                     },
                     modifier = Modifier.fillMaxWidth(),
                     textStyle = TextStyle(
