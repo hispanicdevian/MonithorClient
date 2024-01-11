@@ -69,9 +69,10 @@ fun settingPingBoxes() {
                     }
                     Spacer(modifier = Modifier.width(12.dp))
 //////////////////////////////////////////////////////////// Box Set B
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.Center
+                    Column(modifier = Modifier
+                        .padding(5.dp)
+                        .weight(1f)
+                        //.aspectRatio(1f)
                     ) {
                         pingSettingBoxesB()
                     }
