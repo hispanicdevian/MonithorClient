@@ -22,7 +22,6 @@ fun writeTiToFile0(ipTitle: String) {
 }
 
 //////////////////////////////////////////////////////////// Read/Write File for Boxes IPs value 01
-/*
 fun readTiFile1(): String {
     return try {
         val file1 = File("rwTi01.hdi").readText()
@@ -44,17 +43,17 @@ fun writeTiToFile1(ipTitle: String) {
 //////////////////////////////////////////////////////////// Read/Write File for IPs value, Boxes 02
 fun readTiFile2(): String {
     return try {
-        val file0 = File("rwTi00.hdi").readText()
-        file0
+        val file2 = File("rwTi02.hdi").readText()
+        file2
     } catch (e: Exception) {
         ""
     }
 }
 fun writeTiToFile2(ipTitle: String) {
     try {
-        val file0 = File("rwTi00.hdi")
-        file0.writeText(ipTitle)
-        ipTitle00 = ipTitle // Updates the in-memory value
+        val file2 = File("rwTi02.hdi")
+        file2.writeText(ipTitle)
+        ipTitle02 = ipTitle // Updates the in-memory value
     } catch (e: Exception) { // Log the exception
         e.printStackTrace()
     }
@@ -63,19 +62,18 @@ fun writeTiToFile2(ipTitle: String) {
 //////////////////////////////////////////////////////////// Read/Write File for IPs value, Boxes 03
 fun readTiFile3(): String {
     return try {
-        val file0 = File("rwTi00.hdi").readText()
-        file0
+        val file3 = File("rwTi03.hdi").readText()
+        file3
     } catch (e: Exception) {
         ""
     }
 }
 fun writeTiToFile3(ipTitle: String) {
     try {
-        val file0 = File("rwTi00.hdi")
-        file0.writeText(ipTitle)
-        ipTitle00 = ipTitle // Updates the in-memory value
+        val file3 = File("rwTi03.hdi")
+        file3.writeText(ipTitle)
+        ipTitle03 = ipTitle // Updates the in-memory value
     } catch (e: Exception) { // Log the exception
         e.printStackTrace()
     }
 }
- */
