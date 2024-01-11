@@ -25,12 +25,11 @@ fun pingSettingBoxesB() {
     var ipAddressB7 by remember { mutableStateOf(readIpFile7()) }
 
     Column(
-        modifier = Modifier.padding(bottom = 15.dp),
+        modifier = Modifier.padding(bottom = 30.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
 // Edit Box 4B
-        Spacer(modifier = Modifier.height(15.dp))
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
@@ -55,7 +54,7 @@ fun pingSettingBoxesB() {
             )
         }
 // Edit Box 5B
-        Spacer(modifier = Modifier.height(15.dp))
+        Spacer(modifier = Modifier.height(20.dp))
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
@@ -80,7 +79,7 @@ fun pingSettingBoxesB() {
             )
         }
 // Edit Box 02
-        Spacer(modifier = Modifier.height(15.dp))
+        Spacer(modifier = Modifier.height(20.dp))
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
@@ -105,7 +104,7 @@ fun pingSettingBoxesB() {
             )
         }
 // Edit Box 03
-        Spacer(modifier = Modifier.height(15.dp))
+        Spacer(modifier = Modifier.height(20.dp))
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))

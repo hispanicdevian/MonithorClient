@@ -31,18 +31,17 @@ fun pingSettingBoxesA() {
     var ipTitleA3 by remember { mutableStateOf(readTiFile3()) }
 
     Column(
-        modifier = Modifier.padding(bottom = 15.dp),
+        modifier = Modifier.padding(bottom = 30.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
 //////////////////////////////////////////////////////////// Edit Box A0
-        Spacer(modifier = Modifier.height(15.dp))
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
                 .padding(5.dp)
                 .weight(1f)
-                .aspectRatio(1.5f)
+                .aspectRatio(2f)
                 .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {
@@ -89,13 +88,13 @@ fun pingSettingBoxesA() {
             }
         }
 //////////////////////////////////////////////////////////// Edit Box A1
-        Spacer(modifier = Modifier.height(15.dp))
+        Spacer(modifier = Modifier.height(20.dp))
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
                 .padding(5.dp)
                 .weight(1f)
-                .aspectRatio(1.5f)
+                .aspectRatio(2f)
                 .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {
@@ -142,13 +141,13 @@ fun pingSettingBoxesA() {
             }
         }
 //////////////////////////////////////////////////////////// Edit Box A2
-        Spacer(modifier = Modifier.height(15.dp))
+        Spacer(modifier = Modifier.height(20.dp))
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
                 .padding(5.dp)
                 .weight(1f)
-                .aspectRatio(1.5f)
+                .aspectRatio(2f)
                 .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {
@@ -195,13 +194,13 @@ fun pingSettingBoxesA() {
             }
         }
         //////////////////////////////////////////////////////////// Edit Box A3
-        Spacer(modifier = Modifier.height(15.dp))
+        Spacer(modifier = Modifier.height(20.dp))
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
                 .padding(5.dp)
                 .weight(1f)
-                .aspectRatio(1.5f)
+                .aspectRatio(2f)
                 .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {
