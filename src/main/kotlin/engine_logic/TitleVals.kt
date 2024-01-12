@@ -12,7 +12,7 @@ var ipTitle05 = readTiFile5()
 var ipTitle06 = readTiFile6()
 var ipTitle07 = readTiFile7()
 
-////////////////////////////// PingSettingBoxesB, ReWrTitleC
+////////////////////////////// PingSettingBoxesC, ReWrTitleC
 var ipTitle08 = readTiFile8()
 var ipTitle09 = readTiFile9()
 var ipTitle10 = readTiFile10()
