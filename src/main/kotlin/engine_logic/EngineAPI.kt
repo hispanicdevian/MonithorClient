@@ -1,5 +1,7 @@
 package engine_logic
 
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
 import okhttp3.FormBody
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -42,3 +44,27 @@ fun pingEngineAPI(ip: String): Boolean {
 }
 
 //////////////////////////////////////////////////////////// Weather API
+
+const val WEATHER_API_BASE_URL = "http://api.weatherapi.com/v1/current.json"
+const val API_KEY = "api key goes here"
+val json = Json { ignoreUnknownKeys = true }
+
+@Serializable
+data class WeatherData(val current: Current?)
+
+@Serializable
+data class Current(val temp_c: Double?, val condition: Condition?)
+
+@Serializable
+data class Condition(val text: String?)
+
+fun getCurrentTemperature(cityName: String): Pair<Double?, String?> = try {
+    json.decodeFromString<WeatherData>(OkHttpClient().newCall(buildRequest(cityName)).execute().body?.string()
+        ?: "").let { it.current?.temp_c to it.current?.condition?.text }
+} catch (e: IOException) {
+    println("Error making API call: ${e.message}")
+    null to null
+}
+
+fun buildRequest(cityName: String): Request =
+    Request.Builder().url("$WEATHER_API_BASE_URL?key=$API_KEY&q=$cityName").build()
