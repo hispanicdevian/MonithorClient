@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.sp
 import custom_resources.CustomGrayA
 import custom_resources.MainColorA
 import engine_logic.Navi
-import engine_logic.SLOnOffHandlerA
+import engine_logic.SLOnOffHandlerD
 import engine_logic.loadFontSizeV1A
 import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
@@ -38,7 +38,7 @@ fun weatherBoxesA(currentTempA: String, currentSkyA: String) {
     }
 // Loads the last state of On/Off settings
     val visibilityList = remember {
-        val currentState = SLOnOffHandlerA.loadOnOffFileA()
+        val currentState = SLOnOffHandlerD.loadOnOffFileD()
         if (currentState.isNotEmpty()) {
             currentState.split(",").map { it.toBoolean() }
         } else {
