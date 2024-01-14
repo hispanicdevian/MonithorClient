@@ -18,6 +18,7 @@ import engine_logic.Navi
 import onoffsetting_boxes.onOffSettingBoxesA
 import onoffsetting_boxes.onOffSettingBoxesB
 import onoffsetting_boxes.onOffSettingBoxesC
+import onoffsetting_boxes.onOffSettingBoxesD
 import views.mainScreen
 import views.settingScreen
 
@@ -75,6 +76,11 @@ fun settingOnOffBoxes() {
                         verticalArrangement = Arrangement.Center
                     ) { onOffSettingBoxesC() }
                     Spacer(modifier = Modifier.width(12.dp))
+////////////////////////////// Box set D
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) { onOffSettingBoxesD() }
                 }
             }
         }
