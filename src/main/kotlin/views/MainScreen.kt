@@ -102,12 +102,12 @@ fun mainScreen() {
                 "Error Code hd101"
             }
             currentSkyA = if (skyA != null) {
-                "$skyA"
+                "$skyA Sky"
             } else {
                 "Error Code hd102"
             }
 
-            delay(60000*10) // Add a 2-minute delay
+            delay(60000*10) // Add a 10-minute delay
         }
     }
 
