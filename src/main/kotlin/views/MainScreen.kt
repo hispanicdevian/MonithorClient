@@ -49,6 +49,9 @@ fun mainScreen() {
     var pingSuccessful10 by remember { mutableStateOf(false) }
     var pingSuccessful11 by remember { mutableStateOf(false) }
 
+//////////////////////////////////////////////////////////// Weather Results Ram
+    var currentTemperature by remember { mutableStateOf("Loading...") }
+
 //////////////////////////////////////////////////////////// Ping Engine Call
     LaunchedEffect(Unit) {
         while (isActive) {

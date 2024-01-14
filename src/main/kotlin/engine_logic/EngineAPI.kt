@@ -43,28 +43,57 @@ fun pingEngineAPI(ip: String): Boolean {
     }
 }
 
-//////////////////////////////////////////////////////////// Weather API
+//////////////////////////////////////////////////////////// Weather API A
 
-const val WEATHER_API_BASE_URL = "http://api.weatherapi.com/v1/current.json"
-const val API_KEY = "api key goes here"
-val json = Json { ignoreUnknownKeys = true }
-
-@Serializable
-data class WeatherData(val current: Current?)
+const val WEATHER_API_BASE_URLA = "http://api.weatherapi.com/v1/current.json"
+const val API_KEYA = "api key goes here"
+val jsonA = Json { ignoreUnknownKeys = true }
 
 @Serializable
-data class Current(val temp_c: Double?, val condition: Condition?)
+data class WeatherDataA(val current: CurrentA?)
 
 @Serializable
-data class Condition(val text: String?)
+data class CurrentA(val temp_c: Double?, val condition: ConditionA?)
 
-fun getCurrentTemperature(cityName: String): Pair<Double?, String?> = try {
-    json.decodeFromString<WeatherData>(OkHttpClient().newCall(buildRequest(cityName)).execute().body?.string()
+@Serializable
+data class ConditionA(val text: String?)
+
+suspend fun getCurrentTemperatureA(cityName: String): Pair<Double?, String?> = try {
+    jsonA.decodeFromString<WeatherDataA>(OkHttpClient().newCall(buildRequestA(cityName)).execute().body?.string()
         ?: "").let { it.current?.temp_c to it.current?.condition?.text }
 } catch (e: IOException) {
     println("Error making API call: ${e.message}")
     null to null
 }
 
-fun buildRequest(cityName: String): Request =
-    Request.Builder().url("$WEATHER_API_BASE_URL?key=$API_KEY&q=$cityName").build()
+fun buildRequestA(cityNameA: String): Request =
+    Request.Builder().url("$WEATHER_API_BASE_URLA?key=$API_KEYA&q=$cityNameA").build()
+
+//////////////////////////////////////////////////////////// Weather API B
+
+const val WEATHER_API_BASE_URLB = "http://api.weatherapi.com/v1/current.json"
+const val API_KEYB = "api key goes here"
+private val clientB = OkHttpClient()
+private val jsonB = Json { ignoreUnknownKeys = true }
+
+@Serializable
+data class WeatherDataB(val current: CurrentB?)
+
+@Serializable
+data class CurrentB(val temp_c: Double?, val condition: ConditionB?)
+
+@Serializable
+data class ConditionB(val text: String?)
+
+suspend fun getCurrentTemperatureB(cityName: String): Pair<Double?, String?> = try {
+    val response = clientB.newCall(buildRequestB(cityName)).execute()
+    val body = response.body?.string() ?: ""
+    val weatherData = jsonB.decodeFromString<WeatherDataB>(body)
+    weatherData.current?.temp_c to weatherData.current?.condition?.text
+} catch (e: IOException) {
+    println("Error making API call: ${e.message}")
+    null to null
+}
+
+fun buildRequestB(cityNameB: String): Request =
+    Request.Builder().url("$WEATHER_API_BASE_URLB?key=$API_KEYB&q=$cityNameB").build()
