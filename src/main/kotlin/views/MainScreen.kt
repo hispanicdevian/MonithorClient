@@ -86,7 +86,7 @@ fun mainScreen() {
             pingSuccessful10 = resultsA[10].await()
             pingSuccessful11 = resultsA[11].await()
 
-            delay(10000)
+            delay(10000) // Add a 10-seconds delay
         }
     }
 
@@ -106,8 +106,8 @@ fun mainScreen() {
             } else {
                 "Error Code hd102"
             }
-/////////////// Add a 1-minute delay
-            delay(60000)
+
+            delay(60000*10) // Add a 2-minute delay
         }
     }
 
