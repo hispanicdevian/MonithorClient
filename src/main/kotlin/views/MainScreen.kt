@@ -87,6 +87,23 @@ fun mainScreen() {
             delay(10000)
         }
     }
+
+//////////////////////////////////////////////////////////// Weather Engine Call
+    LaunchedEffect(Unit) {
+        while (isActive) {
+            val (temperature, weather) = getCurrentTemperatureA("North Vancouver")
+
+/////////////// Update the UI state For Weather Boxes A
+            currentTemperature = if (temperature != null && weather != null) {
+                "$temperature°C\n$weather"
+            } else {
+                "Failed to retrieve current temperature."
+            }
+
+            // Add a 1-minute delay
+            delay(60000)
+        }
+    }
 //////////////////////////////////////////////////////////// UI Container
     Box(
         modifier = Modifier.fillMaxSize().background(CustomGrayA)
