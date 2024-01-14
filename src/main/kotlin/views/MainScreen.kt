@@ -25,6 +25,7 @@ import kotlinx.coroutines.isActive
 import mainscreen_boxes.pingBoxesA
 import mainscreen_boxes.pingBoxesB
 import mainscreen_boxes.pingBoxesC
+import mainscreen_boxes.weatherBoxesA
 import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
@@ -50,7 +51,8 @@ fun mainScreen() {
     var pingSuccessful11 by remember { mutableStateOf(false) }
 
 //////////////////////////////////////////////////////////// Weather Results Ram
-    var currentTemperature by remember { mutableStateOf("Loading...") }
+    var currentTempA by remember { mutableStateOf("Loading...") }
+    var currentSkyA by remember { mutableStateOf("Loading...") }
 
 //////////////////////////////////////////////////////////// Ping Engine Call
     LaunchedEffect(Unit) {
@@ -91,16 +93,20 @@ fun mainScreen() {
 //////////////////////////////////////////////////////////// Weather Engine Call
     LaunchedEffect(Unit) {
         while (isActive) {
-            val (temperature, weather) = getCurrentTemperatureA("North Vancouver")
+            val (temperatureA, skyA) = getCurrentTemperatureA("North Vancouver")
 
 /////////////// Update the UI state For Weather Boxes A
-            currentTemperature = if (temperature != null && weather != null) {
-                "$temperature°C\n$weather"
+            currentTempA = if (temperatureA != null) {
+                "$temperatureA°C"
             } else {
-                "Failed to retrieve current temperature."
+                "Error Code hd101"
             }
-
-            // Add a 1-minute delay
+            currentSkyA = if (skyA != null) {
+                "$skyA"
+            } else {
+                "Error Code hd102"
+            }
+/////////////// Add a 1-minute delay
             delay(60000)
         }
     }
@@ -211,6 +217,7 @@ fun mainScreen() {
                     .weight(1f)
                     //.aspectRatio(1f)
                 ) {
+                    weatherBoxesA(currentTempA, currentSkyA)
                 }
             }
         }

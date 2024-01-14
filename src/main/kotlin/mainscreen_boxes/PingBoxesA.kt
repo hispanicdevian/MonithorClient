@@ -33,7 +33,6 @@ fun pingBoxesA(pingSuccessfulA0: Boolean, pingSuccessfulA1: Boolean, pingSuccess
 // Pass through ram for ping state
     val pingSuccessfulList = listOf(pingSuccessfulA0, pingSuccessfulA1, pingSuccessfulA2, pingSuccessfulA3)
 // Title list ram, need to be replaced so that the user can modify it live
-    //val titleList = listOf("0", "1", "2", "3")
     val titleList = listOf(ipTitle00, ipTitle01, ipTitle02, ipTitle03)
 // Font size ram
     val fontSizedA by remember { mutableStateOf(loadFontSizeV1A().sp) }

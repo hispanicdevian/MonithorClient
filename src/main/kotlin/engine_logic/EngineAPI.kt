@@ -7,20 +7,6 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.IOException
 
-//////////////////////////////////////////////////////////// IP List that passes into the APIs function
-var ipAddress0 = readIpFile0()
-var ipAddress1 = readIpFile1()
-var ipAddress2 = readIpFile2()
-var ipAddress3 = readIpFile3()
-var ipAddress4 = readIpFile4()
-var ipAddress5 = readIpFile5()
-var ipAddress6 = readIpFile6()
-var ipAddress7 = readIpFile7()
-var ipAddress8 = readIpFile8()
-var ipAddress9 = readIpFile9()
-var ipAddress10 = readIpFile10()
-var ipAddress11 = readIpFile11()
-
 //////////////////////////////////////////////////////////// Ping API (Adjust to match APIs IP address)
 fun pingEngineAPI(ip: String): Boolean {
     val client = OkHttpClient()
@@ -49,17 +35,17 @@ const val API_KEYA = "api key goes here"
 val jsonA = Json { ignoreUnknownKeys = true }
 
 @Serializable
-data class WeatherDataA(val current: CurrentA?)
+data class WeatherDataA(val currentA: CurrentA? = null)
 
 @Serializable
-data class CurrentA(val temp_c: Double?, val condition: ConditionA?)
+data class CurrentA(val temp_c: Double? = null, val condition: ConditionA? = null)
 
 @Serializable
-data class ConditionA(val text: String?)
+data class ConditionA(val text: String? = null)
 
-suspend fun getCurrentTemperatureA(cityName: String): Pair<Double?, String?> = try {
+fun getCurrentTemperatureA(cityName: String): Pair<Double?, String?> = try {
     jsonA.decodeFromString<WeatherDataA>(OkHttpClient().newCall(buildRequestA(cityName)).execute().body?.string()
-        ?: "").let { it.current?.temp_c to it.current?.condition?.text }
+        ?: "").let { it.currentA?.temp_c to it.currentA?.condition?.text }
 } catch (e: IOException) {
     println("Error making API call: ${e.message}")
     null to null
@@ -83,7 +69,7 @@ data class CurrentB(val temp_c: Double?, val condition: ConditionB?)
 @Serializable
 data class ConditionB(val text: String?)
 
-suspend fun getCurrentTemperatureB(cityName: String): Pair<Double?, String?> = try {
+fun getCurrentTemperatureB(cityName: String): Pair<Double?, String?> = try {
     val response = clientB.newCall(buildRequestB(cityName)).execute()
     val body = response.body?.string() ?: ""
     val weatherData = jsonB.decodeFromString<WeatherDataB>(body)
