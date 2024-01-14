@@ -104,6 +104,7 @@ fun mainScreen() {
             delay(60000)
         }
     }
+
 //////////////////////////////////////////////////////////// UI Container
     Box(
         modifier = Modifier.fillMaxSize().background(CustomGrayA)

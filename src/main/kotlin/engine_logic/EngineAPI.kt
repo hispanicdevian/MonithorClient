@@ -44,7 +44,6 @@ fun pingEngineAPI(ip: String): Boolean {
 }
 
 //////////////////////////////////////////////////////////// Weather API A
-
 const val WEATHER_API_BASE_URLA = "http://api.weatherapi.com/v1/current.json"
 const val API_KEYA = "api key goes here"
 val jsonA = Json { ignoreUnknownKeys = true }
@@ -70,7 +69,6 @@ fun buildRequestA(cityNameA: String): Request =
     Request.Builder().url("$WEATHER_API_BASE_URLA?key=$API_KEYA&q=$cityNameA").build()
 
 //////////////////////////////////////////////////////////// Weather API B
-
 const val WEATHER_API_BASE_URLB = "http://api.weatherapi.com/v1/current.json"
 const val API_KEYB = "api key goes here"
 private val clientB = OkHttpClient()
