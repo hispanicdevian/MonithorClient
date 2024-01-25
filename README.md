@@ -3,5 +3,5 @@
 ## Ment to be used with [MonotoolAPI](https://github.com/hispanicdevian/MonotoolAPI/tree/main)
 
 > [!NOTE]
-> The private version currently handles different functions since it is tailored specifically for a company's needs
+> The private version handles various functions, as it is specifically tailored for a company's needs. That said, this is the core upon which they all are based
 
