@@ -35,14 +35,16 @@ fun pingSettingBoxesA() {
     val placeHolderTitle = "Title"
     val placeHolderIP = "IP/Hostname"
 
+    // Font size ram
+    val fontSizedSA by remember { mutableStateOf(loadFontSizeV1A().sp) }
+
     Column(
         modifier = Modifier.padding(bottom = 30.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
 //////////////////////////////////////////////////////////// Edit Box A0
-        Box(
-            modifier = Modifier
+        Box( modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
                 .padding(5.dp)
                 .weight(1f)
@@ -63,11 +65,19 @@ fun pingSettingBoxesA() {
                     },
                     modifier = Modifier.fillMaxSize().weight(1f),
                     textStyle = TextStyle(
-                        fontSize = 20.sp,
+                        fontSize = fontSizedSA,
                         color = Color.White,
                         textAlign = TextAlign.Center
                     ),
-                    placeholder = { Text(placeHolderTitle) },
+                    placeholder = {
+                        Box(
+                            modifier = Modifier.fillMaxSize(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(text = placeHolderTitle, fontSize = fontSizedSA,
+                                color = Color.White, textAlign = TextAlign.Center)
+                        }
+                    }
                 )
 /////////////// Spacer/Separator
                 Divider(
@@ -84,11 +94,16 @@ fun pingSettingBoxesA() {
                     },
                     modifier = Modifier.fillMaxSize().weight(1f),
                     textStyle = TextStyle(
-                        fontSize = 20.sp,
+                        fontSize = fontSizedSA,
                         color = Color.White,
                         textAlign = TextAlign.Center
                     ),
-                    placeholder = { Text(placeHolderIP) },
+                    placeholder = { Box( modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center ) {
+                            Text( text = placeHolderIP, fontSize = fontSizedSA,
+                                color = Color.White, textAlign = TextAlign.Center )
+                        }
+                    }
                 )
             }
         }
