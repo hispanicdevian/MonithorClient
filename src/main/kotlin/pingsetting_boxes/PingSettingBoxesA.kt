@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.AbsoluteRoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.Divider
+import androidx.compose.material.Text
+import androidx.compose.material.TextField
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -30,6 +32,9 @@ fun pingSettingBoxesA() {
     var ipTitleA2 by remember { mutableStateOf(readTiFile2()) }
     var ipTitleA3 by remember { mutableStateOf(readTiFile3()) }
 
+    val placeHolderTitle = "Title"
+    val placeHolderIP = "IP/Hostname"
+
     Column(
         modifier = Modifier.padding(bottom = 30.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -50,40 +55,40 @@ fun pingSettingBoxesA() {
                 verticalArrangement = Arrangement.Center
             ) {
 ////////////////////////////// title input A0
-                BasicTextField(
+                TextField(
                     value = ipTitleA0,
                     onValueChange = { newValue ->
                         ipTitleA0 = newValue
                         writeTiToFile0(newValue)
                     },
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxSize().weight(1f),
                     textStyle = TextStyle(
                         fontSize = 20.sp,
                         color = Color.White,
                         textAlign = TextAlign.Center
-                    )
+                    ),
+                    placeholder = { Text(placeHolderTitle) },
                 )
 /////////////// Spacer/Separator
-                Spacer(modifier = Modifier.height(10.dp))
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
                     thickness = 1.5.dp
                 )
-                Spacer(modifier = Modifier.height(10.dp))
 ////////////////////////////// ip input A0
-                BasicTextField(
+                TextField(
                     value = ipAddressA0,
                     onValueChange = { newValue ->
                         ipAddressA0 = newValue
                         writeIpToFile0(newValue)
                     },
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxSize().weight(1f),
                     textStyle = TextStyle(
                         fontSize = 20.sp,
                         color = Color.White,
                         textAlign = TextAlign.Center
-                    )
+                    ),
+                    placeholder = { Text(placeHolderIP) },
                 )
             }
         }
@@ -193,7 +198,7 @@ fun pingSettingBoxesA() {
                 )
             }
         }
-        //////////////////////////////////////////////////////////// Edit Box A3
+//////////////////////////////////////////////////////////// Edit Box A3
         Spacer(modifier = Modifier.height(20.dp))
         Box(
             modifier = Modifier
