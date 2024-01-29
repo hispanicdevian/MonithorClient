@@ -19,6 +19,9 @@ fun vSpacer15( ) { Spacer(modifier = Modifier.height(15.dp)) }
 fun hSpacer10( ) { Spacer(modifier = Modifier.width(10.dp)) }
 
 @Composable
+fun hSpacer12( ) { Spacer(modifier = Modifier.width(12.dp)) }
+
+@Composable
 fun hSpacer15( ) { Spacer(modifier = Modifier.width(15.dp)) }
 
 @Composable

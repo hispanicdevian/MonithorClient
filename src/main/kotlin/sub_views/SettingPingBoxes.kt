@@ -13,6 +13,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.CustomGrayA
 import custom_resources.MainColorA
+import custom_resources.hSpacer10
+import custom_resources.hSpacer20
 import engine_logic.Navi
 import pingsetting_boxes.pingSettingBoxesA
 import pingsetting_boxes.pingSettingBoxesB
@@ -58,23 +60,20 @@ fun settingPingBoxes() {
 //////////////////////////////////////////////////////////// Box Set A
                 Column(modifier = Modifier
                     .weight(1f)
-                    //.aspectRatio(1f)
                 ) {
                     pingSettingBoxesA()
                 }
-                Spacer(modifier = Modifier.width(12.dp))
+                hSpacer10()
 //////////////////////////////////////////////////////////// Box Set B
                 Column(modifier = Modifier
                     .weight(1f)
-                    //.aspectRatio(1f)
                 ) {
                     pingSettingBoxesB()
                 }
-                Spacer(modifier = Modifier.width(12.dp))
+                hSpacer10()
 //////////////////////////////////////////////////////////// Box Set C
                 Column(modifier = Modifier
                     .weight(1f)
-                    //.aspectRatio(1f)
                 ) {
                     pingSettingBoxesC()
                 }
