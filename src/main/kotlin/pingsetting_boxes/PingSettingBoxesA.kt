@@ -4,7 +4,6 @@ import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.AbsoluteRoundedCornerShape
-import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
@@ -123,40 +122,52 @@ fun pingSettingBoxesA() {
                 verticalArrangement = Arrangement.Center
             ) {
 ////////////////////////////// title input A1
-                BasicTextField(
+                TextField(
                     value = ipTitleA1,
                     onValueChange = { newValue ->
                         ipTitleA1 = newValue
                         writeTiToFile1(newValue)
                     },
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxSize().weight(1f),
                     textStyle = TextStyle(
-                        fontSize = 20.sp,
+                        fontSize = fontSizedSA,
                         color = Color.White,
                         textAlign = TextAlign.Center
-                    )
+                    ),
+                    placeholder = {
+                        Box(
+                            modifier = Modifier.fillMaxSize(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(text = placeHolderTitle, fontSize = fontSizedSA,
+                                color = Color.White, textAlign = TextAlign.Center)
+                        }
+                    }
                 )
 /////////////// Spacer/Separator
-                Spacer(modifier = Modifier.height(10.dp))
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
                     thickness = 1.5.dp
                 )
-                Spacer(modifier = Modifier.height(10.dp))
 ////////////////////////////// ip input A1
-                BasicTextField(
+                TextField(
                     value = ipAddressA1,
                     onValueChange = { newValue ->
                         ipAddressA1 = newValue
                         writeIpToFile1(newValue)
                     },
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxSize().weight(1f),
                     textStyle = TextStyle(
-                        fontSize = 20.sp,
+                        fontSize = fontSizedSA,
                         color = Color.White,
                         textAlign = TextAlign.Center
-                    )
+                    ),
+                    placeholder = { Box( modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center ) {
+                        Text( text = placeHolderIP, fontSize = fontSizedSA,
+                            color = Color.White, textAlign = TextAlign.Center ) }
+                    }
                 )
             }
         }
@@ -176,40 +187,52 @@ fun pingSettingBoxesA() {
                 verticalArrangement = Arrangement.Center
             ) {
 ////////////////////////////// title input A2
-                BasicTextField(
+                TextField(
                     value = ipTitleA2,
                     onValueChange = { newValue ->
                         ipTitleA2 = newValue
                         writeTiToFile2(newValue)
                     },
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxSize().weight(1f),
                     textStyle = TextStyle(
-                        fontSize = 20.sp,
+                        fontSize = fontSizedSA,
                         color = Color.White,
                         textAlign = TextAlign.Center
-                    )
+                    ),
+                    placeholder = {
+                        Box(
+                            modifier = Modifier.fillMaxSize(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(text = placeHolderTitle, fontSize = fontSizedSA,
+                                color = Color.White, textAlign = TextAlign.Center)
+                        }
+                    }
                 )
 /////////////// Spacer/Separator
-                Spacer(modifier = Modifier.height(10.dp))
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
                     thickness = 1.5.dp
                 )
-                Spacer(modifier = Modifier.height(10.dp))
 ////////////////////////////// ip input A2
-                BasicTextField(
+                TextField(
                     value = ipAddressA2,
                     onValueChange = { newValue ->
                         ipAddressA2 = newValue
                         writeIpToFile2(newValue)
                     },
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxSize().weight(1f),
                     textStyle = TextStyle(
-                        fontSize = 20.sp,
+                        fontSize = fontSizedSA,
                         color = Color.White,
                         textAlign = TextAlign.Center
-                    )
+                    ),
+                    placeholder = { Box( modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center ) {
+                        Text( text = placeHolderIP, fontSize = fontSizedSA,
+                            color = Color.White, textAlign = TextAlign.Center ) }
+                    }
                 )
             }
         }
@@ -229,40 +252,52 @@ fun pingSettingBoxesA() {
                 verticalArrangement = Arrangement.Center
             ) {
 ////////////////////////////// title input A3
-                BasicTextField(
+                TextField(
                     value = ipTitleA3,
                     onValueChange = { newValue ->
                         ipTitleA3 = newValue
                         writeTiToFile3(newValue)
                     },
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxSize().weight(1f),
                     textStyle = TextStyle(
-                        fontSize = 20.sp,
+                        fontSize = fontSizedSA,
                         color = Color.White,
                         textAlign = TextAlign.Center
-                    )
+                    ),
+                    placeholder = {
+                        Box(
+                            modifier = Modifier.fillMaxSize(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(text = placeHolderTitle, fontSize = fontSizedSA,
+                                color = Color.White, textAlign = TextAlign.Center)
+                        }
+                    }
                 )
 /////////////// Spacer/Separator
-                Spacer(modifier = Modifier.height(10.dp))
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
                     thickness = 1.5.dp
                 )
-                Spacer(modifier = Modifier.height(10.dp))
 ////////////////////////////// ip input A3
-                BasicTextField(
+                TextField(
                     value = ipAddressA3,
                     onValueChange = { newValue ->
                         ipAddressA3 = newValue
                         writeIpToFile3(newValue)
                     },
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxSize().weight(1f),
                     textStyle = TextStyle(
-                        fontSize = 20.sp,
+                        fontSize = fontSizedSA,
                         color = Color.White,
                         textAlign = TextAlign.Center
-                    )
+                    ),
+                    placeholder = { Box( modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center ) {
+                        Text( text = placeHolderIP, fontSize = fontSizedSA,
+                            color = Color.White, textAlign = TextAlign.Center ) }
+                    }
                 )
             }
         }
