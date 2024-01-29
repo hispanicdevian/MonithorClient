@@ -11,10 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_resources.CustomGrayA
-import custom_resources.MainColorA
-import custom_resources.hSpacer10
-import custom_resources.hSpacer20
+import custom_resources.*
 import engine_logic.Navi
 import pingsetting_boxes.pingSettingBoxesA
 import pingsetting_boxes.pingSettingBoxesB
@@ -63,14 +60,14 @@ fun settingPingBoxes() {
                 ) {
                     pingSettingBoxesA()
                 }
-                hSpacer10()
+                spbSpacerH()
 //////////////////////////////////////////////////////////// Box Set B
                 Column(modifier = Modifier
                     .weight(1f)
                 ) {
                     pingSettingBoxesB()
                 }
-                hSpacer10()
+                spbSpacerH()
 //////////////////////////////////////////////////////////// Box Set C
                 Column(modifier = Modifier
                     .weight(1f)

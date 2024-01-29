@@ -16,10 +16,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_resources.CustomGrayA
-import custom_resources.MainColorA
-import custom_resources.hSpacer15
-import custom_resources.hSpacer20
+import custom_resources.*
 import engine_logic.*
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
@@ -197,19 +194,19 @@ fun mainScreen() {
                     .padding(5.dp)
                     .weight(1f)
                 ) { pingBoxesA(pingSuccessful0, pingSuccessful1, pingSuccessful2, pingSuccessful3) }
-                hSpacer20()
+                msSpacerH()
 //////////////////////////////////////////////////////////// Box Set B
                 Column(modifier = Modifier
                     .padding(5.dp)
                     .weight(1f)
                 ) { pingBoxesB(pingSuccessful4, pingSuccessful5, pingSuccessful6, pingSuccessful7) }
-                hSpacer20()
+                msSpacerH()
 //////////////////////////////////////////////////////////// Box Set C
                 Column(modifier = Modifier
                     .padding(5.dp)
                     .weight(1f)
                 ) { pingBoxesC(pingSuccessful8, pingSuccessful9, pingSuccessful10, pingSuccessful11) }
-                hSpacer15()
+                msSpacerH()
 //////////////////////////////////////////////////////////// Box Set D
                 Column(modifier = Modifier
                     .padding(5.dp)

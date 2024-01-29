@@ -17,7 +17,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.CustomGrayA
-import custom_resources.vSpacer10
+import custom_resources.psbSpacerH
 import engine_logic.*
 
 @Composable
@@ -101,15 +101,14 @@ fun pingSettingBoxesA() {
                     ),
                     placeholder = { Box( modifier = Modifier.fillMaxSize(),
                         contentAlignment = Alignment.Center ) {
-                            Text( text = placeHolderIP, fontSize = fontSizedSA,
-                                color = Color.White, textAlign = TextAlign.Center )
-                        }
+                        Text( text = placeHolderIP, fontSize = fontSizedSA,
+                            color = Color.White, textAlign = TextAlign.Center ) }
                     }
                 )
             }
         }
 //////////////////////////////////////////////////////////// Edit Box A1
-        vSpacer10()
+        psbSpacerH()
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
@@ -162,7 +161,7 @@ fun pingSettingBoxesA() {
             }
         }
 //////////////////////////////////////////////////////////// Edit Box A2
-        vSpacer10()
+        psbSpacerH()
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
@@ -215,7 +214,7 @@ fun pingSettingBoxesA() {
             }
         }
 //////////////////////////////////////////////////////////// Edit Box A3
-        vSpacer10()
+        psbSpacerH()
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))

@@ -15,6 +15,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.CustomGrayA
+import custom_resources.psbSpacerH
 import engine_logic.*
 
 @Composable
@@ -64,13 +65,11 @@ fun pingSettingBoxesC() {
                     )
                 )
 /////////////// Spacer/Separator
-                Spacer(modifier = Modifier.height(10.dp))
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
                     thickness = 1.5.dp
                 )
-                Spacer(modifier = Modifier.height(10.dp))
 ////////////////////////////// Ip input C0
                 BasicTextField(
                     value = ipAddressC0,
@@ -88,7 +87,7 @@ fun pingSettingBoxesC() {
             }
         }
 //////////////////////////////////////////////////////////// Edit Box C1 - 9
-        Spacer(modifier = Modifier.height(20.dp))
+        psbSpacerH()
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
@@ -117,13 +116,11 @@ fun pingSettingBoxesC() {
                     )
                 )
 /////////////// Spacer/Separator
-                Spacer(modifier = Modifier.height(10.dp))
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
                     thickness = 1.5.dp
                 )
-                Spacer(modifier = Modifier.height(10.dp))
 ////////////////////////////// Ip input C1
                 BasicTextField(
                     value = ipAddressC1,
@@ -141,7 +138,7 @@ fun pingSettingBoxesC() {
             }
         }
 //////////////////////////////////////////////////////////// Edit Box C2 - 10
-        Spacer(modifier = Modifier.height(20.dp))
+        psbSpacerH()
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
@@ -170,13 +167,11 @@ fun pingSettingBoxesC() {
                     )
                 )
 /////////////// Spacer/Separator
-                Spacer(modifier = Modifier.height(10.dp))
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
                     thickness = 1.5.dp
                 )
-                Spacer(modifier = Modifier.height(10.dp))
 ////////////////////////////// Ip input B2
                 BasicTextField(
                     value = ipAddressC2,
@@ -194,7 +189,7 @@ fun pingSettingBoxesC() {
             }
         }
 //////////////////////////////////////////////////////////// Edit Box C3 - 11
-        Spacer(modifier = Modifier.height(20.dp))
+        psbSpacerH()
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
@@ -223,13 +218,11 @@ fun pingSettingBoxesC() {
                     )
                 )
 /////////////// Spacer/Separator
-                Spacer(modifier = Modifier.height(10.dp))
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
                     thickness = 1.5.dp
                 )
-                Spacer(modifier = Modifier.height(10.dp))
 ////////////////////////////// Ip input C3
                 BasicTextField(
                     value = ipAddressC3,
