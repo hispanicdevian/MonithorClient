@@ -17,6 +17,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.CustomGrayA
+import custom_resources.vSpacer10
 import engine_logic.*
 
 @Composable
@@ -39,14 +40,14 @@ fun pingSettingBoxesA() {
     val fontSizedSA by remember { mutableStateOf(loadFontSizeV1A().sp) }
 
     Column(
-        modifier = Modifier.padding(bottom = 30.dp),
+        modifier = Modifier.padding(top = 10.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
 //////////////////////////////////////////////////////////// Edit Box A0
         Box( modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
-                .padding(5.dp)
+                .padding(4.dp)
                 .weight(1f)
                 .aspectRatio(2f)
                 .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
@@ -108,11 +109,11 @@ fun pingSettingBoxesA() {
             }
         }
 //////////////////////////////////////////////////////////// Edit Box A1
-        Spacer(modifier = Modifier.height(20.dp))
+        vSpacer10()
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
-                .padding(5.dp)
+                .padding(4.dp)
                 .weight(1f)
                 .aspectRatio(2f)
                 .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
@@ -161,11 +162,11 @@ fun pingSettingBoxesA() {
             }
         }
 //////////////////////////////////////////////////////////// Edit Box A2
-        Spacer(modifier = Modifier.height(20.dp))
+        vSpacer10()
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
-                .padding(5.dp)
+                .padding(4.dp)
                 .weight(1f)
                 .aspectRatio(2f)
                 .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
@@ -214,11 +215,11 @@ fun pingSettingBoxesA() {
             }
         }
 //////////////////////////////////////////////////////////// Edit Box A3
-        Spacer(modifier = Modifier.height(20.dp))
+        vSpacer10()
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
-                .padding(5.dp)
+                .padding(4.dp)
                 .weight(1f)
                 .aspectRatio(2f)
                 .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
@@ -266,5 +267,6 @@ fun pingSettingBoxesA() {
                 )
             }
         }
+        Spacer(modifier = Modifier.height(15.dp))
     }
 }

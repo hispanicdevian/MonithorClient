@@ -1,7 +1,6 @@
 package sub_views
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -47,44 +46,37 @@ fun settingPingBoxes() {
                 }
             }
 //////////////////////////////////////////////////////////// UI Container
-            Box(
-                modifier = Modifier.fillMaxSize().padding(top = 60.dp)
-                    .background(CustomGrayA)
+
+            Row(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(top = 55.dp)
+                    .padding(horizontal = 15.dp),
+                horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(top = 55.dp)
-                        .padding(horizontal = 15.dp),
-                    horizontalArrangement = Arrangement.Center,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
 //////////////////////////////////////////////////////////// Box Set A
-                    Column(modifier = Modifier
-                        .padding(5.dp)
-                        .weight(1f)
-                        //.aspectRatio(1f)
-                    ) {
-                        pingSettingBoxesA()
-                    }
-                    Spacer(modifier = Modifier.width(12.dp))
+                Column(modifier = Modifier
+                    .weight(1f)
+                    //.aspectRatio(1f)
+                ) {
+                    pingSettingBoxesA()
+                }
+                Spacer(modifier = Modifier.width(12.dp))
 //////////////////////////////////////////////////////////// Box Set B
-                    Column(modifier = Modifier
-                        .padding(5.dp)
-                        .weight(1f)
-                        //.aspectRatio(1f)
-                    ) {
-                        pingSettingBoxesB()
-                    }
-                    Spacer(modifier = Modifier.width(12.dp))
+                Column(modifier = Modifier
+                    .weight(1f)
+                    //.aspectRatio(1f)
+                ) {
+                    pingSettingBoxesB()
+                }
+                Spacer(modifier = Modifier.width(12.dp))
 //////////////////////////////////////////////////////////// Box Set C
-                    Column(modifier = Modifier
-                        .padding(5.dp)
-                        .weight(1f)
-                        //.aspectRatio(1f)
-                    ) {
-                        pingSettingBoxesC()
-                    }
+                Column(modifier = Modifier
+                    .weight(1f)
+                    //.aspectRatio(1f)
+                ) {
+                    pingSettingBoxesC()
                 }
             }
         }

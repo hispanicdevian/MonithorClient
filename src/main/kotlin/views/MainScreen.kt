@@ -18,6 +18,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.CustomGrayA
 import custom_resources.MainColorA
+import custom_resources.hSpacer15
+import custom_resources.hSpacer20
 import engine_logic.*
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
@@ -120,7 +122,7 @@ fun mainScreen() {
             modifier = Modifier.fillMaxWidth()
         ) {
 //////////////////////////////////////////////////////////// Clickable Title
-            Text("Monotool",
+            Text("Monithor Client",
                 fontSize = 26.sp,
                 color = CustomGrayA,
                 fontWeight = FontWeight.W900,
@@ -194,28 +196,24 @@ fun mainScreen() {
                 Column(modifier = Modifier
                     .padding(5.dp)
                     .weight(1f)
-                    //.aspectRatio(1f)
                 ) { pingBoxesA(pingSuccessful0, pingSuccessful1, pingSuccessful2, pingSuccessful3) }
-                Spacer(modifier = Modifier.width(20.dp))
+                hSpacer20()
 //////////////////////////////////////////////////////////// Box Set B
                 Column(modifier = Modifier
                     .padding(5.dp)
                     .weight(1f)
-                    //.aspectRatio(1f)
                 ) { pingBoxesB(pingSuccessful4, pingSuccessful5, pingSuccessful6, pingSuccessful7) }
-                Spacer(modifier = Modifier.width(20.dp))
+                hSpacer20()
 //////////////////////////////////////////////////////////// Box Set C
                 Column(modifier = Modifier
                     .padding(5.dp)
                     .weight(1f)
-                    //.aspectRatio(1f)
                 ) { pingBoxesC(pingSuccessful8, pingSuccessful9, pingSuccessful10, pingSuccessful11) }
-                Spacer(modifier = Modifier.width(20.dp))
+                hSpacer15()
 //////////////////////////////////////////////////////////// Box Set D
                 Column(modifier = Modifier
                     .padding(5.dp)
                     .weight(1f)
-                    //.aspectRatio(1f)
                 ) {
                     weatherBoxesA(currentTempA, currentSkyA)
                 }
