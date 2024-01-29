@@ -31,7 +31,7 @@ compose.desktop {
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "MonotoolClient"
+            packageName = "MonithorClient"
             packageVersion = "1.0.0"
         }
     }
