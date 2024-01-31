@@ -2,7 +2,7 @@ package engine_logic
 
 import java.io.File
 
-//////////////////////////////////////////////////////////// Read/Write File for Boxes Title value 08
+////////////////////////////// Read/Write for PingSettingBoxesC.kt C8
 fun writeTiToFile8(ipTitle: String) {
     try {
         val file8 = File("$RWT_PATH/rwTi08.hdi")
@@ -21,7 +21,8 @@ fun readTiFile8(): String {
         ""
     }
 }
-//////////////////////////////////////////////////////////// Read/Write File for Boxes IPs value 09
+
+////////////////////////////// Read/Write for PingSettingBoxesC.kt C9
 fun writeTiToFile9(ipTitle: String) {
     try {
         val file9 = File("$RWT_PATH/rwTi09.hdi")
@@ -40,7 +41,8 @@ fun readTiFile9(): String {
         ""
     }
 }
-//////////////////////////////////////////////////////////// Read/Write File for IPs value, Boxes 10
+
+////////////////////////////// Read/Write for PingSettingBoxesC.kt C10
 fun writeTiToFile10(ipTitle: String) {
     try {
         val file10 = File("$RWT_PATH/rwTi10.hdi")
@@ -59,7 +61,8 @@ fun readTiFile10(): String {
         ""
     }
 }
-//////////////////////////////////////////////////////////// Read/Write File for IPs value, Boxes 11
+
+////////////////////////////// Read/Write for PingSettingBoxesC.kt C11
 fun writeTiToFile11(ipTitle: String) {
     try {
         val file11 = File("$RWT_PATH/rwTi11.hdi")
