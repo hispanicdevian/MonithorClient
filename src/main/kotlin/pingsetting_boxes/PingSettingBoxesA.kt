@@ -34,9 +34,6 @@ fun pingSettingBoxesA() {
     var ipTitleA2 by remember { mutableStateOf(readTiFile2()) }
     var ipTitleA3 by remember { mutableStateOf(readTiFile3()) }
 
-    val placeHolderTitle = "Title"
-    val placeHolderIP = "IP/Hostname"
-
     // Font size ram
     val fontSizedSA by remember { mutableStateOf(loadFontSizeV1A().sp) }
 
@@ -45,7 +42,7 @@ fun pingSettingBoxesA() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-//////////////////////////////////////////////////////////// Edit Box A0
+//////////////////////////////////////////////////////////// Edit Box A0 - ReWr0
         Box( modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
                 .padding(4.dp)
@@ -81,7 +78,7 @@ fun pingSettingBoxesA() {
                         }
                     }
                 )
-/////////////// Spacer/Separator
+/////////////// Spacer/Separator A0
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
@@ -108,7 +105,7 @@ fun pingSettingBoxesA() {
                 )
             }
         }
-//////////////////////////////////////////////////////////// Edit Box A1
+//////////////////////////////////////////////////////////// Edit Box A1 - ReWr1
         psbSpacerH()
         Box(
             modifier = Modifier
@@ -146,7 +143,7 @@ fun pingSettingBoxesA() {
                         }
                     }
                 )
-/////////////// Spacer/Separator
+/////////////// Spacer/Separator A1
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
@@ -173,7 +170,7 @@ fun pingSettingBoxesA() {
                 )
             }
         }
-//////////////////////////////////////////////////////////// Edit Box A2
+//////////////////////////////////////////////////////////// Edit Box A2 - ReWr2
         psbSpacerH()
         Box(
             modifier = Modifier
@@ -211,7 +208,7 @@ fun pingSettingBoxesA() {
                         }
                     }
                 )
-/////////////// Spacer/Separator
+/////////////// Spacer/Separator A2
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
@@ -238,7 +235,7 @@ fun pingSettingBoxesA() {
                 )
             }
         }
-//////////////////////////////////////////////////////////// Edit Box A3
+//////////////////////////////////////////////////////////// Edit Box A3 - ReWr3
         psbSpacerH()
         Box(
             modifier = Modifier
@@ -276,7 +273,7 @@ fun pingSettingBoxesA() {
                         }
                     }
                 )
-/////////////// Spacer/Separator
+/////////////// Spacer/Separator A3
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,

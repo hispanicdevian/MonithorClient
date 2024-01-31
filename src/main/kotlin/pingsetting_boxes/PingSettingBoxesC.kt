@@ -32,6 +32,9 @@ fun pingSettingBoxesC() {
     var ipTitleC2 by remember { mutableStateOf(readTiFile10()) }
     var ipTitleC3 by remember { mutableStateOf(readTiFile11()) }
 
+    // Font size ram
+    val fontSizedSA by remember { mutableStateOf(loadFontSizeV1A().sp) }
+
     Column(
         modifier = Modifier.padding(bottom = 30.dp),
         horizontalAlignment = Alignment.CenterHorizontally,

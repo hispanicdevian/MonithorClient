@@ -38,8 +38,12 @@ const val RWI_PATH = "LightsData/RWI"
 ////////////////////////////// Path for ReadWriterTitle
 const val RWT_PATH = "LightsData/RWT"
 
-////////////////////////////// Path for SaveLoadFont
+////////////////////////////// Path for SaveLoadFont.kt
 const val SLF_PATH = "LightsData/SLF"
 
-////////////////////////////// Path for SaveLoadMain
+////////////////////////////// Path for SaveLoadMain.kt
 const val SLM_PATH = "LightsData/SLM"
+
+////////////////////////////// PingSettingBoxes.kt
+const val placeHolderTitle = "Title"
+const val placeHolderIP = "IP/Hostname"
