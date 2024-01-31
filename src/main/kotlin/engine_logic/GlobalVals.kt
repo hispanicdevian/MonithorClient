@@ -1,6 +1,6 @@
 package engine_logic
 
-////////////////////////////// IP List that passes into the APIs function
+////////////////////////////// Global Ip list
 var ipAddress0 = readIpFile0()
 var ipAddress1 = readIpFile1()
 var ipAddress2 = readIpFile2()
