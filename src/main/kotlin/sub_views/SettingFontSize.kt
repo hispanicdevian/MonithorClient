@@ -7,21 +7,18 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.AbsoluteRoundedCornerShape
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.CustomGrayA
-import custom_resources.MainColorA
+import custom_resources.doneButton
 import engine_logic.Navi
 import engine_logic.saveFontSizeV1A
 import views.mainScreen
@@ -30,10 +27,11 @@ import views.settingScreen
 //////////////////////////////////////////////////////////// Screen/View for Font Size Settings
 @Composable
 fun settingFontSize() {
+////////////////////////////// Screen view Ram
     var currentScreen by remember { mutableStateOf<Navi>(Navi.SettingFontSz) }
-//////////////////////////////////// These vars contain the value saved and loaded from .hdi files, see (SaveLoadFont.kt)
+////////////////////////////// Font size Ram
     var fontSizedA: TextUnit
-//////////////////////////////////////////////////////////// Lists of shown buttons
+////////////////////////////// List of shown buttons
     val fontSizeMapA = mapOf(
         "Default" to 20.sp,
         "Small" to 25.sp,
@@ -41,36 +39,22 @@ fun settingFontSize() {
         "Large" to 35.sp,
         "None" to 0.sp
     )
-//////////////////////////////////////////////////////////// Navi Head (Navi = Navigation)
+////////////////////////////// Navigation head
     when (currentScreen) {
         is Navi.SettingFontSz -> {
-//////////////////////////////////////////////////////////// Done Button
-            Box(
-                modifier = Modifier.fillMaxSize().padding(start = 4.dp, end = 4.dp, top = 3.dp)
-            ) {
-                Column(
-                    modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Top
-                ) {
-                    Button(modifier = Modifier.fillMaxWidth(),
-                        colors = ButtonDefaults.buttonColors(CustomGrayA),
-                        onClick = { currentScreen = Navi.SettingScn }
-                    ) {
-                        Text("Done", color = MainColorA, fontSize = 25.sp, fontWeight = FontWeight.Bold)
-                    }
-                }
+////////////////////////////// Done Button
+            doneButton {
+                currentScreen = Navi.SettingScn
             }
-//////////////////////////////////////////////////////////// UI Container
+//////////////////////////////////////////////////////////// UI container
             Column(
                 modifier = Modifier.fillMaxSize()
             ) {
-//////////////////////////////////////////////////////////// Row 1 (Box A + B)
                 Row(
                     modifier = Modifier
                         .fillMaxSize()
                         .weight(1f)
                 ) {
-////////////////////////////// Box A
                     Box(
                         modifier = Modifier.fillMaxSize().padding(top = 30.dp).padding(vertical = 100.dp).padding(horizontal = 250.dp)
                             .background(Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
@@ -112,7 +96,7 @@ fun settingFontSize() {
                                         .clickable {
                                             fontSizedA =
                                                 fontSizeMapA[item]
-                                                    ?: 20.sp // Default to 20 sp if item is not found in the map
+                                                    ?: 20.sp ////// Default to 20 sp if map null
                                             saveFontSizeV1A(fontSizedA.value)
                                         }
                                         .padding(16.dp)
@@ -126,7 +110,7 @@ fun settingFontSize() {
                 }
             }
         }
-//////////////////////////////////////////////////////////// Navi Tail (Navi = Navigation)
+//////////////////////////////////////////////////////////// Navigation tail
         Navi.MainScn -> mainScreen()
         Navi.SettingScn -> settingScreen()
         Navi.SettingPingBxs -> settingPingBoxes()
