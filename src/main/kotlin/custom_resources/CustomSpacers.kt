@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
-//////////////////////////////////////////////////////////// Width
+////////////////////////////// Width
 
 /////////////// MainScreen.kt
 @Composable
@@ -21,7 +21,7 @@ fun spbSpacerW() { Spacer(modifier = Modifier.width(10.dp)) }
 @Composable
 fun soobSpacerW() { Spacer(modifier = Modifier.width(12.dp)) }
 
-//////////////////////////////////////////////////////////// Height
+////////////////////////////// Height
 
 /////////////// PingSettingBoxes.kt
 @Composable
