@@ -58,10 +58,6 @@ fun pingBoxesC(pingSuccessfulC8: Boolean, pingSuccessfulC9: Boolean, pingSuccess
                     if (visibilityList[index]) {
                         Box(
                             modifier = Modifier
-                                /*
-                                .background(color = ErgoGray, shape = AbsoluteRoundedCornerShape(8.dp))
-                                .padding(5.dp)
-                                */
                                 .weight(1f)
                                 .aspectRatio(1.5f)
                                 .background((if (pingSuccessfulList[index]) MainColorA else CustomRedA), shape = AbsoluteRoundedCornerShape(8.dp)),

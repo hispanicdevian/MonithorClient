@@ -125,3 +125,39 @@ object SLOnOffHandlerC {
         }
     }
 }
+//////////////////////////////////////////////////////////// Save and Load D
+object SLOnOffHandlerD {
+    private const val FILEPATH3 = "msStateD.hdi"
+
+    fun loadVisibilityListD(): List<Boolean> {
+        val currentState = loadOnOffFileD()
+        return if (currentState.isNotEmpty()) {
+            currentState.split(",").map { it.trim().toBoolean() }
+        } else {
+            listOf(true, true, true, true)
+        }
+    }
+
+    fun saveVisibilityListD(visibilityList: List<Boolean>) {
+        val stateAsString = visibilityList.joinToString(",")
+        saveOnOffFileD(stateAsString)
+    }
+
+    fun loadOnOffFileD(): String {
+        return try {
+            File(FILEPATH3).readText()
+        } catch (e: Exception) {
+            ""
+        }
+    }
+
+    private fun saveOnOffFileD(scState: String) {
+        try {
+            val onOffFileD = File(FILEPATH3)
+            onOffFileD.writeText(scState)
+        } catch (e: Exception) {
+            // Log the exception
+            e.printStackTrace()
+        }
+    }
+}
