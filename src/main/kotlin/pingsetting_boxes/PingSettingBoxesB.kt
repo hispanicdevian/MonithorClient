@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.CustomGrayA
 import custom_resources.psbSpacerH
+import custom_resources.psbSpacerHBot
 import engine_logic.*
 
 ///////////////////////////////////////////// Second Column of Boxes located in IP Settings to modify the IP to be pinged
@@ -262,6 +263,6 @@ fun pingSettingBoxesB() {
                 )
             }
         }
-        Spacer(modifier = Modifier.height(15.dp))
+        psbSpacerHBot()
     }
 }

@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.CustomGrayA
 import custom_resources.psbSpacerH
+import custom_resources.psbSpacerHBot
 import engine_logic.*
 
 @Composable
@@ -239,5 +240,6 @@ fun pingSettingBoxesC() {
                 )
             }
         }
+        psbSpacerHBot()
     }
 }

@@ -13,6 +13,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.CustomGrayA
 import custom_resources.MainColorA
+import custom_resources.oosbSpacerHTop
+import custom_resources.oosbSpacerHBot
 import engine_logic.SLOnOffHandlerC
 
 @Composable
@@ -25,7 +27,7 @@ fun onOffSettingBoxesC() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Spacer(modifier = Modifier.height(15.dp))
+        oosbSpacerHTop()
 //////////////////////////////////////////////////////////// On/Off index control
         visibilityList.forEachIndexed { index, isVisible ->
             Box(
@@ -48,7 +50,7 @@ fun onOffSettingBoxesC() {
             ) {
                 Text(text = if (isVisible) "ON" else "OFF", color = Color.White, fontSize = 20.sp)
             }
-            Spacer(modifier = Modifier.height(12.dp))
+            oosbSpacerHBot()
         }
     }
 }
