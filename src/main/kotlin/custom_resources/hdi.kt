@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 
 @Composable
-fun watermarkScreen(watermark: String) {
+fun hdiScn(watermark: String) {
     Box(modifier = Modifier.fillMaxSize()) {
 
         Text(
