@@ -60,14 +60,14 @@ fun settingPingBoxes() {
                 ) {
                     pingSettingBoxesA()
                 }
-                spbSpacerH()
+                spbSpacerW()
 //////////////////////////////////////////////////////////// Box Set B
                 Column(modifier = Modifier
                     .weight(1f)
                 ) {
                     pingSettingBoxesB()
                 }
-                spbSpacerH()
+                spbSpacerW()
 //////////////////////////////////////////////////////////// Box Set C
                 Column(modifier = Modifier
                     .weight(1f)

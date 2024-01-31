@@ -15,9 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_resources.CustomGrayA
-import custom_resources.CustomRedA
-import custom_resources.MainColorA
+import custom_resources.*
 import engine_logic.*
 import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
@@ -50,7 +48,7 @@ fun pingBoxesA(pingSuccessfulA0: Boolean, pingSuccessfulA1: Boolean, pingSuccess
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Spacer(modifier = Modifier.height(15.dp))
+        pbSpacerHTop()
 //////////////////////////////////////////////////////////// Navi head
         when (currentScreen) {
             is Navi.MainScn -> {
@@ -85,7 +83,7 @@ fun pingBoxesA(pingSuccessfulA0: Boolean, pingSuccessfulA1: Boolean, pingSuccess
                                 )
                             }
                         }
-                        Spacer(modifier = Modifier.height(15.dp))
+                        pbSpacerHBot()
                     }
                 }
             }

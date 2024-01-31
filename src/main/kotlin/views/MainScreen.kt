@@ -194,19 +194,19 @@ fun mainScreen() {
                     .padding(5.dp)
                     .weight(1f)
                 ) { pingBoxesA(pingSuccessful0, pingSuccessful1, pingSuccessful2, pingSuccessful3) }
-                msSpacerH()
+                msSpacerW()
 //////////////////////////////////////////////////////////// Box Set B
                 Column(modifier = Modifier
                     .padding(5.dp)
                     .weight(1f)
                 ) { pingBoxesB(pingSuccessful4, pingSuccessful5, pingSuccessful6, pingSuccessful7) }
-                msSpacerH()
+                msSpacerW()
 //////////////////////////////////////////////////////////// Box Set C
                 Column(modifier = Modifier
                     .padding(5.dp)
                     .weight(1f)
                 ) { pingBoxesC(pingSuccessful8, pingSuccessful9, pingSuccessful10, pingSuccessful11) }
-                msSpacerH()
+                msSpacerW()
 //////////////////////////////////////////////////////////// Box Set D
                 Column(modifier = Modifier
                     .padding(5.dp)

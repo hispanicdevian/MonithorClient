@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.CustomGrayA
 import custom_resources.MainColorA
-import custom_resources.soobSpacerH
+import custom_resources.soobSpacerW
 import engine_logic.Navi
 import onoffsetting_boxes.onOffSettingBoxesA
 import onoffsetting_boxes.onOffSettingBoxesB
@@ -64,19 +64,19 @@ fun settingOnOffBoxes() {
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center
                     ) { onOffSettingBoxesA() }
-                    soobSpacerH()
+                    soobSpacerW()
 ////////////////////////////// Box set B
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center
                     ) { onOffSettingBoxesB() }
-                    soobSpacerH()
+                    soobSpacerW()
 ////////////////////////////// Box set C
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center
                     ) { onOffSettingBoxesC() }
-                    soobSpacerH()
+                    soobSpacerW()
 ////////////////////////////// Box set D
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally,

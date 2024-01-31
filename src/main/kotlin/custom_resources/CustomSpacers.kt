@@ -9,14 +9,13 @@ import androidx.compose.ui.unit.dp
 //////////////////////////////////////////////////////////// Width
 
 /////////////// MainScreen.kt
-fun msSpacerH() { Spacer(modifier = Modifier.width(15.dp)) }
+fun msSpacerW() { Spacer(modifier = Modifier.width(15.dp)) }
 
 /////////////// SettingPingBoxes.kt
-fun spbSpacerH() { Spacer(modifier = Modifier.width(10.dp)) }
+fun spbSpacerW() { Spacer(modifier = Modifier.width(10.dp)) }
 
 /////////////// SettingOnOffBoxes.kt
-fun soobSpacerH() { Spacer(modifier = Modifier.width(12.dp)) }
-
+fun soobSpacerW() { Spacer(modifier = Modifier.width(12.dp)) }
 
 //////////////////////////////////////////////////////////// Height
 
@@ -28,3 +27,6 @@ fun psbSpacerHBot() { Spacer(modifier = Modifier.height(10.dp)) }
 fun oosbSpacerHTop() { Spacer(modifier = Modifier.height(15.dp)) }
 fun oosbSpacerHBot() { Spacer(modifier = Modifier.height(12.dp)) }
 
+/////////////// PingBoxes.kt
+fun pbSpacerHTop() { Spacer(modifier = Modifier.height(15.dp)) }
+fun pbSpacerHBot() { Spacer(modifier = Modifier.height(15.dp)) }
