@@ -33,12 +33,6 @@ fun settingFontSize() {
     var currentScreen by remember { mutableStateOf<Navi>(Navi.SettingFontSz) }
 //////////////////////////////////// These vars contain the value saved and loaded from .hdi files, see (SaveLoadFont.kt)
     var fontSizedA: TextUnit
-    /*
-    var fontSizedB: TextUnit
-    var fontSizedC: TextUnit
-    var fontSizedD: TextUnit
-     */
-
 //////////////////////////////////////////////////////////// Lists of shown buttons
     val fontSizeMapA = mapOf(
         "Default" to 20.sp,
@@ -47,30 +41,6 @@ fun settingFontSize() {
         "Large" to 35.sp,
         "None" to 0.sp
     )
-    /*
-    val fontSizeMapB = mapOf(
-        "Default" to 20.sp,
-        "Small" to 25.sp,
-        "Medium" to 30.sp,
-        "Large" to 35.sp,
-        "None" to 0.sp
-    )
-    val fontSizeMapC = mapOf(
-        "Default" to 20.sp,
-        "Small" to 25.sp,
-        "Medium" to 30.sp,
-        "Large" to 35.sp,
-        "None" to 0.sp
-    )
-    val fontSizeMapD = mapOf(
-        "Default" to 20.sp,
-        "Small" to 25.sp,
-        "Medium" to 30.sp,
-        "Large" to 35.sp,
-        "None" to 0.sp
-    )
-     */
-
 //////////////////////////////////////////////////////////// Navi Head (Navi = Navigation)
     when (currentScreen) {
         is Navi.SettingFontSz -> {
@@ -153,141 +123,6 @@ fun settingFontSize() {
                             }
                         }
                     }
-                    /*
-////////////////////////////// Box B
-                    Box(
-                        modifier = Modifier
-                            .weight(1f)
-                            .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
-                            .padding(5.dp)
-                            .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp))
-                    ) {
-                        val itemsListB = listOf("Default", "Small", "Medium", "Large", "None")
-                        LazyColumn(
-                            modifier = Modifier.fillMaxSize(),
-                            state = rememberLazyListState(),
-                            verticalArrangement = Arrangement.Center,
-                        ) {
-                            item {
-                                Text(
-                                    text = "B",
-                                    color = Color.White,
-                                    fontSize = 25.sp,
-                                    textAlign = TextAlign.Center,
-                                    modifier = Modifier.fillMaxWidth().padding(top = 15.dp, bottom = 15.dp),
-                                )
-                            }
-                            items(itemsListB) { item ->
-                                Text(
-                                    text = item,
-                                    color = Color.White,
-                                    modifier = Modifier
-                                        .clickable {
-                                            fontSizedB =
-                                                fontSizeMapB[item]
-                                                    ?: 20.sp // Default to 20 sp if item is not found in the map
-                                            saveFontSizeV1B(fontSizedB.value)
-                                        }
-                                        .padding(16.dp)
-                                        .fillMaxSize(),
-                                    textAlign = TextAlign.Center,
-                                    style = TextStyle(fontSize = 20.sp)
-                                )
-                            }
-                        }
-                    }
-                }
-//////////////////////////////////////////////////////////// Row 2 (Box C + D)
-                Row(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .weight(1f)
-                ) {
-//////////////////////////////////////////////////////////// Box C
-                    Box(
-                        modifier = Modifier
-                            .weight(1f)
-                            .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
-                            .padding(5.dp)
-                            .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp))
-                    ) {
-                        val itemsListC = listOf("Default", "Small", "Medium", "Large", "None")
-                        LazyColumn(
-                            modifier = Modifier.fillMaxSize(),
-                            state = rememberLazyListState(),
-                            verticalArrangement = Arrangement.Center,
-                        ) {
-                            item {
-                                Text(
-                                    text = "C",
-                                    color = Color.White,
-                                    fontSize = 25.sp,
-                                    textAlign = TextAlign.Center,
-                                    modifier = Modifier.fillMaxWidth().padding(top = 15.dp, bottom = 15.dp),
-                                )
-                            }
-                            items(itemsListC) { item ->
-                                Text(
-                                    text = item,
-                                    color = Color.White,
-                                    modifier = Modifier
-                                        .clickable {
-                                            fontSizedC =
-                                                fontSizeMapC[item]
-                                                    ?: 20.sp // Default to 20 sp if item is not found in the map
-                                            saveFontSizeV1C(fontSizedC.value)
-                                        }
-                                        .padding(16.dp)
-                                        .fillMaxSize(),
-                                    textAlign = TextAlign.Center,
-                                    style = TextStyle(fontSize = 20.sp)
-                                )
-                            }
-                        }
-                    }
-//////////////////////////////////////////////////////////// Box D
-                    Box(
-                        modifier = Modifier
-                            .weight(1f)
-                            .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
-                            .padding(5.dp)
-                            .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp))
-                    ) {
-                        val itemsListD = listOf("Default", "Small", "Medium", "Large", "None")
-                        LazyColumn(
-                            modifier = Modifier.fillMaxSize(),
-                            state = rememberLazyListState(),
-                            verticalArrangement = Arrangement.Center,
-                        ) {
-                            item {
-                                Text(
-                                    text = "D",
-                                    color = Color.White,
-                                    fontSize = 25.sp,
-                                    textAlign = TextAlign.Center,
-                                    modifier = Modifier.fillMaxWidth().padding(top = 15.dp, bottom = 15.dp),
-                                )
-                            }
-                            items(itemsListD) { item ->
-                                Text(
-                                    text = item,
-                                    color = Color.White,
-                                    modifier = Modifier
-                                        .clickable {
-                                            fontSizedD =
-                                                fontSizeMapD[item]
-                                                    ?: 20.sp // Default to 20 sp if item is not found in the map
-                                            saveFontSizeV1D(fontSizedD.value)
-                                        }
-                                        .padding(16.dp)
-                                        .fillMaxSize(),
-                                    textAlign = TextAlign.Center,
-                                    style = TextStyle(fontSize = 20.sp)
-                                )
-                            }
-                        }
-                    }
-                     */
                 }
             }
         }
