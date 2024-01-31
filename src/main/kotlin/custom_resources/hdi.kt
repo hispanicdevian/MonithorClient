@@ -10,14 +10,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 
 @Composable
-fun hdiScn(watermark: String) {
+fun hdiScn(wmk: String) {
     Box(modifier = Modifier.fillMaxSize()) {
 
         Text(
-            text = watermark,
+            text = wmk,
             modifier = Modifier
                 .align(Alignment.BottomEnd)
-                .alpha(0.5f),
+                .alpha(.5f),
             style = MaterialTheme.typography.body1
         )
     }

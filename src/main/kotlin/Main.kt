@@ -7,7 +7,7 @@ import views.mainScreen
 fun main() = application {
     Window(onCloseRequest = ::exitApplication) {
         mainScreen()
-        hdiScn("hdi\uD83C\uDF35")
+        hdiScn("\uD83C\uDF35hdi\uD83C\uDF35")
     }
 }
 
@@ -18,7 +18,7 @@ fun main() {
         val windowState = rememberWindowState(size = DpSize.Unspecified)
         Window(onCloseRequest = ::exitApplication, state = windowState) {
             mainScreen()
-            hdiScn("hdi\uD83C\uDF35")
+            hdiScn("\uD83C\uDF35hdi\uD83C\uDF35")
         }
     }
 }
