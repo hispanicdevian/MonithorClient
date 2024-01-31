@@ -22,7 +22,7 @@ import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 
-//////////////////////////////////////////////////////////// Setting with multiple options Screen of the App
+//////////////////////////////////////// Settings selector screen/view
 @Composable
 @Preview
 fun settingScreen() {
@@ -30,7 +30,7 @@ fun settingScreen() {
     var currentScreenB by remember { mutableStateOf(false) }
     var currentScreenC by remember { mutableStateOf(false) }
 
-//////////////////////////////////////////////////////////// Navi Head
+//////////////////////////////////////// Navi head
     if (currentScreenA) {
         settingPingBoxes()
     } else if (currentScreenB) {
@@ -38,7 +38,7 @@ fun settingScreen() {
     } else if (currentScreenC) {
         settingFontSize()
     } else {
-//////////////////////////////////////////////////////////// UI Container
+//////////////////////////////////////// UI container
         Box(
             modifier = Modifier.fillMaxSize().padding(top = 30.dp).padding(vertical = 100.dp).padding(horizontal = 250.dp)
                 .background(Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
@@ -56,9 +56,8 @@ fun settingScreen() {
                 items(itemsList) { item ->
                     Text(
                         color = Color.White,
-                        //fontWeight = FontWeight.Bold,
                         text = item,
-//////////////////////////////////////////////////////////// Navi Tail
+//////////////////////////////////////// Navi tail
                         modifier = Modifier
                             .clickable {
                                 if (item == "IP Settings") {

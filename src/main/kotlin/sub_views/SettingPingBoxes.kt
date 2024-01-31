@@ -15,21 +15,21 @@ import pingsetting_boxes.pingSettingBoxesC
 import views.mainScreen
 import views.settingScreen
 
-//////////////////////////////////////////////////////////// Screen/View for IP Settings
+//////////////////////////////////////// Screen/View for IP settings
 @Composable
 @Preview
 fun settingPingBoxes() {
     var currentScreen by remember { mutableStateOf<Navi>(Navi.SettingPingBxs) }
 
-//////////////////////////////////////////////////////////// Navi Head (Navi = Navigation)
+//////////////////////////////////////// Navi head
     when (currentScreen) {
         is Navi.SettingPingBxs -> {
-//////////////////////////////////////////////////////////// Done Button
+////////////////////////////// Done button
             doneButton {
                 currentScreen = Navi.SettingScn
             }
-//////////////////////////////////////////////////////////// UI Container
 
+//////////////////////////////////////// UI container
             Row(
                 modifier = Modifier
                     .fillMaxSize()
@@ -38,21 +38,21 @@ fun settingPingBoxes() {
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-//////////////////////////////////////////////////////////// Box Set A
+////////////////////////////// Box set A
                 Column(modifier = Modifier
                     .weight(1f)
                 ) {
                     pingSettingBoxesA()
                 }
                 spbSpacerW()
-//////////////////////////////////////////////////////////// Box Set B
+////////////////////////////// Box set B
                 Column(modifier = Modifier
                     .weight(1f)
                 ) {
                     pingSettingBoxesB()
                 }
                 spbSpacerW()
-//////////////////////////////////////////////////////////// Box Set C
+////////////////////////////// Box set C
                 Column(modifier = Modifier
                     .weight(1f)
                 ) {
@@ -60,7 +60,7 @@ fun settingPingBoxes() {
                 }
             }
         }
-//////////////////////////////////////////////////////////// Navi Tail (Navi = Navigation)
+//////////////////////////////////////// Navi tail
         Navi.MainScn -> mainScreen()
         Navi.SettingScn -> settingScreen()
         Navi.SettingFontSz -> settingFontSize()

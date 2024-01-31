@@ -29,13 +29,13 @@ import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 
-//////////////////////////////////////////////////////////// Main/First Screen of the App
+//////////////////////////////////////// Main screen/view of the app
 @Composable
 @Preview
 fun mainScreen() {
+////////////// Current screen ram
     var currentScreen by remember { mutableStateOf<Navi>(Navi.MainScn) }
-
-//////////////////////////////////////////////////////////// Ping Results Ram
+////////////// Ping results ram
     var pingSuccessful0 by remember { mutableStateOf(false) }
     var pingSuccessful1 by remember { mutableStateOf(false) }
     var pingSuccessful2 by remember { mutableStateOf(false) }
@@ -48,12 +48,11 @@ fun mainScreen() {
     var pingSuccessful9 by remember { mutableStateOf(false) }
     var pingSuccessful10 by remember { mutableStateOf(false) }
     var pingSuccessful11 by remember { mutableStateOf(false) }
-
-//////////////////////////////////////////////////////////// Weather Results Ram
+/////////////// Weather results ram
     var currentTempA by remember { mutableStateOf("Loading...") }
     var currentSkyA by remember { mutableStateOf("Loading...") }
 
-//////////////////////////////////////////////////////////// Ping Engine Call
+////////////////////////////// Ping request engine (coroutine list)
     LaunchedEffect(Unit) {
         while (isActive) {
             val resultsA = listOf(
@@ -70,8 +69,7 @@ fun mainScreen() {
                 async { pingEngineAPI(ipAddress10) },
                 async { pingEngineAPI(ipAddress11) }
             )
-
-//////////////////////////////////////////////////////////// Ping Result Return From API
+////////////////////////////// Ping request engine result
             pingSuccessful0 = resultsA[0].await()
             pingSuccessful1 = resultsA[1].await()
             pingSuccessful2 = resultsA[2].await()
@@ -85,16 +83,15 @@ fun mainScreen() {
             pingSuccessful10 = resultsA[10].await()
             pingSuccessful11 = resultsA[11].await()
 
-            delay(10000) // Add a 10-seconds delay
+            delay(10000) // Adds a 10-second delay
         }
     }
 
-//////////////////////////////////////////////////////////// Weather Engine Call
+////////////////////////////// Weather request engine
     LaunchedEffect(Unit) {
         while (isActive) {
             val (temperatureA, skyA) = getCurrentTemperatureA("North Vancouver")
-
-/////////////// Update the UI state For Weather Boxes A
+/////////////// Updates the UI state for WeatherBoxesA.kt
             currentTempA = if (temperatureA != null) {
                 "$temperatureA°C"
             } else {
@@ -106,11 +103,11 @@ fun mainScreen() {
                 "Error Code hd102"
             }
 
-            delay(60000*10) // Add a 10-minute delay
+            delay(60000*10) // Adds a 10-minute delay
         }
     }
 
-//////////////////////////////////////////////////////////// UI Container
+////////////////////////////// UI container
     Box(
         modifier = Modifier.fillMaxSize().background(CustomGrayA)
     ) {
@@ -118,7 +115,7 @@ fun mainScreen() {
             backgroundColor = MainColorA,
             modifier = Modifier.fillMaxWidth()
         ) {
-//////////////////////////////////////////////////////////// Clickable Title
+////////////////////////////// Clickable Title
             Text("Monithor Client",
                 fontSize = 26.sp,
                 color = CustomGrayA,
@@ -133,7 +130,7 @@ fun mainScreen() {
                     )
             )
         }
-//////////////////////////////////////////////////////////// Home Button
+////////////////////////////// Home button
         Box(
             modifier = Modifier
                 .align(Alignment.TopStart)
@@ -155,7 +152,7 @@ fun mainScreen() {
                 )
             }
         }
-//////////////////////////////////////////////////////////// Settings Button
+////////////////////////////// Settings button
         Box(
             modifier = Modifier
                 .align(Alignment.TopEnd)
@@ -178,7 +175,7 @@ fun mainScreen() {
             }
         }
     }
-//////////////////////////////////////////////////////////// Navi Head
+////////////////////////////// Navi head
     when (currentScreen) {
         is Navi.MainScn -> {
             Row(
@@ -189,25 +186,25 @@ fun mainScreen() {
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-//////////////////////////////////////////////////////////// Box Set A
+////////////////////////////// Box set A
                 Column(modifier = Modifier
                     .padding(5.dp)
                     .weight(1f)
                 ) { pingBoxesA(pingSuccessful0, pingSuccessful1, pingSuccessful2, pingSuccessful3) }
                 msSpacerW()
-//////////////////////////////////////////////////////////// Box Set B
+////////////////////////////// Box set B
                 Column(modifier = Modifier
                     .padding(5.dp)
                     .weight(1f)
                 ) { pingBoxesB(pingSuccessful4, pingSuccessful5, pingSuccessful6, pingSuccessful7) }
                 msSpacerW()
-//////////////////////////////////////////////////////////// Box Set C
+////////////////////////////// Box set C
                 Column(modifier = Modifier
                     .padding(5.dp)
                     .weight(1f)
                 ) { pingBoxesC(pingSuccessful8, pingSuccessful9, pingSuccessful10, pingSuccessful11) }
                 msSpacerW()
-//////////////////////////////////////////////////////////// Box Set D
+////////////////////////////// Box set D
                 Column(modifier = Modifier
                     .padding(5.dp)
                     .weight(1f)
@@ -216,7 +213,7 @@ fun mainScreen() {
                 }
             }
         }
-//////////////////////////////////////////////////////////// Navi Tail
+////////////////////////////// Navi Tail
         Navi.MainScn -> mainScreen()
         Navi.SettingFontSz -> settingFontSize()
         Navi.SettingOnOffBxs -> settingOnOffBoxes()

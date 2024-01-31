@@ -18,19 +18,21 @@ import onoffsetting_boxes.onOffSettingBoxesD
 import views.mainScreen
 import views.settingScreen
 
+////////////////////////////// Screen/view for turning On/Off UI
 @Composable
 @Preview
 fun settingOnOffBoxes() {
-/////////////// Ram for active View/Screen
+/////////////// Current screen ram
     var currentScreen by remember { mutableStateOf<Navi>(Navi.SettingOnOffBxs) }
-//////////////////////////////////////////////////////////// Navi head
+
+////////////////////////////// Navi head
     when (currentScreen) {
         is Navi.SettingOnOffBxs -> {
 ////////////////////////////// Done button -> Setting screen
             doneButton {
                 currentScreen = Navi.SettingScn
             }
-//////////////////////////////////////////////////////////// UI container
+////////////////////////////// UI container
             Box(
                 modifier = Modifier.fillMaxSize().padding(top = 60.dp)
                     .background(CustomGrayA)
@@ -68,7 +70,7 @@ fun settingOnOffBoxes() {
                 }
             }
         }
-//////////////////////////////////////////////////////////// Navi tail
+////////////////////////////// Navi tail
         Navi.MainScn -> mainScreen()
         Navi.SettingFontSz -> settingFontSize()
         Navi.SettingPingBxs -> settingPingBoxes()

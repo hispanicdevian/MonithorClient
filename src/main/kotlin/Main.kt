@@ -3,7 +3,7 @@ import androidx.compose.ui.window.application
 import custom_resources.hdiScn
 import views.mainScreen
 
-//////////////////////////////////////////////////////////// Start Normal Screen Mode
+////////////////////////////// Starts in default screen size
 fun main() = application {
     Window(onCloseRequest = ::exitApplication) {
         mainScreen()
@@ -11,7 +11,7 @@ fun main() = application {
     }
 }
 
-//////////////////////////////////////////////////////////// Start Full Screen Mode
+////////////////////////////// Start in full screen size
 /*
 fun main() {
     application {

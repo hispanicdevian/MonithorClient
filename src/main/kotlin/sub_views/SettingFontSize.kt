@@ -24,14 +24,15 @@ import engine_logic.saveFontSizeV1A
 import views.mainScreen
 import views.settingScreen
 
-//////////////////////////////////////////////////////////// Screen/View for Font Size Settings
+////////////////////////////// Screen/View for selecting font size
 @Composable
 fun settingFontSize() {
-////////////////////////////// Screen view Ram
+/////////////// Screen view Ram
     var currentScreen by remember { mutableStateOf<Navi>(Navi.SettingFontSz) }
-////////////////////////////// Font size Ram
+/////////////// Font size Ram
     var fontSizedA: TextUnit
-////////////////////////////// List of shown buttons
+
+/////////////// List buttons
     val fontSizeMapA = mapOf(
         "Default" to 20.sp,
         "Small" to 25.sp,
@@ -39,14 +40,14 @@ fun settingFontSize() {
         "Large" to 35.sp,
         "None" to 0.sp
     )
-////////////////////////////// Navigation head
+////////////////////////////// Navi head
     when (currentScreen) {
         is Navi.SettingFontSz -> {
 ////////////////////////////// Done Button
             doneButton {
                 currentScreen = Navi.SettingScn
             }
-//////////////////////////////////////////////////////////// UI container
+////////////////////////////// UI container
             Column(
                 modifier = Modifier.fillMaxSize()
             ) {
@@ -62,6 +63,7 @@ fun settingFontSize() {
                             .size(300.dp)
                             .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp))
                     ) {
+/////////////// this needs to match fontSizeMapA variable strings
                         val itemsListA = listOf("Default", "Small", "Medium", "Large", "None")
                         LazyColumn(
                             modifier = Modifier.fillMaxSize(),
@@ -96,7 +98,7 @@ fun settingFontSize() {
                                         .clickable {
                                             fontSizedA =
                                                 fontSizeMapA[item]
-                                                    ?: 20.sp ////// Default to 20 sp if map null
+                                                    ?: 20.sp // Default to 20 sp if map null
                                             saveFontSizeV1A(fontSizedA.value)
                                         }
                                         .padding(16.dp)
@@ -110,7 +112,7 @@ fun settingFontSize() {
                 }
             }
         }
-//////////////////////////////////////////////////////////// Navigation tail
+////////////////////////////// Navi tail
         Navi.MainScn -> mainScreen()
         Navi.SettingScn -> settingScreen()
         Navi.SettingPingBxs -> settingPingBoxes()
