@@ -20,7 +20,7 @@ import custom_resources.psbSpacerH
 import custom_resources.psbSpacerHBot
 import engine_logic.*
 
-///////////////////////////////////////////// Second Column of Boxes located in IP Settings to modify the IP to be pinged
+////////////////////////////// Second column of boxes located in Ip settings
 @Composable
 @Preview
 fun pingSettingBoxesB() {
@@ -34,15 +34,14 @@ fun pingSettingBoxesB() {
     var ipTitleB2 by remember { mutableStateOf(readTiFile6()) }
     var ipTitleB3 by remember { mutableStateOf(readTiFile7()) }
 
-    // Font size ram
+/////////////// Font size ram
     val fontSizedSA by remember { mutableStateOf(loadFontSizeV1A().sp) }
 
-    Column(
-        modifier = Modifier.padding(top = 10.dp),
+    Column( modifier = Modifier.padding(top = 10.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-//////////////////////////////////////////////////////////// Edit Box B0 - ReWr4
+////////////////////////////// Edit box B0 - ReWr4
         Box( modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
                 .padding(4.dp)
@@ -55,7 +54,7 @@ fun pingSettingBoxesB() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-////////////////////////////// title input B0
+/////////////// Title input B0
                 TextField(
                     value = ipTitleB0,
                     onValueChange = { newValue ->
@@ -78,13 +77,13 @@ fun pingSettingBoxesB() {
                         }
                     }
                 )
-/////////////// Spacer/Separator B0
+/////////////// Divider line B0
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
                     thickness = 1.5.dp
                 )
-////////////////////////////// ip input B0
+/////////////// Ip input B0
                 TextField(
                     value = ipAddressB0,
                     onValueChange = { newValue ->
@@ -105,7 +104,7 @@ fun pingSettingBoxesB() {
                 )
             }
         }
-//////////////////////////////////////////////////////////// Edit Box B1 - ReWr5
+////////////////////////////// Edit box B1 - ReWr5
         psbSpacerH()
         Box(
             modifier = Modifier
@@ -120,7 +119,7 @@ fun pingSettingBoxesB() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-////////////////////////////// title input B1
+/////////////// Title input B1
                 TextField(
                     value = ipTitleB1,
                     onValueChange = { newValue ->
@@ -143,13 +142,13 @@ fun pingSettingBoxesB() {
                         }
                     }
                 )
-/////////////// Spacer/Separator B1
+/////////////// Divider line B1
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
                     thickness = 1.5.dp
                 )
-////////////////////////////// ip input B1
+/////////////// Ip input B1
                 TextField(
                     value = ipAddressB1,
                     onValueChange = { newValue ->
@@ -170,7 +169,7 @@ fun pingSettingBoxesB() {
                 )
             }
         }
-//////////////////////////////////////////////////////////// Edit Box B2 - ReWr6
+////////////////////////////// Edit box B2 - ReWr6
         psbSpacerH()
         Box(
             modifier = Modifier
@@ -185,7 +184,7 @@ fun pingSettingBoxesB() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-////////////////////////////// title input B2
+/////////////// Title input B2
                 TextField(
                     value = ipTitleB2,
                     onValueChange = { newValue ->
@@ -208,13 +207,13 @@ fun pingSettingBoxesB() {
                         }
                     }
                 )
-/////////////// Spacer/Separator B2
+/////////////// Divider line B2
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
                     thickness = 1.5.dp
                 )
-////////////////////////////// ip input B2
+/////////////// Ip input B2
                 TextField(
                     value = ipAddressB2,
                     onValueChange = { newValue ->
@@ -235,7 +234,7 @@ fun pingSettingBoxesB() {
                 )
             }
         }
-//////////////////////////////////////////////////////////// Edit Box B3 - ReWr7
+////////////////////////////// Edit box B3 - ReWr7
         psbSpacerH()
         Box(
             modifier = Modifier
@@ -250,7 +249,7 @@ fun pingSettingBoxesB() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-////////////////////////////// title input B3
+/////////////// Title input B3
                 TextField(
                     value = ipTitleB3,
                     onValueChange = { newValue ->
@@ -273,13 +272,13 @@ fun pingSettingBoxesB() {
                         }
                     }
                 )
-/////////////// Spacer/Separator B3
+/////////////// Divider line B3
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
                     thickness = 1.5.dp
                 )
-////////////////////////////// ip input B3
+/////////////// Ip input B3
                 TextField(
                     value = ipAddressB3,
                     onValueChange = { newValue ->
