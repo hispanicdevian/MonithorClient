@@ -2,7 +2,7 @@ package engine_logic
 
 import java.io.File
 
-//////////////////////////////////////////////////////////// Save and Write A
+////////////////////////////// Saves and loads the selected font size
 fun saveFontSizeV1A(fontSize: Float) {
     try {
         val file0 = File("$SLF_PATH/fontSizeA.hdi")
