@@ -32,10 +32,10 @@ var ipTitle09 = readTiFile9()
 var ipTitle10 = readTiFile10()
 var ipTitle11 = readTiFile11()
 
-////////////////////////////// Path for ReadWriterIP
+////////////////////////////// Path for ReadWriterIP(ABC).kt
 const val RWI_PATH = "LightsData/RWI"
 
-////////////////////////////// Path for ReadWriterTitle
+////////////////////////////// Path for ReWrTitle(ABC).kt
 const val RWT_PATH = "LightsData/RWT"
 
 ////////////////////////////// Path for SaveLoadFont.kt
