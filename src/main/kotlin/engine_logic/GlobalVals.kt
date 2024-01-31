@@ -31,3 +31,15 @@ var ipTitle08 = readTiFile8()
 var ipTitle09 = readTiFile9()
 var ipTitle10 = readTiFile10()
 var ipTitle11 = readTiFile11()
+
+////////////////////////////// Path for ReadWriterIP
+const val RWI_PATH = "LightsData/RWI"
+
+////////////////////////////// Path for ReadWriterTitle
+const val RWT_PATH = "LightsData/RWT"
+
+////////////////////////////// Path for SaveLoadFont
+const val SLF_PATH = "LightsData/SLF"
+
+////////////////////////////// Path for SaveLoadMain
+const val SLM_PATH = "LightsData/SLM"
