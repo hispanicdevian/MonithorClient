@@ -19,6 +19,7 @@ import custom_resources.CustomGrayA
 import custom_resources.psbSpacerH
 import engine_logic.*
 
+///////////////////////////////////////////// First Column of Boxes located in IP Settings to modify the IP to be pinged
 @Composable
 @Preview
 fun pingSettingBoxesA() {
