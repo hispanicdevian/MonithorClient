@@ -17,12 +17,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.*
 import engine_logic.*
+import engine_logic.SLFObjectA.loadFontSizeA
+import engine_logic.SLOnOffObjectC.loadOnOffFileC
 import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 import views.settingScreen
 
-//////////////////////////////////////////////////////////// Ping Boxes Shown in the Third Column of the Main Screen
+////////////////////////////// Ping Boxes Shown in the Third Column of the Main Screen
 @Composable
 @Preview
 fun pingBoxesC(pingSuccessfulC8: Boolean, pingSuccessfulC9: Boolean, pingSuccessfulC10: Boolean, pingSuccessfulC11: Boolean) {
@@ -33,26 +35,28 @@ fun pingBoxesC(pingSuccessfulC8: Boolean, pingSuccessfulC9: Boolean, pingSuccess
 // Title list ram, need to be replaced so that the user can modify it live
     val titleList = listOf(ipTitle08, ipTitle09, ipTitle10, ipTitle11)
 // Font size ram
-    val fontSizedA by remember { mutableStateOf(loadFontSizeV1A().sp) }
-// Loads the last state of On/Off settings
+    val fontSizedA by remember { mutableStateOf(loadFontSizeA().sp) }
+
+/////////////// Loads the last state of On/Off settings
     val visibilityList = remember {
-        val currentState = SLOnOffHandlerC.loadOnOffFileC()
+        val currentState = loadOnOffFileC()
         if (currentState.isNotEmpty()) {
             currentState.split(",").map { it.toBoolean() }
         } else {
             listOf(true, true, true, true)
         }
     }
-//////////////////////////////////////////////////////////// UI container
+
+////////////////////////////// UI container
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         pbSpacerHTop()
-//////////////////////////////////////////////////////////// Navi head
+/////////////// Navi head
         when (currentScreen) {
             is Navi.MainScn -> {
-////////////////////////////// Creates boxes based on # of titles, and its visibility based on settings file
+/////////////// Creates boxes based on # of titles, and its visibility based on settings file
                 for (index in titleList.indices) {
                     if (visibilityList[index]) {
                         Box(
@@ -87,7 +91,7 @@ fun pingBoxesC(pingSuccessfulC8: Boolean, pingSuccessfulC9: Boolean, pingSuccess
                     }
                 }
             }
-//////////////////////////////////////////////////////////// Navi tail
+/////////////// Navi tail
             Navi.SettingFontSz -> settingFontSize()
             Navi.SettingPingBxs -> settingPingBoxes()
             Navi.SettingScn -> settingScreen()

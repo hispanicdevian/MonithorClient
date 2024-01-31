@@ -7,7 +7,7 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.IOException
 
-//////////////////////////////////////////////////////////// Ping API (Adjust to match APIs IP address)
+////////////////////////////// Pinging request engine (Match API address)
 fun pingEngineAPI(ip: String): Boolean {
     val client = OkHttpClient()
     val formBody = FormBody.Builder()
@@ -15,7 +15,7 @@ fun pingEngineAPI(ip: String): Boolean {
         .build()
 
     val request = Request.Builder()
-        .url("http://192.168.:8080/pingMotor") // API IP
+        .url("http://192.168.:8080/pingMotor") // Ping API address
         .post(formBody)
         .build()
 
@@ -29,7 +29,7 @@ fun pingEngineAPI(ip: String): Boolean {
     }
 }
 
-//////////////////////////////////////////////////////////// Weather API A
+////////////////////////////// Weather API A
 const val WEATHER_API_BASE_URLA = "http://api.weatherapi.com/v1/current.json"
 const val API_KEYA = "API Key from https://www.weatherapi.com/ goes here"
 val jsonA = Json { ignoreUnknownKeys = true }
@@ -54,7 +54,7 @@ fun getCurrentTemperatureA(cityName: String): Pair<Double?, String?> = try {
 fun buildRequestA(cityNameA: String): Request =
     Request.Builder().url("$WEATHER_API_BASE_URLA?key=$API_KEYA&q=$cityNameA").build()
 
-//////////////////////////////////////////////////////////// Weather API B
+////////////////////////////// Weather API B
 const val WEATHER_API_BASE_URLB = "http://api.weatherapi.com/v1/current.json"
 const val API_KEYB = "API Key from https://www.weatherapi.com/ goes here"
 private val clientB = OkHttpClient()

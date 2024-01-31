@@ -15,20 +15,22 @@ import custom_resources.CustomGrayA
 import custom_resources.MainColorA
 import custom_resources.oosbSpacerHBot
 import custom_resources.oosbSpacerHTop
-import engine_logic.SLOnOffHandlerB
+import engine_logic.SLOnOffObjectB.loadVisibilityB
+import engine_logic.SLOnOffObjectB.saveVisibilityB
 
 @Composable
 fun onOffSettingBoxesB() {
 // Ram for active View/Screen
-    var visibilityList by remember { mutableStateOf(SLOnOffHandlerB.loadVisibilityListB()) }
-//////////////////////////////////////////////////////////// UI container
+    var visibilityList by remember { mutableStateOf(loadVisibilityB()) }
+
+////////////////////////////// UI container
     Column(
         modifier = Modifier.padding(bottom = 15.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         oosbSpacerHTop()
-//////////////////////////////////////////////////////////// On/Off index control
+////////////////////////////// On/Off index control
         visibilityList.forEachIndexed { index, isVisible ->
             Box(
                 modifier = Modifier
@@ -43,8 +45,8 @@ fun onOffSettingBoxesB() {
                         visibilityList = visibilityList.toMutableList().apply {
                             this[index] = !this[index]
                         }
-//////////////////////////////////////////////////////////// Saves the updated state when the box is clicked
-                        SLOnOffHandlerB.saveVisibilityListB(visibilityList)
+////////////////////////////// Saves the updated state when the box is clicked
+                        saveVisibilityB(visibilityList)
                     },
                 contentAlignment = Alignment.Center
             ) {

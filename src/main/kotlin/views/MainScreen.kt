@@ -29,13 +29,13 @@ import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 
-//////////////////////////////////////// Main screen/view of the app
+////////////////////////////// Main screen/view of the app
 @Composable
 @Preview
 fun mainScreen() {
-////////////// Current screen ram
+// Current screen ram
     var currentScreen by remember { mutableStateOf<Navi>(Navi.MainScn) }
-////////////// Ping results ram
+// Ping results ram
     var pingSuccessful0 by remember { mutableStateOf(false) }
     var pingSuccessful1 by remember { mutableStateOf(false) }
     var pingSuccessful2 by remember { mutableStateOf(false) }
@@ -48,7 +48,7 @@ fun mainScreen() {
     var pingSuccessful9 by remember { mutableStateOf(false) }
     var pingSuccessful10 by remember { mutableStateOf(false) }
     var pingSuccessful11 by remember { mutableStateOf(false) }
-/////////////// Weather results ram
+// Weather results ram
     var currentTempA by remember { mutableStateOf("Loading...") }
     var currentSkyA by remember { mutableStateOf("Loading...") }
 
@@ -208,9 +208,7 @@ fun mainScreen() {
                 Column(modifier = Modifier
                     .padding(5.dp)
                     .weight(1f)
-                ) {
-                    weatherBoxesA(currentTempA, currentSkyA)
-                }
+                ) {weatherBoxesA(currentTempA, currentSkyA) }
             }
         }
 ////////////////////////////// Navi Tail

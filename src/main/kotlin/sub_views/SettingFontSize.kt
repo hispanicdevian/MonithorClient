@@ -20,16 +20,16 @@ import androidx.compose.ui.unit.sp
 import custom_resources.CustomGrayA
 import custom_resources.doneButton
 import engine_logic.Navi
-import engine_logic.saveFontSizeV1A
+import engine_logic.SLFObjectA.saveFontSizeA
 import views.mainScreen
 import views.settingScreen
 
 ////////////////////////////// Screen/View for selecting font size
 @Composable
 fun settingFontSize() {
-/////////////// Screen view Ram
+// Screen view Ram
     var currentScreen by remember { mutableStateOf<Navi>(Navi.SettingFontSz) }
-/////////////// Font size Ram
+// Font size Ram
     var fontSizedA: TextUnit
 
 /////////////// List buttons
@@ -99,7 +99,7 @@ fun settingFontSize() {
                                             fontSizedA =
                                                 fontSizeMapA[item]
                                                     ?: 20.sp // Default to 20 sp if map null
-                                            saveFontSizeV1A(fontSizedA.value)
+                                            saveFontSizeA(fontSizedA.value)
                                         }
                                         .padding(16.dp)
                                         .fillMaxSize(),

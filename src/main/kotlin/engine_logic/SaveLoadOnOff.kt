@@ -2,16 +2,15 @@ package engine_logic
 
 import java.io.File
 
-//////////////////////////////////////////////////////////// Save and Load A
-object SLOnOffHandlerA {
-    private const val FILE_NAME0 = "msStateA.hdi"
-    private const val FILEPATH0 = "$SLM_PATH/$FILE_NAME0"
+////////////////////////////// Save and Load On/Off state A
+object SLOnOffObjectA {
+    private const val FILEPATH0 = "$SLM_PATH/msStateA.hdi"
 
     init {
         File(SLM_PATH).mkdirs()
     }
 
-    fun loadVisibilityListA(): List<Boolean> {
+    fun loadVisibilityA(): List<Boolean> {
         val currentState = loadOnOffFileA()
         return if (currentState.isNotEmpty()) {
             currentState.split(",").map { it.trim().toBoolean() }
@@ -28,7 +27,7 @@ object SLOnOffHandlerA {
         }
     }
 
-    fun saveVisibilityListA(visibilityList: List<Boolean>) {
+    fun saveVisibilityA(visibilityList: List<Boolean>) {
         val stateAsString = visibilityList.joinToString(",")
         saveOnOffFileA(stateAsString)
     }
@@ -43,17 +42,17 @@ object SLOnOffHandlerA {
         }
     }
 }
-//////////////////////////////////////////////////////////// Save and Load B
-object SLOnOffHandlerB {
-    private const val FILE_NAME1 = "msStateB.hdi"
-    private const val FILEPATH1 = "$SLM_PATH/$FILE_NAME1"
+
+////////////////////////////// Save and Load On/Off state B
+object SLOnOffObjectB {
+    private const val FILEPATH1 = "$SLM_PATH/msStateB.hdi"
 
     init {
         File(SLM_PATH).mkdirs()
     }
 
-    fun loadVisibilityListB(): List<Boolean> {
-        val currentState = SLOnOffHandlerA.loadOnOffFileA()
+    fun loadVisibilityB(): List<Boolean> {
+        val currentState = loadOnOffFileB()
         return if (currentState.isNotEmpty()) {
             currentState.split(",").map { it.trim().toBoolean() }
         } else {
@@ -69,7 +68,7 @@ object SLOnOffHandlerB {
         }
     }
 
-    fun saveVisibilityListB(visibilityList: List<Boolean>) {
+    fun saveVisibilityB(visibilityList: List<Boolean>) {
         val stateAsString = visibilityList.joinToString(",")
         saveOnOffFileB(stateAsString)
     }
@@ -84,16 +83,16 @@ object SLOnOffHandlerB {
         }
     }
 }
-//////////////////////////////////////////////////////////// Save and Load C
-object SLOnOffHandlerC {
-    private const val FILE_NAME2 = "msStateC.hdi"
-    private const val FILEPATH2 = "$SLM_PATH/$FILE_NAME2"
+
+////////////////////////////// Save and Load On/Off state C
+object SLOnOffObjectC {
+    private const val FILEPATH2 = "$SLM_PATH/msStateC.hdi"
 
     init {
         File(SLM_PATH).mkdirs()
     }
 
-    fun loadVisibilityListC(): List<Boolean> {
+    fun loadVisibilityC(): List<Boolean> {
         val currentState = loadOnOffFileC()
         return if (currentState.isNotEmpty()) {
             currentState.split(",").map { it.trim().toBoolean() }
@@ -110,7 +109,7 @@ object SLOnOffHandlerC {
         }
     }
 
-    fun saveVisibilityListC(visibilityList: List<Boolean>) {
+    fun saveVisibilityC(visibilityList: List<Boolean>) {
         val stateAsString = visibilityList.joinToString(",")
         saveOnOffFileC(stateAsString)
     }
@@ -125,22 +124,22 @@ object SLOnOffHandlerC {
         }
     }
 }
-//////////////////////////////////////////////////////////// Save and Load D
-object SLOnOffHandlerD {
-    private const val FILEPATH3 = "msStateD.hdi"
 
-    fun loadVisibilityListD(): List<Boolean> {
+////////////////////////////// Save and Load On/Off state D
+object SLOnOffObjectD {
+    private const val FILEPATH3 = "$SLM_PATH/msStateD.hdi"
+
+    init {
+        File(SLM_PATH).mkdirs()
+    }
+
+    fun loadVisibilityD(): List<Boolean> {
         val currentState = loadOnOffFileD()
         return if (currentState.isNotEmpty()) {
             currentState.split(",").map { it.trim().toBoolean() }
         } else {
-            listOf(true, true, true, true)
+            listOf(true, true)
         }
-    }
-
-    fun saveVisibilityListD(visibilityList: List<Boolean>) {
-        val stateAsString = visibilityList.joinToString(",")
-        saveOnOffFileD(stateAsString)
     }
 
     fun loadOnOffFileD(): String {
@@ -149,6 +148,11 @@ object SLOnOffHandlerD {
         } catch (e: Exception) {
             ""
         }
+    }
+
+    fun saveVisibilityD(visibilityList: List<Boolean>) {
+        val stateAsString = visibilityList.joinToString(",")
+        saveOnOffFileD(stateAsString)
     }
 
     private fun saveOnOffFileD(scState: String) {

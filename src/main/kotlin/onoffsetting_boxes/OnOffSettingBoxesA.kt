@@ -13,22 +13,24 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.CustomGrayA
 import custom_resources.MainColorA
-import custom_resources.oosbSpacerHTop
 import custom_resources.oosbSpacerHBot
-import engine_logic.SLOnOffHandlerA
+import custom_resources.oosbSpacerHTop
+import engine_logic.SLOnOffObjectA.loadVisibilityA
+import engine_logic.SLOnOffObjectA.saveVisibilityA
 
 @Composable
 fun onOffSettingBoxesA() {
 // Ram for active View/Screen
-    var visibilityList by remember { mutableStateOf(SLOnOffHandlerA.loadVisibilityListA()) }
-//////////////////////////////////////////////////////////// UI container
+    var visibilityList by remember { mutableStateOf(loadVisibilityA()) }
+
+////////////////////////////// UI container
     Column(
         modifier = Modifier.padding(bottom = 15.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         oosbSpacerHTop()
-//////////////////////////////////////////////////////////// On/Off index control
+////////////////////////////// On/Off index control
         visibilityList.forEachIndexed { index, isVisible ->
             Box(
                 modifier = Modifier
@@ -43,8 +45,8 @@ fun onOffSettingBoxesA() {
                         visibilityList = visibilityList.toMutableList().apply {
                             this[index] = !this[index]
                         }
-//////////////////////////////////////////////////////////// Saves the updated state when the box is clicked
-                        SLOnOffHandlerA.saveVisibilityListA(visibilityList)
+////////////////////////////// Saves the updated state when the box is clicked
+                        saveVisibilityA(visibilityList)
                     },
                 contentAlignment = Alignment.Center
             ) {

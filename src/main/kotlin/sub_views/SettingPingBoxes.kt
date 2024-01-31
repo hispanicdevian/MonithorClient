@@ -15,13 +15,13 @@ import pingsetting_boxes.pingSettingBoxesC
 import views.mainScreen
 import views.settingScreen
 
-//////////////////////////////////////// Screen/View for IP settings
+////////////////////////////// Screen/View for IP settings
 @Composable
 @Preview
 fun settingPingBoxes() {
     var currentScreen by remember { mutableStateOf<Navi>(Navi.SettingPingBxs) }
 
-//////////////////////////////////////// Navi head
+////////////////////////////// Navi head
     when (currentScreen) {
         is Navi.SettingPingBxs -> {
 ////////////////////////////// Done button
@@ -29,7 +29,7 @@ fun settingPingBoxes() {
                 currentScreen = Navi.SettingScn
             }
 
-//////////////////////////////////////// UI container
+////////////////////////////// UI container
             Row(
                 modifier = Modifier
                     .fillMaxSize()
@@ -60,7 +60,7 @@ fun settingPingBoxes() {
                 }
             }
         }
-//////////////////////////////////////// Navi tail
+////////////////////////////// Navi tail
         Navi.MainScn -> mainScreen()
         Navi.SettingScn -> settingScreen()
         Navi.SettingFontSz -> settingFontSize()

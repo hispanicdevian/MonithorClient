@@ -19,6 +19,7 @@ import custom_resources.CustomGrayA
 import custom_resources.psbSpacerH
 import custom_resources.psbSpacerHBot
 import engine_logic.*
+import engine_logic.SLFObjectA.loadFontSizeA
 
 ////////////////////////////// Third column of boxes located in Ip settings
 @Composable
@@ -34,8 +35,8 @@ fun pingSettingBoxesC() {
     var ipTitleC2 by remember { mutableStateOf(readTiFile10()) }
     var ipTitleC3 by remember { mutableStateOf(readTiFile11()) }
 
-/////////////// Font size ram
-    val fontSizedSA by remember { mutableStateOf(loadFontSizeV1A().sp) }
+// Font size ram
+    val fontSizedSA by remember { mutableStateOf(loadFontSizeA().sp) }
 
     Column( modifier = Modifier.padding(top = 10.dp),
         horizontalAlignment = Alignment.CenterHorizontally,

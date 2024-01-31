@@ -16,45 +16,47 @@ import androidx.compose.ui.unit.sp
 import custom_resources.CustomGrayA
 import custom_resources.MainColorA
 import engine_logic.Navi
-import engine_logic.SLOnOffHandlerD
-import engine_logic.loadFontSizeV1A
+import engine_logic.SLFObjectA.loadFontSizeA
+import engine_logic.SLOnOffObjectD.loadOnOffFileD
 import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 import views.settingScreen
 
-//////////////////////////////////////////////////////////// Weather boxes shown in the last column of the main screen
+////////////////////////////// Weather boxes shown in the last column of the main screen
 @Composable
 fun weatherBoxesA(currentTempA: String, currentSkyA: String) {
     val currentWeatherListA = listOf(currentTempA, currentSkyA)
 // Ram for active View/Screen
     val currentScreen by remember { mutableStateOf<Navi>(Navi.MainScn) }
 // Font size ram
-    val loadedFontSize by remember { mutableStateOf(loadFontSizeV1A()) }
+    val loadedFontSize by remember { mutableStateOf(loadFontSizeA()) }
     val fontSizedA = if (loadedFontSize < 1) { // adds 20 if value less than 1, but adds 20 if higher than 1
         loadedFontSize
     } else {
         loadedFontSize + 12
     }
-// Loads the last state of On/Off settings
+
+/////////////// Loads the last state of On/Off settings
     val visibilityList = remember {
-        val currentState = SLOnOffHandlerD.loadOnOffFileD()
+        val currentState = loadOnOffFileD()
         if (currentState.isNotEmpty()) {
             currentState.split(",").map { it.toBoolean() }
         } else {
-            listOf(true, true, true, true)
+            listOf(true, true)
         }
     }
-//////////////////////////////////////////////////////////// UI container
+
+////////////////////////////// UI container
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         Spacer(modifier = Modifier.height(15.dp))
-//////////////////////////////////////////////////////////// Navi head
+/////////////// Navi head
         when (currentScreen) {
             is Navi.MainScn -> {
-////////////////////////////// Creates boxes based on # of titles, and its visibility based on settings file
+/////////////// Creates boxes based on # of titles, and its visibility based on settings file
                 for (index in currentWeatherListA.indices) {
                     if (visibilityList[index]) {
                         Box(
@@ -79,7 +81,7 @@ fun weatherBoxesA(currentTempA: String, currentSkyA: String) {
                     }
                 }
             }
-//////////////////////////////////////////////////////////// Navi tail
+/////////////// Navi tail
             Navi.SettingFontSz -> settingFontSize()
             Navi.SettingOnOffBxs -> settingOnOffBoxes()
             Navi.SettingPingBxs -> settingPingBoxes()

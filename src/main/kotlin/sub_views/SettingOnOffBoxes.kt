@@ -22,7 +22,7 @@ import views.settingScreen
 @Composable
 @Preview
 fun settingOnOffBoxes() {
-/////////////// Current screen ram
+// Current screen ram
     var currentScreen by remember { mutableStateOf<Navi>(Navi.SettingOnOffBxs) }
 
 ////////////////////////////// Navi head
