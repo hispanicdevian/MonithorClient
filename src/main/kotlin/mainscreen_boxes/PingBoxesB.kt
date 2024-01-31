@@ -1,6 +1,5 @@
 package mainscreen_boxes
 
-
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -13,6 +12,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.CustomGrayA
@@ -72,14 +72,16 @@ fun pingBoxesB(pingSuccessfulB4: Boolean, pingSuccessfulB5: Boolean, pingSuccess
                                     text = titleList[index],
                                     color = CustomGrayA,
                                     fontWeight = FontWeight.W900,
-                                    fontSize = fontSizedA
+                                    fontSize = fontSizedA,
+                                    textAlign = TextAlign.Center
                                 )
                                 Spacer(modifier = Modifier.height(8.dp))
                                 Text(
                                     text = if (pingSuccessfulList[index]) "On" else "Off",
                                     color = CustomGrayA,
                                     fontWeight = FontWeight.W800,
-                                    fontSize = fontSizedA
+                                    fontSize = fontSizedA,
+                                    textAlign = TextAlign.Center
                                 )
                             }
                         }
