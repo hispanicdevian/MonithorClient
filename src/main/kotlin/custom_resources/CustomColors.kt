@@ -10,4 +10,4 @@ val CustomGrayA = Color(0xFF303030)
 val CustomRedA = Color(0xFFD7213A)
 
 ////////////////////////////// Custom Colors B
-val CustomRedB = Color(4292294221)
+val CustomRedB = Color(0xFFD7364D)
