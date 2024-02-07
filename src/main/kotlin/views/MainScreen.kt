@@ -109,16 +109,16 @@ fun mainScreen() {
 
 ////////////////////////////// UI container
     Box(
-        modifier = Modifier.fillMaxSize().background(CustomGrayA)
+        modifier = Modifier.fillMaxSize().background(ErgoGray)
     ) {
         TopAppBar(
-            backgroundColor = MainColorA,
+            backgroundColor = TurquoiseColor,
             modifier = Modifier.fillMaxWidth()
         ) {
 ////////////////////////////// Clickable Title
             Text("Monithor Client",
                 fontSize = 26.sp,
-                color = CustomGrayA,
+                color = ErgoGray,
                 fontWeight = FontWeight.W900,
                 modifier = Modifier
                     .fillMaxWidth()

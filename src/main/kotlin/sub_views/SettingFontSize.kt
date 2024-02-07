@@ -17,7 +17,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_resources.CustomGrayA
+import custom_resources.ErgoGray
 import custom_resources.doneButton
 import engine_logic.Navi
 import engine_logic.SLFObjectA.saveFontSizeA
@@ -61,7 +61,7 @@ fun settingFontSize() {
                             .background(Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
                             .padding(5.dp)
                             .size(300.dp)
-                            .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp))
+                            .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp))
                     ) {
 /////////////// this needs to match fontSizeMapA variable strings
                         val itemsListA = listOf("Default", "Small", "Medium", "Large", "None")

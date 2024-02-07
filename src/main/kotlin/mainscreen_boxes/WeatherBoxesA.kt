@@ -13,8 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_resources.CustomGrayA
-import custom_resources.MainColorA
+import custom_resources.ErgoGray
+import custom_resources.TurquoiseColor
 import engine_logic.Navi
 import engine_logic.SLFObjectA.loadFontSizeA
 import engine_logic.SLOnOffObjectD.loadOnOffFileD
@@ -63,7 +63,7 @@ fun weatherBoxesA(currentTempA: String, currentSkyA: String) {
                             modifier = Modifier
                                 .weight(1f)
                                 .aspectRatio(1.5f)
-                                .background(MainColorA, shape = AbsoluteRoundedCornerShape(8.dp)),
+                                .background(TurquoiseColor, shape = AbsoluteRoundedCornerShape(8.dp)),
                             contentAlignment = Alignment.Center
                         ) {
                             Column(
@@ -72,7 +72,7 @@ fun weatherBoxesA(currentTempA: String, currentSkyA: String) {
                             ) {
                                 Text(
                                     text = currentWeatherListA[index],
-                                    color = CustomGrayA,
+                                    color = ErgoGray,
                                     fontSize = fontSizedA.sp,
                                     textAlign = TextAlign.Center
                                 )

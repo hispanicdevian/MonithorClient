@@ -63,7 +63,7 @@ fun pingBoxesC(pingSuccessfulC8: Boolean, pingSuccessfulC9: Boolean, pingSuccess
                             modifier = Modifier
                                 .weight(1f)
                                 .aspectRatio(1.5f)
-                                .background((if (pingSuccessfulList[index]) MainColorA else CustomRedA), shape = AbsoluteRoundedCornerShape(8.dp)),
+                                .background((if (pingSuccessfulList[index]) TurquoiseColor else RedAlert), shape = AbsoluteRoundedCornerShape(8.dp)),
                             contentAlignment = Alignment.Center
                         ) {
                             Column(
@@ -72,7 +72,7 @@ fun pingBoxesC(pingSuccessfulC8: Boolean, pingSuccessfulC9: Boolean, pingSuccess
                             ) {
                                 Text(
                                     text = titleList[index],
-                                    color = CustomGrayA,
+                                    color = ErgoGray,
                                     fontWeight = FontWeight.W900,
                                     fontSize = fontSizedA,
                                     textAlign = TextAlign.Center
@@ -80,7 +80,7 @@ fun pingBoxesC(pingSuccessfulC8: Boolean, pingSuccessfulC9: Boolean, pingSuccess
                                 Spacer(modifier = Modifier.height(8.dp))
                                 Text(
                                     text = if (pingSuccessfulList[index]) "On" else "Off",
-                                    color = CustomGrayA,
+                                    color = ErgoGray,
                                     fontWeight = FontWeight.W800,
                                     fontSize = fontSizedA,
                                     textAlign = TextAlign.Center

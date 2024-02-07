@@ -17,7 +17,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_resources.CustomGrayA
+import custom_resources.ErgoGray
 import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
@@ -45,7 +45,7 @@ fun settingScreen() {
                 .background(Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
                 .padding(5.dp)
                 .size(300.dp)
-                .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)),
+                .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)),
             contentAlignment = Alignment.Center
         ) {
             val itemsList = listOf("IP Settings", "On / Off", "Font Size")

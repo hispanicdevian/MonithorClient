@@ -21,10 +21,10 @@ fun doneButton(onDoneClick: () -> Unit) {
         ) {
             Button(
                 modifier = Modifier.fillMaxWidth(),
-                colors = ButtonDefaults.buttonColors(CustomGrayA),
+                colors = ButtonDefaults.buttonColors(ErgoGray),
                 onClick = { onDoneClick() }
             ) {
-                Text("Done", color = MainColorA, fontSize = 25.sp, fontWeight = FontWeight.Bold)
+                Text("Done", color = TurquoiseColor, fontSize = 25.sp, fontWeight = FontWeight.Bold)
             }
         }
     }

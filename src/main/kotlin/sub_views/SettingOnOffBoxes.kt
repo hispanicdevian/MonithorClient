@@ -7,7 +7,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import custom_resources.CustomGrayA
+import custom_resources.ErgoGray
 import custom_resources.doneButton
 import custom_resources.soobSpacerW
 import engine_logic.Navi
@@ -35,7 +35,7 @@ fun settingOnOffBoxes() {
 ////////////////////////////// UI container
             Box(
                 modifier = Modifier.fillMaxSize().padding(top = 60.dp)
-                    .background(CustomGrayA)
+                    .background(ErgoGray)
             ) {
                 Row(
                     modifier = Modifier

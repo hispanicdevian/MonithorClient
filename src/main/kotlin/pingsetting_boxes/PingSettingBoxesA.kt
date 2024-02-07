@@ -15,7 +15,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_resources.CustomGrayA
+import custom_resources.ErgoGray
 import custom_resources.psbSpacerH
 import custom_resources.psbSpacerHBot
 import engine_logic.*
@@ -47,7 +47,7 @@ fun pingSettingBoxesA() {
                 .padding(4.dp)
                 .weight(1f)
                 .aspectRatio(2f)
-                .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
+                .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {
             Column(
@@ -112,7 +112,7 @@ fun pingSettingBoxesA() {
                 .padding(4.dp)
                 .weight(1f)
                 .aspectRatio(2f)
-                .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
+                .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {
             Column(
@@ -177,7 +177,7 @@ fun pingSettingBoxesA() {
                 .padding(4.dp)
                 .weight(1f)
                 .aspectRatio(2f)
-                .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
+                .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {
             Column(
@@ -242,7 +242,7 @@ fun pingSettingBoxesA() {
                 .padding(4.dp)
                 .weight(1f)
                 .aspectRatio(2f)
-                .background((CustomGrayA), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
+                .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {
             Column(
