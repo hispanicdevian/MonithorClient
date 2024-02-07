@@ -19,7 +19,7 @@ fun spbSpacerW() { Spacer(modifier = Modifier.width(10.dp)) }
 
 /////////////// SettingOnOffBoxes.kt
 @Composable
-fun soobSpacerW() { Spacer(modifier = Modifier.width(12.dp)) }
+fun soobSpacerW() { Spacer(modifier = Modifier.width(8.dp)) }
 
 ////////////////////////////// Height
 
@@ -29,9 +29,6 @@ fun psbSpacerH() { Spacer(modifier = Modifier.height(10.dp)) }
 @Composable
 fun psbSpacerHBot() { Spacer(modifier = Modifier.height(10.dp)) }
 
-/////////////// OnOffSettingBoxes.kt
-@Composable
-fun oosbSpacerHTop() { Spacer(modifier = Modifier.height(15.dp)) }
 @Composable
 fun oosbSpacerHBot() { Spacer(modifier = Modifier.height(12.dp)) }
 

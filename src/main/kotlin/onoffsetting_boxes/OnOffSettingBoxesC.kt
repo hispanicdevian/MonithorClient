@@ -12,9 +12,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.ErgoGray
-import custom_resources.TurquoiseColor
+import custom_resources.SeaColor
 import custom_resources.oosbSpacerHBot
-import custom_resources.oosbSpacerHTop
 import engine_logic.SLOnOffObjectC.loadVisibilityC
 import engine_logic.SLOnOffObjectC.saveVisibilityC
 
@@ -24,23 +23,17 @@ fun onOffSettingBoxesC() {
     var visibilityList by remember { mutableStateOf(loadVisibilityC()) }
 
 ////////////////////////////// UI container
-    Column(
-        modifier = Modifier.padding(bottom = 15.dp),
+    Column(modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        oosbSpacerHTop()
+        verticalArrangement = Arrangement.Center) {
 ////////////////////////////// On/Off index control
         visibilityList.forEachIndexed { index, isVisible ->
-            Box(
-                modifier = Modifier
-                    .background(
-                        color = if (isVisible) TurquoiseColor else Color.Black, shape = AbsoluteRoundedCornerShape(8.dp)
-                    )
+            Box(modifier = Modifier.background(color = if (isVisible) SeaColor else Color.Black,
+                shape = AbsoluteRoundedCornerShape(8.dp))
                     .padding(5.dp)
                     .background(color = ErgoGray, shape = AbsoluteRoundedCornerShape(5.dp))
                     .weight(1f)
-                    .aspectRatio(1.5f)
+                    .fillMaxSize()
                     .clickable {
                         visibilityList = visibilityList.toMutableList().apply {
                             this[index] = !this[index]

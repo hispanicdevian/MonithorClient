@@ -8,6 +8,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import custom_resources.ErgoGray
+import custom_resources.TurquoiseColor
 import custom_resources.doneButton
 import custom_resources.soobSpacerW
 import engine_logic.Navi
@@ -28,42 +29,37 @@ fun settingOnOffBoxes() {
 ////////////////////////////// Navi head
     when (currentScreen) {
         is Navi.SettingOnOffBxs -> {
-////////////////////////////// Done button -> Setting screen
-            doneButton {
-                currentScreen = Navi.SettingScn
-            }
-////////////////////////////// UI container
-            Box(
-                modifier = Modifier.fillMaxSize().padding(top = 60.dp)
-                    .background(ErgoGray)
-            ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(horizontal = 15.dp),
+////////////////////////////// UI Parent
+            Column(modifier = Modifier.fillMaxSize().background(ErgoGray),
+                horizontalAlignment = Alignment.CenterHorizontally) {
+////////////////////////////// Done button
+                Row(modifier = Modifier.fillMaxSize().weight(1f).background(TurquoiseColor)) {
+                    doneButton { currentScreen = Navi.SettingScn
+                    }
+                }
+                Row(modifier = Modifier.fillMaxSize().weight(10f).padding(top = 12.dp).padding(horizontal = 5.dp),
                     horizontalArrangement = Arrangement.Center,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
+                    verticalAlignment = Alignment.CenterVertically) {
 ////////////////////////////// Box set A
-                    Column(
+                    Column(modifier = Modifier.weight(1f),
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center
                     ) { onOffSettingBoxesA() }
                     soobSpacerW()
 ////////////////////////////// Box set B
-                    Column(
+                    Column(modifier = Modifier.weight(1f),
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center
                     ) { onOffSettingBoxesB() }
                     soobSpacerW()
 ////////////////////////////// Box set C
-                    Column(
+                    Column(modifier = Modifier.weight(1f),
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center
                     ) { onOffSettingBoxesC() }
                     soobSpacerW()
 ////////////////////////////// Box set D
-                    Column(
+                    Column(modifier = Modifier.weight(1.5f),
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center
                     ) { onOffSettingBoxesD() }
