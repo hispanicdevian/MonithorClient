@@ -38,7 +38,7 @@ fun settingPingBoxes() {
                 Row(modifier = Modifier.fillMaxWidth().weight(10f),
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically) {
-                    Spacer(modifier = Modifier.fillMaxWidth().weight(.42f))
+                    Spacer(modifier = Modifier.fillMaxWidth().weight(.44f))
 ////////////////////////////// Box set A
                     Column( modifier = Modifier.weight(2f)) {
                         pingSettingBoxesA()
