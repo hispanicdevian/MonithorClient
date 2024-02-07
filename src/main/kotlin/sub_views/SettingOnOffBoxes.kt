@@ -37,7 +37,7 @@ fun settingOnOffBoxes() {
                     doneButton { currentScreen = Navi.SettingScn
                     }
                 }
-                Row(modifier = Modifier.fillMaxSize().weight(10f).padding(top = 12.dp).padding(horizontal = 5.dp),
+                Row(modifier = Modifier.fillMaxSize().weight(10f).padding(top = 10.dp).padding(horizontal = 5.dp),
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically) {
 ////////////////////////////// Box set A

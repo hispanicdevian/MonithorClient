@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import custom_resources.ErgoGray
 import custom_resources.TurquoiseColor
 import custom_resources.doneButton
@@ -35,10 +36,9 @@ fun settingPingBoxes() {
                     doneButton { currentScreen = Navi.SettingScn
                     }
                 }
-                Row(modifier = Modifier.fillMaxWidth().weight(10f),
+                Row(modifier = Modifier.fillMaxWidth().weight(10f).padding(horizontal = 5.dp),
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically) {
-                    Spacer(modifier = Modifier.fillMaxWidth().weight(0.44f))
 ////////////////////////////// Box set A
                     Column( modifier = Modifier.weight(2f)) {
                         pingSettingBoxesA()
@@ -53,7 +53,6 @@ fun settingPingBoxes() {
                     Column( modifier = Modifier.weight(2f)) {
                         pingSettingBoxesC()
                     }
-                    Spacer(modifier = Modifier.fillMaxWidth().weight(0.1f))
                 }
             }
         }

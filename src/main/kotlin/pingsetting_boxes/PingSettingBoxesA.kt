@@ -46,7 +46,6 @@ fun pingSettingBoxesA() {
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
                 .padding(4.dp)
                 .weight(1f)
-                .aspectRatio(2f)
                 .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {
@@ -111,7 +110,6 @@ fun pingSettingBoxesA() {
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
                 .padding(4.dp)
                 .weight(1f)
-                .aspectRatio(2f)
                 .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {
@@ -176,7 +174,6 @@ fun pingSettingBoxesA() {
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
                 .padding(4.dp)
                 .weight(1f)
-                .aspectRatio(2f)
                 .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {
@@ -241,7 +238,6 @@ fun pingSettingBoxesA() {
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
                 .padding(4.dp)
                 .weight(1f)
-                .aspectRatio(2f)
                 .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
         ) {

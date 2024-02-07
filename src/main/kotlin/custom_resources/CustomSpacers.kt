@@ -15,7 +15,7 @@ fun msSpacerW() { Spacer(modifier = Modifier.width(15.dp)) }
 
 /////////////// SettingPingBoxes.kt
 @Composable
-fun spbSpacerW() { Spacer(modifier = Modifier.width(10.dp)) }
+fun spbSpacerW() { Spacer(modifier = Modifier.width(8.dp)) }
 
 /////////////// SettingOnOffBoxes.kt
 @Composable
