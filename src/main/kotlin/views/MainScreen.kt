@@ -7,7 +7,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -16,7 +15,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_resources.*
+import custom_resources.ErgoGray
+import custom_resources.TurquoiseColor
+import custom_resources.msSpacerW
 import engine_logic.*
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
@@ -103,47 +104,24 @@ fun mainScreen() {
                 "Error Code hd102"
             }
 
-            delay(60000*10) // Adds a 10-minute delay
+            delay(60000 * 10) // Adds a 10-minute delay
         }
     }
 
 ////////////////////////////// UI container
-    Box(
-        modifier = Modifier.fillMaxSize().background(ErgoGray)
-    ) {
-        TopAppBar(
-            backgroundColor = TurquoiseColor,
-            modifier = Modifier.fillMaxWidth()
-        ) {
-////////////////////////////// Clickable Title
-            Text("Monithor Client",
-                fontSize = 26.sp,
-                color = ErgoGray,
-                fontWeight = FontWeight.W900,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .wrapContentSize(Alignment.Center)
-                    .clickable(
-                        interactionSource = remember { MutableInteractionSource() },
-                        indication = null,
-                        onClick = { currentScreen = Navi.MainScn }
-                    )
-            )
-        }
+    Column( modifier = Modifier.fillMaxSize().background(ErgoGray),
+        horizontalAlignment = Alignment.CenterHorizontally) {
+
+        Row(modifier = Modifier.fillMaxSize().weight(1f).background(TurquoiseColor)) {
+
 ////////////////////////////// Home button
-        Box(
-            modifier = Modifier
-                .align(Alignment.TopStart)
-                .padding(top = 17.dp, start = 20.dp),
-        ) {
-            Box(
-                modifier = Modifier
-                    .size(24.dp)
-                    .clickable(
-                        interactionSource = remember { MutableInteractionSource() },
-                        indication = rememberRipple(bounded = false, radius = 15.dp),
-                        onClick = { currentScreen = Navi.MainScn }
-                    )
+            Box(modifier = Modifier.fillMaxSize().weight(1f)
+                .size(24.dp)
+                .clickable(
+                    interactionSource = remember { MutableInteractionSource() },
+                    indication = rememberRipple(bounded = false, radius = 15.dp),
+                    onClick = { currentScreen = Navi.MainScn }
+                )
             ) {
                 Image(
                     painter = painterResource("HomePng240.png"),
@@ -151,71 +129,90 @@ fun mainScreen() {
                     modifier = Modifier.fillMaxSize()
                 )
             }
-        }
+
+////////////////////////////// Clickable Title
+            Box(modifier = Modifier.fillMaxSize().weight(1f)) {
+
+                Text("Monithor Client",
+                    fontSize = 26.sp,
+                    color = ErgoGray,
+                    fontWeight = FontWeight.W900,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .wrapContentSize(Alignment.Center)
+                        .clickable(
+                            interactionSource = remember { MutableInteractionSource() },
+                            indication = null,
+                            onClick = { currentScreen = Navi.MainScn }
+                        )
+                )
+            }
+
 ////////////////////////////// Settings button
-        Box(
-            modifier = Modifier
-                .align(Alignment.TopEnd)
-                .padding(top = 17.dp, end = 22.dp),
-        ) {
-            Box(
-                modifier = Modifier
-                    .size(24.dp)
-                    .clickable(
-                        interactionSource = remember { MutableInteractionSource() },
-                        indication = rememberRipple(bounded = false, radius = 15.dp),
-                        onClick = { currentScreen = Navi.SettingScn }
-                    )
+            Box(modifier = Modifier.fillMaxSize().weight(1f)
+                .size(24.dp)
+                .clickable(
+                    interactionSource = remember { MutableInteractionSource() },
+                    indication = rememberRipple(bounded = false, radius = 15.dp),
+                    onClick = { currentScreen = Navi.SettingScn }
+                )
             ) {
                 Image(
                     painter = painterResource("SettingsPng240F.png"),
                     contentDescription = "",
                     modifier = Modifier.fillMaxSize()
                 )
+
             }
         }
-    }
 ////////////////////////////// Navi head
-    when (currentScreen) {
-        is Navi.MainScn -> {
-            Row(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(top = 55.dp)
-                    .padding(horizontal = 15.dp),
-                horizontalArrangement = Arrangement.Center,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
+        when (currentScreen) {
+            is Navi.MainScn -> {
+                Row(
+                    modifier = Modifier.fillMaxWidth().weight(10f).padding(horizontal = 5.dp),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
 ////////////////////////////// Box set A
-                Column(modifier = Modifier
-                    .padding(5.dp)
-                    .weight(1f)
-                ) { pingBoxesA(pingSuccessful0, pingSuccessful1, pingSuccessful2, pingSuccessful3) }
-                msSpacerW()
+                    Column(
+                        modifier = Modifier
+                            .padding(5.dp)
+                            .weight(2f)
+                    ) { pingBoxesA(pingSuccessful0, pingSuccessful1, pingSuccessful2, pingSuccessful3) }
+                    msSpacerW()
 ////////////////////////////// Box set B
-                Column(modifier = Modifier
-                    .padding(5.dp)
-                    .weight(1f)
-                ) { pingBoxesB(pingSuccessful4, pingSuccessful5, pingSuccessful6, pingSuccessful7) }
-                msSpacerW()
+                    Column(
+                        modifier = Modifier
+                            .padding(5.dp)
+                            .weight(2f)
+                    ) { pingBoxesB(pingSuccessful4, pingSuccessful5, pingSuccessful6, pingSuccessful7) }
+                    msSpacerW()
 ////////////////////////////// Box set C
-                Column(modifier = Modifier
-                    .padding(5.dp)
-                    .weight(1f)
-                ) { pingBoxesC(pingSuccessful8, pingSuccessful9, pingSuccessful10, pingSuccessful11) }
-                msSpacerW()
+                    Column(
+                        modifier = Modifier
+                            .padding(5.dp)
+                            .weight(2f)
+                    ) { pingBoxesC(pingSuccessful8, pingSuccessful9, pingSuccessful10, pingSuccessful11) }
+                    msSpacerW()
 ////////////////////////////// Box set D
-                Column(modifier = Modifier
-                    .padding(5.dp)
-                    .weight(1f)
-                ) {weatherBoxesA(currentTempA, currentSkyA) }
+                    Column(
+                        modifier = Modifier
+                            .padding(5.dp)
+                            .weight(2f)
+                    ) { weatherBoxesA(currentTempA, currentSkyA) }
+                }
             }
-        }
+
+
+            Navi.MainScn -> mainScreen()
+            Navi.SettingFontSz -> settingFontSize()
+            Navi.SettingOnOffBxs -> settingOnOffBoxes()
+            Navi.SettingPingBxs -> settingPingBoxes()
+            Navi.SettingScn -> settingScreen()
+
 ////////////////////////////// Navi Tail
-        Navi.MainScn -> mainScreen()
-        Navi.SettingFontSz -> settingFontSize()
-        Navi.SettingOnOffBxs -> settingOnOffBoxes()
-        Navi.SettingPingBxs -> settingPingBoxes()
-        Navi.SettingScn -> settingScreen()
+
+
+        }
     }
 }
