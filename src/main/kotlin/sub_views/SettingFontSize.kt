@@ -10,6 +10,7 @@ import androidx.compose.foundation.shape.AbsoluteRoundedCornerShape
 import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
@@ -18,7 +19,9 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.ErgoGray
+import custom_resources.TurquoiseColor
 import custom_resources.doneButton
+import custom_resources.settingSpacerH
 import engine_logic.Navi
 import engine_logic.SLFObjectA.saveFontSizeA
 import views.mainScreen
@@ -43,30 +46,29 @@ fun settingFontSize() {
 ////////////////////////////// Navi head
     when (currentScreen) {
         is Navi.SettingFontSz -> {
-////////////////////////////// Done Button
-            doneButton {
-                currentScreen = Navi.SettingScn
-            }
-////////////////////////////// UI container
+
+            ////////////////////////////// UI Parent
             Column(
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier.fillMaxSize().background(ErgoGray),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .weight(1f)
+////////////////////////////// Done button
+                Row(modifier = Modifier.fillMaxSize().weight(1f).background(TurquoiseColor)) {
+                    doneButton {
+                        currentScreen = Navi.SettingScn
+                    }
+                }
+                Row( modifier = Modifier.fillMaxSize().weight(10f).padding(top = 10.dp).padding(horizontal = 5.dp),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Box(
-                        modifier = Modifier.fillMaxSize().padding(top = 30.dp).padding(vertical = 100.dp).padding(horizontal = 250.dp)
-                            .background(Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
-                            .padding(5.dp)
-                            .size(300.dp)
-                            .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp))
-                    ) {
+                    Box( modifier = Modifier.fillMaxSize().background(Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
+                        .padding(5.dp)
+                        .fillMaxSize()
+                        .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp))) {
 /////////////// this needs to match fontSizeMapA variable strings
                         val itemsListA = listOf("Default", "Small", "Medium", "Large", "None")
-                        LazyColumn(
-                            modifier = Modifier.fillMaxSize(),
+                        LazyColumn( modifier = Modifier.fillMaxSize(),
                             state = rememberLazyListState(),
                             verticalArrangement = Arrangement.Center,
                         ) {
@@ -76,15 +78,16 @@ fun settingFontSize() {
                                     color = Color.White,
                                     fontSize = 30.sp,
                                     textAlign = TextAlign.Center,
-                                    modifier = Modifier.fillMaxWidth().padding(top = 15.dp, bottom = 15.dp)
+                                    modifier = Modifier.fillMaxSize().padding(top = 15.dp, bottom = 15.dp)
                                 )
                             }
                             item {
-                                Row( modifier = Modifier.fillMaxWidth(),
+                                Row(
+                                    modifier = Modifier.fillMaxSize(),
                                     horizontalArrangement = Arrangement.Center
                                 ) {
                                     Divider(
-                                        modifier = Modifier.fillMaxWidth(0.5f),
+                                        modifier = Modifier.fillMaxSize(0.5f),
                                         color = Color.Black,
                                         thickness = 1.5.dp
                                     )
@@ -110,6 +113,7 @@ fun settingFontSize() {
                         }
                     }
                 }
+                settingSpacerH()
             }
         }
 ////////////////////////////// Navi tail

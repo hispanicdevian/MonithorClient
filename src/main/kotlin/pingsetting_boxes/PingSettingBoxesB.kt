@@ -16,8 +16,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.ErgoGray
-import custom_resources.psbSpacerH
-import custom_resources.psbSpacerHBot
+import custom_resources.settingSpacerH
 import engine_logic.*
 import engine_logic.SLFObjectA.loadFontSizeA
 
@@ -104,7 +103,7 @@ fun pingSettingBoxesB() {
             }
         }
 ////////////////////////////// Edit box B1 - ReWr5
-        psbSpacerH()
+        settingSpacerH()
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
@@ -168,7 +167,7 @@ fun pingSettingBoxesB() {
             }
         }
 ////////////////////////////// Edit box B2 - ReWr6
-        psbSpacerH()
+        settingSpacerH()
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
@@ -232,7 +231,7 @@ fun pingSettingBoxesB() {
             }
         }
 ////////////////////////////// Edit box B3 - ReWr7
-        psbSpacerH()
+        settingSpacerH()
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
@@ -295,6 +294,5 @@ fun pingSettingBoxesB() {
                 )
             }
         }
-        psbSpacerHBot()
     }
 }

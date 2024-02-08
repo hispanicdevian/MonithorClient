@@ -24,10 +24,6 @@ fun soobSpacerW() { Spacer(modifier = Modifier.width(8.dp)) }
 ////////////////////////////// Height
 
 /////////////// PingSettingBoxes.kt
-@Composable
-fun psbSpacerH() { Spacer(modifier = Modifier.height(10.dp)) }
-@Composable
-fun psbSpacerHBot() { Spacer(modifier = Modifier.height(10.dp)) }
 
 @Composable
 fun oosbSpacerHBot() { Spacer(modifier = Modifier.height(12.dp)) }
@@ -37,3 +33,5 @@ fun oosbSpacerHBot() { Spacer(modifier = Modifier.height(12.dp)) }
 fun pbSpacerHTop() { Spacer(modifier = Modifier.height(15.dp)) }
 @Composable
 fun pbSpacerHBot() { Spacer(modifier = Modifier.height(15.dp)) }
+@Composable
+fun settingSpacerH() { Spacer(modifier = Modifier.height(10.dp)) }

@@ -7,10 +7,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import custom_resources.ErgoGray
-import custom_resources.TurquoiseColor
-import custom_resources.doneButton
-import custom_resources.soobSpacerW
+import custom_resources.*
 import engine_logic.Navi
 import onoffsetting_boxes.onOffSettingBoxesA
 import onoffsetting_boxes.onOffSettingBoxesB
@@ -29,6 +26,7 @@ fun settingOnOffBoxes() {
 ////////////////////////////// Navi head
     when (currentScreen) {
         is Navi.SettingOnOffBxs -> {
+
 ////////////////////////////// UI Parent
             Column(modifier = Modifier.fillMaxSize().background(ErgoGray),
                 horizontalAlignment = Alignment.CenterHorizontally) {

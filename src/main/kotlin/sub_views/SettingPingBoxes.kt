@@ -7,10 +7,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import custom_resources.ErgoGray
-import custom_resources.TurquoiseColor
-import custom_resources.doneButton
-import custom_resources.spbSpacerW
+import custom_resources.*
 import engine_logic.Navi
 import pingsetting_boxes.pingSettingBoxesA
 import pingsetting_boxes.pingSettingBoxesB
@@ -54,6 +51,7 @@ fun settingPingBoxes() {
                         pingSettingBoxesC()
                     }
                 }
+                settingSpacerH()
             }
         }
 ////////////////////////////// Navi tail
