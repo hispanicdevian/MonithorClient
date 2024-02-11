@@ -55,11 +55,9 @@ fun settingScreen() {
                         interactionSource = remember { MutableInteractionSource() },
                         indication = rememberRipple(bounded = false, radius = 15.dp),
                         onClick = { currentScreen = Navi.MainScn })
-                ) {
-                    Image(
-                        painter = painterResource("HomePng240.png"),
-                        contentDescription = "",
-                        modifier = Modifier.fillMaxSize()
+                ) { Image(painter = painterResource("HomePng240.png"),
+                    contentDescription = "",
+                    modifier = Modifier.fillMaxSize().padding(5.dp)
                     )
                 }
 
@@ -84,14 +82,12 @@ fun settingScreen() {
                         interactionSource = remember { MutableInteractionSource() },
                         indication = rememberRipple(bounded = false, radius = 15.dp),
                         onClick = { currentScreen = Navi.SettingScn })
-                ) {
-                    Image(
-                        painter = painterResource("SettingsPng240F.png"),
-                        contentDescription = "",
-                        modifier = Modifier.fillMaxSize().padding(2.dp)
-                    )
+                ) { Image(painter = painterResource("SettingsPng240F.png"),
+                    contentDescription = "",
+                    modifier = Modifier.fillMaxSize().padding(6.5.dp))
                 }
             }
+
 // Navi head
             when (currentScreen) {
                 is Navi.SettingScn -> {

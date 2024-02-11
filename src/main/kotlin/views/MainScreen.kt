@@ -30,7 +30,7 @@ import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 
-////////////////////////////// Main screen/view of the app
+// Main screen/view of the app
 @Composable
 @Preview
 fun mainScreen() {
@@ -53,7 +53,7 @@ fun mainScreen() {
     var currentTempA by remember { mutableStateOf("Loading...") }
     var currentSkyA by remember { mutableStateOf("Loading...") }
 
-////////////////////////////// Ping request engine (coroutine list)
+// Ping request engine (coroutine list)
     LaunchedEffect(Unit) {
         while (isActive) {
             val resultsA = listOf(
@@ -70,7 +70,7 @@ fun mainScreen() {
                 async { pingEngineAPI(ipAddress10) },
                 async { pingEngineAPI(ipAddress11) }
             )
-////////////////////////////// Ping request engine result
+// Ping request engine result
             pingSuccessful0 = resultsA[0].await()
             pingSuccessful1 = resultsA[1].await()
             pingSuccessful2 = resultsA[2].await()
@@ -88,11 +88,11 @@ fun mainScreen() {
         }
     }
 
-////////////////////////////// Weather request engine
+// Weather request engine
     LaunchedEffect(Unit) {
         while (isActive) {
             val (temperatureA, skyA) = getCurrentTemperatureA("North Vancouver")
-/////////////// Updates the UI state for WeatherBoxesA.kt
+// Updates the UI state for WeatherBoxesA.kt
             currentTempA = if (temperatureA != null) {
                 "$temperatureA°C"
             } else {
@@ -108,29 +108,26 @@ fun mainScreen() {
         }
     }
 
-////////////////////////////// UI container
+// UI container
     Column( modifier = Modifier.fillMaxSize().background(ErgoGray),
         horizontalAlignment = Alignment.CenterHorizontally) {
 
         Row(modifier = Modifier.fillMaxSize().weight(1f).background(TurquoiseColor)) {
 
-////////////////////////////// Home button
+// Home button
             Box(modifier = Modifier.fillMaxSize().weight(1f)
                 .size(24.dp)
                 .clickable(
                     interactionSource = remember { MutableInteractionSource() },
                     indication = rememberRipple(bounded = false, radius = 15.dp),
-                    onClick = { currentScreen = Navi.MainScn }
-                )
-            ) {
-                Image(
-                    painter = painterResource("HomePng240.png"),
+                    onClick = { currentScreen = Navi.MainScn })
+            ) { Image(painter = painterResource("HomePng240.png"),
                     contentDescription = "",
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier.fillMaxSize().padding(5.dp)
                 )
             }
 
-////////////////////////////// Clickable Title
+// Clickable title
             Box(modifier = Modifier.fillMaxSize().weight(1f)) {
 
                 Text("Monithor Client",
@@ -148,24 +145,20 @@ fun mainScreen() {
                 )
             }
 
-////////////////////////////// Settings button
+// Settings button
             Box(modifier = Modifier.fillMaxSize().weight(1f)
                 .size(24.dp)
                 .clickable(
                     interactionSource = remember { MutableInteractionSource() },
                     indication = rememberRipple(bounded = false, radius = 15.dp),
-                    onClick = { currentScreen = Navi.SettingScn }
-                )
-            ) {
-                Image(
-                    painter = painterResource("SettingsPng240F.png"),
+                    onClick = { currentScreen = Navi.SettingScn })
+            ) { Image(painter = painterResource("SettingsPng240F.png"),
                     contentDescription = "",
-                    modifier = Modifier.fillMaxSize()
-                )
-
+                    modifier = Modifier.fillMaxSize().padding(6.5.dp))
             }
         }
-////////////////////////////// Navi head
+
+// Navi head
         when (currentScreen) {
             is Navi.MainScn -> {
                 Row(
@@ -173,28 +166,28 @@ fun mainScreen() {
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-////////////////////////////// Box set A
+// Box set A
                     Column(
                         modifier = Modifier
                             .padding(5.dp)
                             .weight(2f)
                     ) { pingBoxesA(pingSuccessful0, pingSuccessful1, pingSuccessful2, pingSuccessful3) }
                     msSpacerW()
-////////////////////////////// Box set B
+// Box set B
                     Column(
                         modifier = Modifier
                             .padding(5.dp)
                             .weight(2f)
                     ) { pingBoxesB(pingSuccessful4, pingSuccessful5, pingSuccessful6, pingSuccessful7) }
                     msSpacerW()
-////////////////////////////// Box set C
+// Box set C
                     Column(
                         modifier = Modifier
                             .padding(5.dp)
                             .weight(2f)
                     ) { pingBoxesC(pingSuccessful8, pingSuccessful9, pingSuccessful10, pingSuccessful11) }
                     msSpacerW()
-////////////////////////////// Box set D
+// Box set D
                     Column(
                         modifier = Modifier
                             .padding(5.dp)
@@ -202,17 +195,12 @@ fun mainScreen() {
                     ) { weatherBoxesA(currentTempA, currentSkyA) }
                 }
             }
-
-
+// Navi tail
             Navi.MainScn -> mainScreen()
             Navi.SettingFontSz -> settingFontSize()
             Navi.SettingOnOffBxs -> settingOnOffBoxes()
             Navi.SettingPingBxs -> settingPingBoxes()
             Navi.SettingScn -> settingScreen()
-
-////////////////////////////// Navi Tail
-
-
         }
     }
 }
