@@ -5,6 +5,7 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import custom_resources.olrScn
+import custom_resources.smartText
 import views.mainScreen
 
 // Starts in default screen size
@@ -14,6 +15,7 @@ fun main() = application {
     Window(onCloseRequest = ::exitApplication, state = initialWindowState) {
         mainScreen()
         olrScn("\uD83C\uDF35olr")
+        smartText(windowState)
     }
 }
 

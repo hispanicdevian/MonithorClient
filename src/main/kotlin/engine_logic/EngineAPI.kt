@@ -7,7 +7,7 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.IOException
 
-////////////////////////////// Pinging request engine (Match API address)
+// Pinging request engine (Match API address)
 fun pingEngineAPI(ip: String): Boolean {
     val client = OkHttpClient()
     val formBody = FormBody.Builder()
@@ -29,7 +29,7 @@ fun pingEngineAPI(ip: String): Boolean {
     }
 }
 
-////////////////////////////// Weather API A
+// Weather API A
 const val WEATHER_API_BASE_URLA = "http://api.weatherapi.com/v1/current.json"
 const val API_KEYA = "API Key from https://www.weatherapi.com/ goes here"
 val jsonA = Json { ignoreUnknownKeys = true }

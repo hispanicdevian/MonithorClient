@@ -21,8 +21,14 @@ dependencies {
     // (in a separate module for demo project and in testMain).
     // With compose.desktop.common you will also lose @Preview functionality
     implementation(compose.desktop.currentOs)
+    implementation(dependencyNotation = "com.squareup.moshi:moshi-kotlin:1.12.0")
     implementation(dependencyNotation = "com.squareup.okhttp3:okhttp:4.10.0")
     implementation(dependencyNotation = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
+
+    implementation(dependencyNotation = "com.squareup.retrofit2:retrofit:2.9.0")
+    implementation(dependencyNotation = "com.squareup.retrofit2:converter-moshi:2.9.0")
+    implementation(dependencyNotation = "com.squareup.moshi:moshi-kotlin:1.13.0")
+
 }
 
 compose.desktop {
