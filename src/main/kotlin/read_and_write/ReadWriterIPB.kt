@@ -3,7 +3,7 @@ package read_and_write
 import engine_logic.*
 import java.io.File
 
-////////////////////////////// Read/Write for PingSettingBoxesB.kt B4
+// Read/Write for PingSettingBoxesB.kt B4
 fun writeIpToFile4(ipAddress: String) {
     try {
         val file4 = File("$RWI_PATH/rwIP04.hdi")
@@ -24,7 +24,7 @@ fun readIpFile4(): String {
     }
 }
 
-////////////////////////////// Read/Write for PingSettingBoxesB.kt B5
+// Read/Write for PingSettingBoxesB.kt B5
 fun writeIpToFile5(ipAddress: String) {
     try {
         val file5 = File("$RWI_PATH/rwIP05.hdi")
@@ -45,7 +45,7 @@ fun readIpFile5(): String {
     }
 }
 
-////////////////////////////// Read/Write for PingSettingBoxesB.kt B6
+// Read/Write for PingSettingBoxesB.kt B6
 fun writeIpToFile6(ipAddress: String) {
     try {
         val file6 = File("$RWI_PATH/rwIP06.hdi")
@@ -66,7 +66,7 @@ fun readIpFile6(): String {
     }
 }
 
-////////////////////////////// Read/Write for PingSettingBoxesB.kt B7
+// Read/Write for PingSettingBoxesB.kt B7
 fun writeIpToFile7(ipAddress: String) {
     try {
         val file7 = File("$RWI_PATH/rwIP07.hdi")
