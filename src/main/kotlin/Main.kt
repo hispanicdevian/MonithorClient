@@ -1,17 +1,23 @@
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import androidx.compose.ui.window.rememberWindowState
 import custom_resources.olrScn
 import views.mainScreen
 
-////////////////////////////// Starts in default screen size
+// Starts in default screen size
 fun main() = application {
-    Window(onCloseRequest = ::exitApplication) {
+    val initialWindowState = rememberWindowState()
+    val windowState by remember { mutableStateOf(initialWindowState) }
+    Window(onCloseRequest = ::exitApplication, state = initialWindowState) {
         mainScreen()
         olrScn("\uD83C\uDF35olr")
     }
 }
 
-////////////////////////////// Start in full screen size
+// Start in full screen size
 /*
 fun main() {
     application {

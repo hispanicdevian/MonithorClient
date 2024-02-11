@@ -27,7 +27,7 @@ import engine_logic.SLFObjectA.saveFontSizeA
 import views.mainScreen
 import views.settingScreen
 
-////////////////////////////// Screen/View for selecting font size
+// Screen/View for selecting font size
 @Composable
 fun settingFontSize() {
 // Screen view Ram
@@ -35,7 +35,7 @@ fun settingFontSize() {
 // Font size Ram
     var fontSizedA: TextUnit
 
-/////////////// List buttons
+// List buttons
     val fontSizeMapA = mapOf(
         "Default" to 20.sp,
         "Small" to 25.sp,
@@ -43,16 +43,16 @@ fun settingFontSize() {
         "Large" to 35.sp,
         "None" to 0.sp
     )
-////////////////////////////// Navi head
+// Navi head
     when (currentScreen) {
         is Navi.SettingFontSz -> {
 
-            ////////////////////////////// UI Parent
+// UI Parent
             Column(
                 modifier = Modifier.fillMaxSize().background(ErgoGray),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-////////////////////////////// Done button
+// Done button
                 Row(modifier = Modifier.fillMaxSize().weight(1f).background(TurquoiseColor)) {
                     doneButton {
                         currentScreen = Navi.SettingScn
@@ -66,7 +66,7 @@ fun settingFontSize() {
                         .padding(5.dp)
                         .fillMaxSize()
                         .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp))) {
-/////////////// this needs to match fontSizeMapA variable strings
+// This needs to match fontSizeMapA variable strings
                         val itemsListA = listOf("Default", "Small", "Medium", "Large", "None")
                         LazyColumn( modifier = Modifier.fillMaxSize(),
                             state = rememberLazyListState(),
@@ -116,7 +116,7 @@ fun settingFontSize() {
                 settingSpacerH()
             }
         }
-////////////////////////////// Navi tail
+// Navi tail
         Navi.MainScn -> mainScreen()
         Navi.SettingScn -> settingScreen()
         Navi.SettingPingBxs -> settingPingBoxes()

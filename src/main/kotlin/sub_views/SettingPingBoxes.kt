@@ -15,20 +15,20 @@ import pingsetting_boxes.pingSettingBoxesC
 import views.mainScreen
 import views.settingScreen
 
-////////////////////////////// Screen/View for IP settings
+// Screen/View for IP settings
 @Composable
 @Preview
 fun settingPingBoxes() {
     var currentScreen by remember { mutableStateOf<Navi>(Navi.SettingPingBxs) }
 
-////////////////////////////// Navi head
+// Navi head
     when (currentScreen) {
         is Navi.SettingPingBxs -> {
 
-////////////////////////////// UI container
+// UI container
             Column(modifier = Modifier.fillMaxSize().background(ErgoGray),
                 horizontalAlignment = Alignment.CenterHorizontally) {
-////////////////////////////// Done button
+// Done button
                 Row(modifier = Modifier.fillMaxSize().weight(1f).background(TurquoiseColor)) {
                     doneButton { currentScreen = Navi.SettingScn
                     }
@@ -36,17 +36,17 @@ fun settingPingBoxes() {
                 Row(modifier = Modifier.fillMaxWidth().weight(10f).padding(horizontal = 5.dp),
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically) {
-////////////////////////////// Box set A
+// Box set A
                     Column( modifier = Modifier.weight(2f)) {
                         pingSettingBoxesA()
                     }
                     spbSpacerW()
-////////////////////////////// Box set B
+// Box set B
                     Column( modifier = Modifier.weight(2f)) {
                         pingSettingBoxesB()
                     }
                     spbSpacerW()
-////////////////////////////// Box set C
+// Box set C
                     Column( modifier = Modifier.weight(2f)) {
                         pingSettingBoxesC()
                     }
@@ -54,7 +54,7 @@ fun settingPingBoxes() {
                 settingSpacerH()
             }
         }
-////////////////////////////// Navi tail
+// Navi tail
         Navi.MainScn -> mainScreen()
         Navi.SettingScn -> settingScreen()
         Navi.SettingFontSz -> settingFontSize()

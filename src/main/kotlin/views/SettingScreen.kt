@@ -28,7 +28,7 @@ import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 
-////////////////////////////// Settings selector screen/view
+// Settings selector screen/view
 @Composable
 @Preview
 fun settingScreen() {

@@ -16,21 +16,21 @@ import onoffsetting_boxes.onOffSettingBoxesD
 import views.mainScreen
 import views.settingScreen
 
-////////////////////////////// Screen/view for turning On/Off UI
+// Screen/view for turning On/Off UI
 @Composable
 @Preview
 fun settingOnOffBoxes() {
 // Current screen ram
     var currentScreen by remember { mutableStateOf<Navi>(Navi.SettingOnOffBxs) }
 
-////////////////////////////// Navi head
+// Navi head
     when (currentScreen) {
         is Navi.SettingOnOffBxs -> {
 
-////////////////////////////// UI Parent
+// UI Parent
             Column(modifier = Modifier.fillMaxSize().background(ErgoGray),
                 horizontalAlignment = Alignment.CenterHorizontally) {
-////////////////////////////// Done button
+// Done button
                 Row(modifier = Modifier.fillMaxSize().weight(1f).background(TurquoiseColor)) {
                     doneButton { currentScreen = Navi.SettingScn
                     }
@@ -38,25 +38,25 @@ fun settingOnOffBoxes() {
                 Row(modifier = Modifier.fillMaxSize().weight(10f).padding(top = 10.dp).padding(horizontal = 5.dp),
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically) {
-////////////////////////////// Box set A
+// Box set A
                     Column(modifier = Modifier.weight(1f),
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center
                     ) { onOffSettingBoxesA() }
                     soobSpacerW()
-////////////////////////////// Box set B
+// Box set B
                     Column(modifier = Modifier.weight(1f),
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center
                     ) { onOffSettingBoxesB() }
                     soobSpacerW()
-////////////////////////////// Box set C
+// Box set C
                     Column(modifier = Modifier.weight(1f),
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center
                     ) { onOffSettingBoxesC() }
                     soobSpacerW()
-////////////////////////////// Box set D
+// Box set D
                     Column(modifier = Modifier.weight(1.5f),
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center
@@ -64,7 +64,7 @@ fun settingOnOffBoxes() {
                 }
             }
         }
-////////////////////////////// Navi tail
+// Navi tail
         Navi.MainScn -> mainScreen()
         Navi.SettingFontSz -> settingFontSize()
         Navi.SettingPingBxs -> settingPingBoxes()
