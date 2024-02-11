@@ -1,11 +1,12 @@
 package engine_logic
 
-////////////////////////////// Navigation anchors
+// Navigation anchors
 sealed class Navi {
-/////////////// Main screens
+// Main screens
     data object MainScn : Navi()
     data object SettingScn : Navi()
-/////////////// Secondary screens
+
+// Secondary screens
     data object SettingPingBxs : Navi()
     data object SettingFontSz : Navi()
     data object SettingOnOffBxs : Navi()

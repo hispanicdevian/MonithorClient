@@ -5,7 +5,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.WindowState
 
-// This right here is what you need; make sure to pass the value from /Main.kt/windowsState/initialWindowState
 fun smartText(windowState: WindowState): TextUnit {
     val displayState = windowState.size.height
 

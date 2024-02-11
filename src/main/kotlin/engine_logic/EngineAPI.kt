@@ -54,7 +54,7 @@ fun getCurrentTemperatureA(cityName: String): Pair<Double?, String?> = try {
 fun buildRequestA(cityNameA: String): Request =
     Request.Builder().url("$WEATHER_API_BASE_URLA?key=$API_KEYA&q=$cityNameA").build()
 
-////////////////////////////// Weather API B
+// Weather API B
 const val WEATHER_API_BASE_URLB = "http://api.weatherapi.com/v1/current.json"
 const val API_KEYB = "API Key from https://www.weatherapi.com/ goes here"
 private val clientB = OkHttpClient()

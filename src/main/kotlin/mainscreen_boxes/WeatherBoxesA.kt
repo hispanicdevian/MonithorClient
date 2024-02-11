@@ -16,8 +16,8 @@ import androidx.compose.ui.unit.sp
 import custom_resources.ErgoGray
 import custom_resources.TurquoiseColor
 import engine_logic.Navi
-import engine_logic.SLFObjectA.loadFontSizeA
-import engine_logic.SLOnOffObjectD.loadOnOffFileD
+import read_and_write.SLFObjectA.loadFontSizeA
+import read_and_write.SLOnOffObjectD.loadOnOffFileD
 import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes

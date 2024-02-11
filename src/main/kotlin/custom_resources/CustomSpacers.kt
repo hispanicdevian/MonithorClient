@@ -7,28 +7,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
-////////////////////////////// Width
+//// Width
 
-/////////////// MainScreen.kt
 @Composable
 fun msSpacerW() { Spacer(modifier = Modifier.width(15.dp)) }
-
-/////////////// SettingPingBoxes.kt
 @Composable
 fun spbSpacerW() { Spacer(modifier = Modifier.width(8.dp)) }
-
-/////////////// SettingOnOffBoxes.kt
 @Composable
 fun soobSpacerW() { Spacer(modifier = Modifier.width(8.dp)) }
 
-////////////////////////////// Height
-
-/////////////// PingSettingBoxes.kt
+//// Height
 
 @Composable
 fun oosbSpacerHBot() { Spacer(modifier = Modifier.height(12.dp)) }
-
-/////////////// PingBoxes.kt
 @Composable
 fun pbSpacerHTop() { Spacer(modifier = Modifier.height(15.dp)) }
 @Composable
