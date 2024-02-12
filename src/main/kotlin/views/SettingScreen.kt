@@ -65,7 +65,7 @@ fun settingScreen() {
                 Box(modifier = Modifier.fillMaxSize().weight(1f)
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
-                        indication = rememberRipple(bounded = false, radius = 15.dp),
+                        indication = rememberRipple(bounded = false, radius = 10.dp),
                         onClick = { currentScreen = Navi.MainScn })
                 ) { Image(painter = painterResource("HomePng240.png"),
                     contentDescription = "",
@@ -92,7 +92,7 @@ fun settingScreen() {
                 Box(modifier = Modifier.fillMaxSize().weight(1f)
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
-                        indication = rememberRipple(bounded = false, radius = 15.dp),
+                        indication = rememberRipple(bounded = false, radius = 10.dp),
                         onClick = { currentScreen = Navi.SettingScn })
                 ) { Image(painter = painterResource("SettingsPng240F.png"),
                     contentDescription = "",
