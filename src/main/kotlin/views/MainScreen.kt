@@ -39,7 +39,6 @@ import sub_views.settingPingBoxes
 fun mainScreen() {
 // Current screen ram
     var currentScreen by remember { mutableStateOf<Navi>(Navi.MainScn) }
-
     val displayState = LocalWindowInfo.current.containerSize.height
     val smartText = when {
         displayState <= 720 -> 25.sp

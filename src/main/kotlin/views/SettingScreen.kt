@@ -45,12 +45,10 @@ fun settingScreen() {
         displayState >= 1526 -> 75.sp
         else -> 20.sp // Default size
     }
-
     var currentScreen by remember { mutableStateOf<Navi>(Navi.SettingScn) }
     var currentScreenA by remember { mutableStateOf(false) }
     var currentScreenB by remember { mutableStateOf(false) }
     var currentScreenC by remember { mutableStateOf(false) }
-
 // Navi set
     if (currentScreenA) { settingPingBoxes() }
     else if (currentScreenB) { settingOnOffBoxes() }
