@@ -13,8 +13,10 @@ import androidx.compose.material.Text
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -29,9 +31,19 @@ import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 
 // Settings selector screen/view
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 @Preview
 fun settingScreen() {
+    val displayState = LocalWindowInfo.current.containerSize.height
+    val smartText = when {
+        displayState <= 720 -> 20.sp
+        displayState in 730..820 -> 30.sp
+        displayState in 830..1100 -> 40.sp
+        displayState >= 1110 -> 50.sp
+        else -> 20.sp // Default size
+    }
+
     var currentScreen by remember { mutableStateOf<Navi>(Navi.SettingScn) }
     var currentScreenA by remember { mutableStateOf(false) }
     var currentScreenB by remember { mutableStateOf(false) }
@@ -63,7 +75,7 @@ fun settingScreen() {
 
 // Clickable Title
                 Box(modifier = Modifier.fillMaxSize().weight(1f)) {
-                    Text("Monithor Client", fontSize = 26.sp,
+                    Text("Monithor Client", fontSize = smartText,
                         color = ErgoGray, fontWeight = FontWeight.W900,
                         modifier = Modifier
                             .fillMaxSize()
