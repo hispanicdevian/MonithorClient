@@ -37,10 +37,12 @@ import sub_views.settingPingBoxes
 fun settingScreen() {
     val displayState = LocalWindowInfo.current.containerSize.height
     val smartText = when {
-        displayState <= 720 -> 20.sp
-        displayState in 730..820 -> 30.sp
-        displayState in 830..1100 -> 40.sp
-        displayState >= 1110 -> 50.sp
+        displayState <= 720 -> 25.sp
+        displayState in 735..825 -> 35.sp
+        displayState in 826..1125 -> 45.sp
+        displayState in 1126..1325 -> 55.sp
+        displayState in 1326..1525 -> 65.sp
+        displayState >= 1526 -> 75.sp
         else -> 20.sp // Default size
     }
 

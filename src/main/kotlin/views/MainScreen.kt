@@ -42,10 +42,12 @@ fun mainScreen() {
 
     val displayState = LocalWindowInfo.current.containerSize.height
     val smartText = when {
-        displayState <= 720 -> 20.sp
-        displayState in 730..820 -> 30.sp
-        displayState in 830..1100 -> 40.sp
-        displayState >= 1110 -> 50.sp
+        displayState <= 720 -> 25.sp
+        displayState in 735..825 -> 35.sp
+        displayState in 826..1125 -> 45.sp
+        displayState in 1126..1325 -> 55.sp
+        displayState in 1326..1525 -> 65.sp
+        displayState >= 1526 -> 75.sp
         else -> 20.sp // Default size
     }
 // Ping results ram
@@ -173,35 +175,30 @@ fun mainScreen() {
 // Navi head
         when (currentScreen) {
             is Navi.MainScn -> {
-                Row(
-                    modifier = Modifier.fillMaxWidth().weight(10f).padding(horizontal = 5.dp),
+                Row(modifier = Modifier.fillMaxWidth().weight(10f).padding(horizontal = 5.dp),
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
 // Box set A
-                    Column(
-                        modifier = Modifier
+                    Column(modifier = Modifier
                             .padding(5.dp)
                             .weight(2f)
                     ) { pingBoxesA(pingSuccessful0, pingSuccessful1, pingSuccessful2, pingSuccessful3) }
                     msSpacerW()
 // Box set B
-                    Column(
-                        modifier = Modifier
+                    Column(modifier = Modifier
                             .padding(5.dp)
                             .weight(2f)
                     ) { pingBoxesB(pingSuccessful4, pingSuccessful5, pingSuccessful6, pingSuccessful7) }
                     msSpacerW()
 // Box set C
-                    Column(
-                        modifier = Modifier
+                    Column(modifier = Modifier
                             .padding(5.dp)
                             .weight(2f)
                     ) { pingBoxesC(pingSuccessful8, pingSuccessful9, pingSuccessful10, pingSuccessful11) }
                     msSpacerW()
 // Box set D
-                    Column(
-                        modifier = Modifier
+                    Column(modifier = Modifier
                             .padding(5.dp)
                             .weight(2f)
                     ) { weatherBoxesA(currentTempA, currentSkyA) }
