@@ -51,7 +51,6 @@ fun settingPingBoxes() {
                         pingSettingBoxesC()
                     }
                 }
-                settingSpacerH()
             }
         }
 // Navi tail

@@ -19,13 +19,14 @@ import custom_resources.TurquoiseColor
 import custom_resources.msSpacerW
 import custom_resources.smartText
 import engine_logic.*
+import engine_logic.read_and_write.IpFileManager
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
-import mainscreen_boxes.pingBoxesA
-import mainscreen_boxes.pingBoxesB
-import mainscreen_boxes.pingBoxesC
-import mainscreen_boxes.weatherBoxesA
+import ping_boxes.pingBoxesA
+import ping_boxes.pingBoxesB
+import ping_boxes.pingBoxesC
+import ping_boxes.weatherBoxesA
 import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
@@ -36,6 +37,19 @@ import sub_views.settingPingBoxes
 fun mainScreen() {
 // Current screen ram
     var currentScreen by remember { mutableStateOf<Navi>(Navi.MainScn) }
+// IPs
+    val ipAddress0 by remember { mutableStateOf(IpFileManager.readIpFile(0)) }
+    val ipAddress1 by remember { mutableStateOf(IpFileManager.readIpFile(1)) }
+    val ipAddress2 by remember { mutableStateOf(IpFileManager.readIpFile(2)) }
+    val ipAddress3 by remember { mutableStateOf(IpFileManager.readIpFile(3)) }
+    val ipAddress4 by remember { mutableStateOf(IpFileManager.readIpFile(4)) }
+    val ipAddress5 by remember { mutableStateOf(IpFileManager.readIpFile(5)) }
+    val ipAddress6 by remember { mutableStateOf(IpFileManager.readIpFile(6)) }
+    val ipAddress7 by remember { mutableStateOf(IpFileManager.readIpFile(7)) }
+    val ipAddress8 by remember { mutableStateOf(IpFileManager.readIpFile(8)) }
+    val ipAddress9 by remember { mutableStateOf(IpFileManager.readIpFile(9)) }
+    val ipAddress10 by remember { mutableStateOf(IpFileManager.readIpFile(10)) }
+    val ipAddress11 by remember { mutableStateOf(IpFileManager.readIpFile(11)) }
 // Ping results ram
     var pingSuccessful0 by remember { mutableStateOf(false) }
     var pingSuccessful1 by remember { mutableStateOf(false) }

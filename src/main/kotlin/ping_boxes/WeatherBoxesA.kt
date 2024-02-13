@@ -1,4 +1,4 @@
-package mainscreen_boxes
+package ping_boxes
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*

@@ -21,7 +21,6 @@ import androidx.compose.ui.unit.sp
 import custom_resources.ErgoGray
 import custom_resources.TurquoiseColor
 import custom_resources.doneButton
-import custom_resources.settingSpacerH
 import engine_logic.Navi
 import engine_logic.read_and_write.SLFObjectA.saveFontSizeA
 import views.mainScreen
@@ -113,7 +112,7 @@ fun settingFontSize() {
                         }
                     }
                 }
-                settingSpacerH()
+                Spacer(modifier = Modifier.height(10.dp))
             }
         }
 // Navi tail

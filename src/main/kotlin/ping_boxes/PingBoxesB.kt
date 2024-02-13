@@ -1,4 +1,4 @@
-package mainscreen_boxes
+package ping_boxes
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.background
@@ -18,7 +18,8 @@ import androidx.compose.ui.unit.sp
 import custom_resources.*
 import engine_logic.*
 import engine_logic.read_and_write.SLFObjectA.loadFontSizeA
-import engine_logic.read_and_write.SLOnOffObjectA.loadOnOffFileA
+import engine_logic.read_and_write.SLOnOffObjectB.loadOnOffFileB
+import engine_logic.read_and_write.TiFileManager
 import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
@@ -27,25 +28,31 @@ import views.settingScreen
 ////////////////////////////// Ping boxes shown in the first column of the main screen
 @Composable
 @Preview
-fun pingBoxesA(pingSuccessfulA0: Boolean, pingSuccessfulA1: Boolean, pingSuccessfulA2: Boolean, pingSuccessfulA3: Boolean) {
+fun pingBoxesB(pingSuccessfulB4: Boolean, pingSuccessfulB5: Boolean, pingSuccessfulB6: Boolean, pingSuccessfulB7: Boolean) {
 // Ram for active View/Screen
     val currentScreen by remember { mutableStateOf<Navi>(Navi.MainScn) }
 // Pass through ram for ping state
-    val pingSuccessfulList = listOf(pingSuccessfulA0, pingSuccessfulA1, pingSuccessfulA2, pingSuccessfulA3)
-// Title list ram, need to be replaced so that the user can modify it live
-    val titleList = listOf(ipTitle00, ipTitle01, ipTitle02, ipTitle03)
+    val pingSuccessfulList = listOf(pingSuccessfulB4, pingSuccessfulB5, pingSuccessfulB6, pingSuccessfulB7)
+// Title
+    val ipTitleA0 by remember { mutableStateOf(TiFileManager.readTiFile(0)) }
+    val ipTitleA1 by remember { mutableStateOf(TiFileManager.readTiFile(1)) }
+    val ipTitleA2 by remember { mutableStateOf(TiFileManager.readTiFile(2)) }
+    val ipTitleA3 by remember { mutableStateOf(TiFileManager.readTiFile(3)) }
+
+    val titleList = listOf(ipTitleA0, ipTitleA1, ipTitleA2, ipTitleA3)
 // Font size ram
     val fontSizedA by remember { mutableStateOf(loadFontSizeA().sp) }
 
 /////////////// Loads the last state of On/Off settings
     val visibilityList = remember {
-        val currentState = loadOnOffFileA()
+        val currentState = loadOnOffFileB()
         if (currentState.isNotEmpty()) {
             currentState.split(",").map { it.toBoolean() }
         } else {
             listOf(true, true, true, true)
         }
     }
+
 ////////////////////////////// UI container
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,

@@ -1,14 +1,11 @@
-package mainscreen_boxes
+package ping_boxes
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.AbsoluteRoundedCornerShape
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -18,35 +15,40 @@ import androidx.compose.ui.unit.sp
 import custom_resources.*
 import engine_logic.*
 import engine_logic.read_and_write.SLFObjectA.loadFontSizeA
-import engine_logic.read_and_write.SLOnOffObjectC.loadOnOffFileC
+import engine_logic.read_and_write.SLOnOffObjectA.loadOnOffFileA
+import engine_logic.read_and_write.TiFileManager
 import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 import views.settingScreen
 
-////////////////////////////// Ping Boxes Shown in the Third Column of the Main Screen
+////////////////////////////// Ping boxes shown in the first column of the main screen
 @Composable
 @Preview
-fun pingBoxesC(pingSuccessfulC8: Boolean, pingSuccessfulC9: Boolean, pingSuccessfulC10: Boolean, pingSuccessfulC11: Boolean) {
+fun pingBoxesA(pingSuccessfulA0: Boolean, pingSuccessfulA1: Boolean, pingSuccessfulA2: Boolean, pingSuccessfulA3: Boolean) {
 // Ram for active View/Screen
     val currentScreen by remember { mutableStateOf<Navi>(Navi.MainScn) }
 // Pass through ram for ping state
-    val pingSuccessfulList = listOf(pingSuccessfulC8, pingSuccessfulC9, pingSuccessfulC10, pingSuccessfulC11)
-// Title list ram, need to be replaced so that the user can modify it live
-    val titleList = listOf(ipTitle08, ipTitle09, ipTitle10, ipTitle11)
+    val pingSuccessfulList = listOf(pingSuccessfulA0, pingSuccessfulA1, pingSuccessfulA2, pingSuccessfulA3)
+// Title
+    val ipTitleA0 by remember { mutableStateOf(TiFileManager.readTiFile(0)) }
+    val ipTitleA1 by remember { mutableStateOf(TiFileManager.readTiFile(1)) }
+    val ipTitleA2 by remember { mutableStateOf(TiFileManager.readTiFile(2)) }
+    val ipTitleA3 by remember { mutableStateOf(TiFileManager.readTiFile(3)) }
+
+    val titleList = listOf(ipTitleA0, ipTitleA1, ipTitleA2, ipTitleA3)
 // Font size ram
     val fontSizedA by remember { mutableStateOf(loadFontSizeA().sp) }
 
 /////////////// Loads the last state of On/Off settings
     val visibilityList = remember {
-        val currentState = loadOnOffFileC()
+        val currentState = loadOnOffFileA()
         if (currentState.isNotEmpty()) {
             currentState.split(",").map { it.toBoolean() }
         } else {
             listOf(true, true, true, true)
         }
     }
-
 ////////////////////////////// UI container
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,

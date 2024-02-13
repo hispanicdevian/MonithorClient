@@ -24,5 +24,3 @@ fun oosbSpacerHBot() { Spacer(modifier = Modifier.height(12.dp)) }
 fun pbSpacerHTop() { Spacer(modifier = Modifier.height(15.dp)) }
 @Composable
 fun pbSpacerHBot() { Spacer(modifier = Modifier.height(15.dp)) }
-@Composable
-fun settingSpacerH() { Spacer(modifier = Modifier.height(10.dp)) }
