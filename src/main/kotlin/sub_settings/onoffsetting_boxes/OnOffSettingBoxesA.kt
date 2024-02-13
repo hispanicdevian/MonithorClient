@@ -1,4 +1,4 @@
-package onoffsetting_boxes
+package sub_settings.onoffsetting_boxes
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -14,13 +14,13 @@ import androidx.compose.ui.unit.sp
 import custom_resources.ErgoGray
 import custom_resources.SeaColor
 import custom_resources.oosbSpacerHBot
-import read_and_write.SLOnOffObjectB.loadVisibilityB
-import read_and_write.SLOnOffObjectB.saveVisibilityB
+import read_and_write.SLOnOffObjectA.loadVisibilityA
+import read_and_write.SLOnOffObjectA.saveVisibilityA
 
 @Composable
-fun onOffSettingBoxesB() {
+fun onOffSettingBoxesA() {
 // Ram for active View/Screen
-    var visibilityList by remember { mutableStateOf(loadVisibilityB()) }
+    var visibilityList by remember { mutableStateOf(loadVisibilityA()) }
 
 ////////////////////////////// UI container
     Column(modifier = Modifier.fillMaxSize(),
@@ -39,8 +39,8 @@ fun onOffSettingBoxesB() {
                         this[index] = !this[index]
                     }
 ////////////////////////////// Saves the updated state when the box is clicked
-                        saveVisibilityB(visibilityList)
-                    },
+                    saveVisibilityA(visibilityList)
+                },
                 contentAlignment = Alignment.Center
             ) {
                 Text(text = if (isVisible) "ON" else "OFF", color = Color.White, fontSize = 20.sp)

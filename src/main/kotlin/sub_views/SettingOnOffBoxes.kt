@@ -9,10 +9,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import custom_resources.*
 import engine_logic.Navi
-import onoffsetting_boxes.onOffSettingBoxesA
-import onoffsetting_boxes.onOffSettingBoxesB
-import onoffsetting_boxes.onOffSettingBoxesC
-import onoffsetting_boxes.onOffSettingBoxesD
+import sub_settings.onoffsetting_boxes.onOffSettingBoxesA
+import sub_settings.onoffsetting_boxes.onOffSettingBoxesB
+import sub_settings.onoffsetting_boxes.onOffSettingBoxesC
+import sub_settings.onoffsetting_boxes.onOffSettingBoxesD
 import views.mainScreen
 import views.settingScreen
 

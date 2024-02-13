@@ -1,4 +1,4 @@
-package onoffsetting_boxes
+package sub_settings.onoffsetting_boxes
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -14,34 +14,33 @@ import androidx.compose.ui.unit.sp
 import custom_resources.ErgoGray
 import custom_resources.SeaColor
 import custom_resources.oosbSpacerHBot
-import read_and_write.SLOnOffObjectD.loadVisibilityD
-import read_and_write.SLOnOffObjectD.saveVisibilityD
+import read_and_write.SLOnOffObjectB.loadVisibilityB
+import read_and_write.SLOnOffObjectB.saveVisibilityB
 
 @Composable
-fun onOffSettingBoxesD() {
+fun onOffSettingBoxesB() {
 // Ram for active View/Screen
-    var visibilityList by remember { mutableStateOf(loadVisibilityD()) }
+    var visibilityList by remember { mutableStateOf(loadVisibilityB()) }
 
 ////////////////////////////// UI container
-    Column(
-        modifier = Modifier.fillMaxSize(),
+    Column(modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
+        verticalArrangement = Arrangement.Center) {
 ////////////////////////////// On/Off index control
         visibilityList.forEachIndexed { index, isVisible ->
-            Box( modifier = Modifier.background(color = if (isVisible) SeaColor else Color.Black,
-                    shape = AbsoluteRoundedCornerShape(8.dp))
+            Box(modifier = Modifier.background(color = if (isVisible) SeaColor else Color.Black,
+                shape = AbsoluteRoundedCornerShape(8.dp))
                 .padding(5.dp)
                 .background(color = ErgoGray, shape = AbsoluteRoundedCornerShape(5.dp))
                 .weight(1f)
                 .fillMaxSize()
-                .clickable {visibilityList = visibilityList.toMutableList().apply {
-                    this[index] = !this[index]
-                }
+                .clickable {
+                    visibilityList = visibilityList.toMutableList().apply {
+                        this[index] = !this[index]
+                    }
 ////////////////////////////// Saves the updated state when the box is clicked
-                    saveVisibilityD(visibilityList)
-                },
+                        saveVisibilityB(visibilityList)
+                    },
                 contentAlignment = Alignment.Center
             ) {
                 Text(text = if (isVisible) "ON" else "OFF", color = Color.White, fontSize = 20.sp)

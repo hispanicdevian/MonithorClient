@@ -1,4 +1,4 @@
-package pingsetting_boxes
+package sub_settings.pingsetting_boxes
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.background
@@ -21,20 +21,19 @@ import engine_logic.*
 import read_and_write.SLFObjectA.loadFontSizeA
 import read_and_write.*
 
-////////////////////////////// Third column of boxes located in Ip settings
+////////////////////////////// Second column of boxes located in Ip settings
 @Composable
 @Preview
-fun pingSettingBoxesC() {
-    var ipAddressC0 by remember { mutableStateOf(readIpFile8()) }
-    var ipAddressC1 by remember { mutableStateOf(readIpFile9()) }
-    var ipAddressC2 by remember { mutableStateOf(readIpFile10()) }
-    var ipAddressC3 by remember { mutableStateOf(readIpFile11()) }
+fun pingSettingBoxesB() {
+    var ipAddressB0 by remember { mutableStateOf(readIpFile4()) }
+    var ipAddressB1 by remember { mutableStateOf(readIpFile5()) }
+    var ipAddressB2 by remember { mutableStateOf(readIpFile6()) }
+    var ipAddressB3 by remember { mutableStateOf(readIpFile7()) }
 
-    var ipTitleC0 by remember { mutableStateOf(readTiFile8()) }
-    var ipTitleC1 by remember { mutableStateOf(readTiFile9()) }
-    var ipTitleC2 by remember { mutableStateOf(readTiFile10()) }
-    var ipTitleC3 by remember { mutableStateOf(readTiFile11()) }
-
+    var ipTitleB0 by remember { mutableStateOf(readTiFile4()) }
+    var ipTitleB1 by remember { mutableStateOf(readTiFile5()) }
+    var ipTitleB2 by remember { mutableStateOf(readTiFile6()) }
+    var ipTitleB3 by remember { mutableStateOf(readTiFile7()) }
 // Font size ram
     val fontSizedSA by remember { mutableStateOf(loadFontSizeA().sp) }
 
@@ -42,7 +41,7 @@ fun pingSettingBoxesC() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-////////////////////////////// Edit box C0 - 8
+////////////////////////////// Edit box B0 - ReWr4
         Box( modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
                 .padding(4.dp)
@@ -54,12 +53,12 @@ fun pingSettingBoxesC() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-/////////////// Title input C0
+/////////////// Title input B0
                 TextField(
-                    value = ipTitleC0,
+                    value = ipTitleB0,
                     onValueChange = { newValue ->
-                        ipTitleC0 = newValue
-                        writeTiToFile8(newValue)
+                        ipTitleB0 = newValue
+                        writeTiToFile4(newValue)
                     },
                     modifier = Modifier.fillMaxSize().weight(1f),
                     textStyle = TextStyle(
@@ -77,18 +76,18 @@ fun pingSettingBoxesC() {
                         }
                     }
                 )
-/////////////// Divider line C0
+/////////////// Divider line B0
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
                     thickness = 1.5.dp
                 )
-/////////////// Ip input C0
+/////////////// Ip input B0
                 TextField(
-                    value = ipAddressC0,
+                    value = ipAddressB0,
                     onValueChange = { newValue ->
-                        ipAddressC0= newValue
-                        writeIpToFile8(newValue)
+                        ipAddressB0 = newValue
+                        writeIpToFile4(newValue)
                     },
                     modifier = Modifier.fillMaxSize().weight(1f),
                     textStyle = TextStyle(
@@ -104,12 +103,12 @@ fun pingSettingBoxesC() {
                 )
             }
         }
-////////////////////////////// Edit box C1 - 9
+////////////////////////////// Edit box B1 - ReWr5
         settingSpacerH()
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
-                .padding(5.dp)
+                .padding(4.dp)
                 .weight(1f)
                 .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
@@ -118,12 +117,12 @@ fun pingSettingBoxesC() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-/////////////// Title input C1
+/////////////// Title input B1
                 TextField(
-                    value = ipTitleC1,
+                    value = ipTitleB1,
                     onValueChange = { newValue ->
-                        ipTitleC1 = newValue
-                        writeTiToFile9(newValue)
+                        ipTitleB1 = newValue
+                        writeTiToFile5(newValue)
                     },
                     modifier = Modifier.fillMaxSize().weight(1f),
                     textStyle = TextStyle(
@@ -141,18 +140,18 @@ fun pingSettingBoxesC() {
                         }
                     }
                 )
-/////////////// Divider line C1
+/////////////// Divider line B1
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
                     thickness = 1.5.dp
                 )
-/////////////// Ip input C1
+/////////////// Ip input B1
                 TextField(
-                    value = ipAddressC1,
+                    value = ipAddressB1,
                     onValueChange = { newValue ->
-                        ipAddressC1 = newValue
-                        writeIpToFile9(newValue)
+                        ipAddressB1 = newValue
+                        writeIpToFile5(newValue)
                     },
                     modifier = Modifier.fillMaxSize().weight(1f),
                     textStyle = TextStyle(
@@ -168,12 +167,12 @@ fun pingSettingBoxesC() {
                 )
             }
         }
-////////////////////////////// Edit box C2 - 10
+////////////////////////////// Edit box B2 - ReWr6
         settingSpacerH()
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
-                .padding(5.dp)
+                .padding(4.dp)
                 .weight(1f)
                 .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
@@ -182,12 +181,12 @@ fun pingSettingBoxesC() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-/////////////// Title input C2
+/////////////// Title input B2
                 TextField(
-                    value = ipTitleC2,
+                    value = ipTitleB2,
                     onValueChange = { newValue ->
-                        ipTitleC2 = newValue
-                        writeTiToFile10(newValue)
+                        ipTitleB2 = newValue
+                        writeTiToFile6(newValue)
                     },
                     modifier = Modifier.fillMaxSize().weight(1f),
                     textStyle = TextStyle(
@@ -205,18 +204,18 @@ fun pingSettingBoxesC() {
                         }
                     }
                 )
-/////////////// Divider line C2
+/////////////// Divider line B2
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
                     thickness = 1.5.dp
                 )
-/////////////// Ip input C2
+/////////////// Ip input B2
                 TextField(
-                    value = ipAddressC2,
+                    value = ipAddressB2,
                     onValueChange = { newValue ->
-                        ipAddressC2 = newValue
-                        writeIpToFile10(newValue)
+                        ipAddressB2 = newValue
+                        writeIpToFile6(newValue)
                     },
                     modifier = Modifier.fillMaxSize().weight(1f),
                     textStyle = TextStyle(
@@ -232,12 +231,12 @@ fun pingSettingBoxesC() {
                 )
             }
         }
-////////////////////////////// Edit box C3 - 11
+////////////////////////////// Edit box B3 - ReWr7
         settingSpacerH()
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
-                .padding(5.dp)
+                .padding(4.dp)
                 .weight(1f)
                 .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             contentAlignment = Alignment.Center
@@ -246,12 +245,12 @@ fun pingSettingBoxesC() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-/////////////// Title input C3
+/////////////// Title input B3
                 TextField(
-                    value = ipTitleC3,
+                    value = ipTitleB3,
                     onValueChange = { newValue ->
-                        ipTitleC3 = newValue
-                        writeTiToFile11(newValue)
+                        ipTitleB3 = newValue
+                        writeTiToFile7(newValue)
                     },
                     modifier = Modifier.fillMaxSize().weight(1f),
                     textStyle = TextStyle(
@@ -269,18 +268,18 @@ fun pingSettingBoxesC() {
                         }
                     }
                 )
-/////////////// Divider line C3
+/////////////// Divider line B3
                 Divider(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color.Black,
                     thickness = 1.5.dp
                 )
-/////////////// Ip input C3
+/////////////// Ip input B3
                 TextField(
-                    value = ipAddressC3,
+                    value = ipAddressB3,
                     onValueChange = { newValue ->
-                        ipAddressC3 = newValue
-                        writeIpToFile11(newValue)
+                        ipAddressB3 = newValue
+                        writeIpToFile7(newValue)
                     },
                     modifier = Modifier.fillMaxSize().weight(1f),
                     textStyle = TextStyle(

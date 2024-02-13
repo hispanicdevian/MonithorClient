@@ -1,4 +1,4 @@
-package onoffsetting_boxes
+package sub_settings.onoffsetting_boxes
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

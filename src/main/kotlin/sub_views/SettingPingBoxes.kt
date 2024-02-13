@@ -9,9 +9,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import custom_resources.*
 import engine_logic.Navi
-import pingsetting_boxes.pingSettingBoxesA
-import pingsetting_boxes.pingSettingBoxesB
-import pingsetting_boxes.pingSettingBoxesC
+import sub_settings.pingsetting_boxes.pingSettingBoxesA
+import sub_settings.pingsetting_boxes.pingSettingBoxesB
+import sub_settings.pingsetting_boxes.pingSettingBoxesC
 import views.mainScreen
 import views.settingScreen
 
