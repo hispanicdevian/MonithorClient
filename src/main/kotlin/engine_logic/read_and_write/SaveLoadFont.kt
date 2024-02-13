@@ -3,7 +3,7 @@ package engine_logic.read_and_write
 import engine_logic.SLF_PATH
 import java.io.File
 
-////////////////////////////// Saves and loads the selected font size
+// Saves and loads the selected font size
 object SLFObjectA {
     private const val PATH0 = "$SLF_PATH/fontSizeA.hdi"
     fun saveFontSizeA(fontSize: Float) {

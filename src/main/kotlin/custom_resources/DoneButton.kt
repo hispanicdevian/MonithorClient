@@ -8,20 +8,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 
 @Composable
 fun doneButton(onDoneClick: () -> Unit) {
     Box( modifier = Modifier.fillMaxSize().padding(4.dp)) {
-
         Column( modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Top) {
-            Button(
-                modifier = Modifier.fillMaxSize(),
+            Button(modifier = Modifier.fillMaxSize(),
                 colors = ButtonDefaults.buttonColors(ErgoGray),
                 onClick = { onDoneClick() }
-            ) {
-                Text("Done", color = TurquoiseColor, fontSize = 25.sp, fontWeight = FontWeight.Bold)
+            ) { Text("Done", color = TurquoiseColor, fontSize = smartText(1f),
+                    fontWeight = FontWeight.Bold)
             }
         }
     }

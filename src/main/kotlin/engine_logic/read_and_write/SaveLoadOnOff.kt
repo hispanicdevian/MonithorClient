@@ -3,7 +3,7 @@ package engine_logic.read_and_write
 import engine_logic.SLM_PATH
 import java.io.File
 
-////////////////////////////// Save and Load On/Off state A
+// Save and Load On/Off state A
 object SLOnOffObjectA {
     private const val FILEPATH0 = "$SLM_PATH/msStateA.hdi"
 
@@ -44,7 +44,7 @@ object SLOnOffObjectA {
     }
 }
 
-////////////////////////////// Save and Load On/Off state B
+// Save and Load On/Off state B
 object SLOnOffObjectB {
     private const val FILEPATH1 = "$SLM_PATH/msStateB.hdi"
 
@@ -85,7 +85,7 @@ object SLOnOffObjectB {
     }
 }
 
-////////////////////////////// Save and Load On/Off state C
+// Save and Load On/Off state C
 object SLOnOffObjectC {
     private const val FILEPATH2 = "$SLM_PATH/msStateC.hdi"
 
@@ -126,7 +126,7 @@ object SLOnOffObjectC {
     }
 }
 
-////////////////////////////// Save and Load On/Off state D
+// Save and Load On/Off state D
 object SLOnOffObjectD {
     private const val FILEPATH3 = "$SLM_PATH/msStateD.hdi"
 
