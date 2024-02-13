@@ -2,6 +2,7 @@ package engine_logic.read_and_write
 
 import engine_logic.*
 import java.io.File
+const val RWI_PATH = "LightsData/RWI"
 
 // Read/Write for PingSettingBoxesA.kt A0
 fun writeIpToFile0(ipAddress: String) {

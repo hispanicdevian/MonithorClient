@@ -1,7 +1,7 @@
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
-import api.launchAPI
-import api.pkillAPI
+import engine_logic.embedded_api.launchAPI
+import engine_logic.embedded_api.pkillAPI
 import custom_resources.olrScn
 import views.mainScreen
 

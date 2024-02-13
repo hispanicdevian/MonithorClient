@@ -1,7 +1,7 @@
-package api
+package engine_logic.embedded_api
 
 fun launchAPI() {
-    val binaryPath = "src/main/kotlin/api/monithorapi23"
+    val binaryPath = "src/main/kotlin/engine_logic/embedded_api/monithorapi23"
     ProcessBuilder(binaryPath).start()
     println("monithorapi = on")
 }
