@@ -10,16 +10,14 @@ import androidx.compose.material.Text
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import custom_resources.ErgoGray
 import custom_resources.TurquoiseColor
 import custom_resources.msSpacerW
+import custom_resources.smartText
 import engine_logic.*
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
@@ -33,22 +31,11 @@ import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 
 // Main screen/view of the app
-@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 @Preview
 fun mainScreen() {
 // Current screen ram
     var currentScreen by remember { mutableStateOf<Navi>(Navi.MainScn) }
-    val displayState = LocalWindowInfo.current.containerSize.height
-    val smartText = when {
-        displayState <= 720 -> 25.sp
-        displayState in 735..825 -> 35.sp
-        displayState in 826..1125 -> 45.sp
-        displayState in 1126..1325 -> 55.sp
-        displayState in 1326..1525 -> 65.sp
-        displayState >= 1526 -> 75.sp
-        else -> 20.sp // Default size
-    }
 // Ping results ram
     var pingSuccessful0 by remember { mutableStateOf(false) }
     var pingSuccessful1 by remember { mutableStateOf(false) }
@@ -144,7 +131,7 @@ fun mainScreen() {
             Box(modifier = Modifier.fillMaxSize().weight(1f)) {
 
                 Text("Monithor Client",
-                    fontSize = smartText,
+                    fontSize = smartText(1.2f),
                     color = ErgoGray,
                     fontWeight = FontWeight.W900,
                     modifier = Modifier
