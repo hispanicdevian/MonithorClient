@@ -17,8 +17,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import custom_resources.*
 import engine_logic.*
-import read_and_write.SLFObjectA.loadFontSizeA
-import read_and_write.SLOnOffObjectC.loadOnOffFileC
+import engine_logic.read_and_write.SLFObjectA.loadFontSizeA
+import engine_logic.read_and_write.SLOnOffObjectC.loadOnOffFileC
 import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes

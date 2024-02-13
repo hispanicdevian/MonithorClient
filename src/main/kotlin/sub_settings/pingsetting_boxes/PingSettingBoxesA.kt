@@ -18,8 +18,8 @@ import androidx.compose.ui.unit.sp
 import custom_resources.ErgoGray
 import custom_resources.settingSpacerH
 import engine_logic.*
-import read_and_write.SLFObjectA.loadFontSizeA
-import read_and_write.*
+import engine_logic.read_and_write.SLFObjectA.loadFontSizeA
+import engine_logic.read_and_write.*
 
 ////////////////////////////// First column of boxes located in Ip settings
 @Composable

@@ -23,7 +23,7 @@ import custom_resources.TurquoiseColor
 import custom_resources.doneButton
 import custom_resources.settingSpacerH
 import engine_logic.Navi
-import read_and_write.SLFObjectA.saveFontSizeA
+import engine_logic.read_and_write.SLFObjectA.saveFontSizeA
 import views.mainScreen
 import views.settingScreen
 

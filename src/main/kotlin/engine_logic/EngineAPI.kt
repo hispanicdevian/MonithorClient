@@ -15,7 +15,7 @@ fun pingEngineAPI(ip: String): Boolean {
         .build()
 
     val request = Request.Builder()
-        .url("http://localhost:8080/pingMotor") // Ping API address
+        .url("http://127.0.0.1:8080/pingMotor") // Ping API address
         .post(formBody)
         .build()
 

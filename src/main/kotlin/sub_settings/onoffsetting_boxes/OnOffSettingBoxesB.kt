@@ -14,8 +14,8 @@ import androidx.compose.ui.unit.sp
 import custom_resources.ErgoGray
 import custom_resources.SeaColor
 import custom_resources.oosbSpacerHBot
-import read_and_write.SLOnOffObjectB.loadVisibilityB
-import read_and_write.SLOnOffObjectB.saveVisibilityB
+import engine_logic.read_and_write.SLOnOffObjectB.loadVisibilityB
+import engine_logic.read_and_write.SLOnOffObjectB.saveVisibilityB
 
 @Composable
 fun onOffSettingBoxesB() {
