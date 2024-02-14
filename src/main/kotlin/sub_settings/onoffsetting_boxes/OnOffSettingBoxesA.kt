@@ -10,17 +10,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import custom_resources.ErgoGray
 import custom_resources.SeaColor
 import custom_resources.oosbSpacerHBot
-import engine_logic.read_and_write.SLOnOffManager.loadVisibility
-import engine_logic.read_and_write.SLOnOffManager.saveVisibility
+import custom_resources.smartText
+import engine_logic.read_and_write.SLOnOffObjectA.loadVisibilityA
+import engine_logic.read_and_write.SLOnOffObjectA.saveVisibilityA
 
 @Composable
 fun onOffSettingBoxesA() {
 // Ram for active View/Screen
-    var visibilityList by remember { mutableStateOf(loadVisibility("A")) }
+    var visibilityList by remember { mutableStateOf(loadVisibilityA()) }
 
 // UI container
     Column(modifier = Modifier.fillMaxSize(),
@@ -39,11 +39,11 @@ fun onOffSettingBoxesA() {
                         this[index] = !this[index]
                     }
 // Saves the updated state when the box is clicked
-                    saveVisibility("A", visibilityList)
+                    saveVisibilityA(visibilityList)
                 },
                 contentAlignment = Alignment.Center
             ) {
-                Text(text = if (isVisible) "ON" else "OFF", color = Color.White, fontSize = 20.sp)
+                Text(text = if (isVisible) "ON" else "OFF", color = Color.White, fontSize = smartText(.8f))
             }
             oosbSpacerHBot()
         }

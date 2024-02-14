@@ -15,9 +15,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import custom_resources.*
-import engine_logic.*
-import engine_logic.read_and_write.SLOnOffManager.loadVisibility
-import engine_logic.read_and_write.TiFileManager
+import engine_logic.Navi
+import engine_logic.read_and_write.SLOnOffObjectB.loadOnOffFileB
+import engine_logic.read_and_write.ipTitle04
+import engine_logic.read_and_write.ipTitle05
+import engine_logic.read_and_write.ipTitle06
+import engine_logic.read_and_write.ipTitle07
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 import views.settingScreen
@@ -31,16 +34,17 @@ fun pingBoxesB(pingSuccessfulB4: Boolean, pingSuccessfulB5: Boolean, pingSuccess
 // Pass through ram for ping state
     val pingSuccessfulList = listOf(pingSuccessfulB4, pingSuccessfulB5, pingSuccessfulB6, pingSuccessfulB7)
 // Title
-    val ipTitleA0 by remember { mutableStateOf(TiFileManager.readTiFile(4)) }
-    val ipTitleA1 by remember { mutableStateOf(TiFileManager.readTiFile(5)) }
-    val ipTitleA2 by remember { mutableStateOf(TiFileManager.readTiFile(6)) }
-    val ipTitleA3 by remember { mutableStateOf(TiFileManager.readTiFile(7)) }
-
-    val titleList = listOf(ipTitleA0, ipTitleA1, ipTitleA2, ipTitleA3)
+    val titleList = listOf(ipTitle04, ipTitle05, ipTitle06, ipTitle07)
 
 // Load and save on/off state B
-    val visibilityList = remember { loadVisibility("B")}
-
+    val visibilityList = remember {
+        val currentState = loadOnOffFileB()
+        if (currentState.isNotEmpty()) {
+            currentState.split(",").map { it.toBoolean() }
+        } else {
+            listOf(true, true, true, true)
+        }
+    }
 // UI container
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -68,7 +72,7 @@ fun pingBoxesB(pingSuccessfulB4: Boolean, pingSuccessfulB5: Boolean, pingSuccess
                                     text = titleList[index],
                                     color = ErgoGray,
                                     fontWeight = FontWeight.W900,
-                                    fontSize = smartText(),
+                                    fontSize = smartText(.8f),
                                     textAlign = TextAlign.Center
                                 )
                                 Spacer(modifier = Modifier.height(8.dp))
@@ -76,7 +80,7 @@ fun pingBoxesB(pingSuccessfulB4: Boolean, pingSuccessfulB5: Boolean, pingSuccess
                                     text = if (pingSuccessfulList[index]) "On" else "Off",
                                     color = ErgoGray,
                                     fontWeight = FontWeight.W800,
-                                    fontSize = smartText(),
+                                    fontSize = smartText(.8f),
                                     textAlign = TextAlign.Center
                                 )
                             }

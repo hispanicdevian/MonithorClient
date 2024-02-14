@@ -20,7 +20,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import custom_resources.ErgoGray
 import custom_resources.TurquoiseColor
 import custom_resources.smartText
@@ -39,7 +38,6 @@ fun settingScreen() {
     if (currentScreenA) { settingPingBoxes() }
     else if (currentScreenB) { settingOnOffBoxes() }
     else {
-
 // UI container
         Column( modifier = Modifier.fillMaxSize().background(ErgoGray),
             horizontalAlignment = Alignment.CenterHorizontally) {
@@ -84,7 +82,6 @@ fun settingScreen() {
                     modifier = Modifier.fillMaxSize().padding(6.5.dp))
                 }
             }
-
 // Navi head
             when (currentScreen) {
                 is Navi.SettingScn -> {
@@ -93,15 +90,14 @@ fun settingScreen() {
                         horizontalArrangement = Arrangement.Center,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        val itemsList = listOf("IP Settings", "On / Off", "Font Size")
+                        val itemsList = listOf("IP Settings", "On / Off")
                         LazyColumn(
                             modifier = Modifier.fillMaxHeight(),
                             state = rememberLazyListState(),
                             verticalArrangement = Arrangement.Center
                         ) {
                             items(itemsList) { item ->
-                                Text(
-                                    color = Color.White,
+                                Text(color = Color.White,
                                     text = item,
 // Navi buttons
                                     modifier = Modifier
@@ -116,7 +112,7 @@ fun settingScreen() {
                                         .padding(28.dp)
                                         .fillMaxSize(),
                                     textAlign = TextAlign.Center,
-                                    style = TextStyle(fontSize = 30.sp)
+                                    style = TextStyle(fontSize = smartText(1.2f))
                                 )
                             }
                         }

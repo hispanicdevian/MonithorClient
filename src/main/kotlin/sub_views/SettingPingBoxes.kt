@@ -33,7 +33,7 @@ fun settingPingBoxes() {
                     doneButton { currentScreen = Navi.SettingScn
                     }
                 }
-                Row(modifier = Modifier.fillMaxWidth().weight(10f).padding(horizontal = 5.dp),
+                Row(modifier = Modifier.fillMaxWidth().weight(10f).padding(horizontal = 5.dp).padding(top = 5.dp, bottom = 5.dp),
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically) {
 // Box set A

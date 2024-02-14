@@ -16,7 +16,7 @@ import custom_resources.ErgoGray
 import custom_resources.TurquoiseColor
 import custom_resources.smartText
 import engine_logic.Navi
-import engine_logic.read_and_write.SLOnOffManager.loadVisibility
+import engine_logic.read_and_write.SLOnOffObjectD.loadOnOffFileD
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 import views.settingScreen
@@ -29,8 +29,14 @@ fun weatherBoxesA(currentTempA: String, currentSkyA: String) {
     val currentScreen by remember { mutableStateOf<Navi>(Navi.MainScn) }
 
 // Load and save on/off state D
-    val visibilityList = remember { loadVisibility("D")}
-
+    val visibilityList = remember {
+        val currentState = loadOnOffFileD()
+        if (currentState.isNotEmpty()) {
+            currentState.split(",").map { it.toBoolean() }
+        } else {
+            listOf(true, true)
+        }
+    }
 // UI container
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -57,7 +63,7 @@ fun weatherBoxesA(currentTempA: String, currentSkyA: String) {
                                 Text(
                                     text = currentWeatherListA[index],
                                     color = ErgoGray,
-                                    fontSize = smartText(),
+                                    fontSize = smartText(1f),
                                     textAlign = TextAlign.Center
                                 )
                             }

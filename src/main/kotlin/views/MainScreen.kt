@@ -18,8 +18,10 @@ import custom_resources.ErgoGray
 import custom_resources.TurquoiseColor
 import custom_resources.msSpacerW
 import custom_resources.smartText
-import engine_logic.*
-import engine_logic.read_and_write.IpFileManager
+import engine_logic.Navi
+import engine_logic.getCurrentTemperatureA
+import engine_logic.pingEngineAPI
+import engine_logic.read_and_write.*
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
@@ -37,18 +39,18 @@ fun mainScreen() {
 // Current screen ram
     var currentScreen by remember { mutableStateOf<Navi>(Navi.MainScn) }
 // IPs
-    val ipAddress0 by remember { mutableStateOf(IpFileManager.readIpFile(0)) }
-    val ipAddress1 by remember { mutableStateOf(IpFileManager.readIpFile(1)) }
-    val ipAddress2 by remember { mutableStateOf(IpFileManager.readIpFile(2)) }
-    val ipAddress3 by remember { mutableStateOf(IpFileManager.readIpFile(3)) }
-    val ipAddress4 by remember { mutableStateOf(IpFileManager.readIpFile(4)) }
-    val ipAddress5 by remember { mutableStateOf(IpFileManager.readIpFile(5)) }
-    val ipAddress6 by remember { mutableStateOf(IpFileManager.readIpFile(6)) }
-    val ipAddress7 by remember { mutableStateOf(IpFileManager.readIpFile(7)) }
-    val ipAddress8 by remember { mutableStateOf(IpFileManager.readIpFile(8)) }
-    val ipAddress9 by remember { mutableStateOf(IpFileManager.readIpFile(9)) }
-    val ipAddress10 by remember { mutableStateOf(IpFileManager.readIpFile(10)) }
-    val ipAddress11 by remember { mutableStateOf(IpFileManager.readIpFile(11)) }
+    val ipAddress0 = readIpFile0()
+    val ipAddress1 = readIpFile1()
+    val ipAddress2 = readIpFile2()
+    val ipAddress3 = readIpFile3()
+    val ipAddress4 = readIpFile4()
+    val ipAddress5 = readIpFile5()
+    val ipAddress6 = readIpFile6()
+    val ipAddress7 = readIpFile7()
+    val ipAddress8 = readIpFile8()
+    val ipAddress9 = readIpFile9()
+    val ipAddress10 = readIpFile10()
+    val ipAddress11 = readIpFile11()
 // Ping results ram
     var pingSuccessful0 by remember { mutableStateOf(false) }
     var pingSuccessful1 by remember { mutableStateOf(false) }

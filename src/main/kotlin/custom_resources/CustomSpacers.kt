@@ -19,7 +19,7 @@ fun soobSpacerW() { Spacer(modifier = Modifier.width(8.dp)) }
 //// Height
 
 @Composable
-fun oosbSpacerHBot() { Spacer(modifier = Modifier.height(12.dp)) }
+fun oosbSpacerHBot() { Spacer(modifier = Modifier.height(8.dp)) }
 @Composable
 fun pbSpacerHTop() { Spacer(modifier = Modifier.height(15.dp)) }
 @Composable
