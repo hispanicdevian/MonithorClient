@@ -16,38 +16,31 @@ import custom_resources.ErgoGray
 import custom_resources.TurquoiseColor
 import custom_resources.smartText
 import engine_logic.Navi
-import engine_logic.read_and_write.SLOnOffObjectD.loadOnOffFileD
+import engine_logic.read_and_write.SLOnOffManager.loadVisibility
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 import views.settingScreen
 
-////////////////////////////// Weather boxes shown in the last column of the main screen
+// Weather boxes shown in the last column of the main screen
 @Composable
 fun weatherBoxesA(currentTempA: String, currentSkyA: String) {
     val currentWeatherListA = listOf(currentTempA, currentSkyA)
 // Ram for active View/Screen
     val currentScreen by remember { mutableStateOf<Navi>(Navi.MainScn) }
 
-/////////////// Loads the last state of On/Off settings
-    val visibilityList = remember {
-        val currentState = loadOnOffFileD()
-        if (currentState.isNotEmpty()) {
-            currentState.split(",").map { it.toBoolean() }
-        } else {
-            listOf(true, true)
-        }
-    }
+// Load and save on/off state D
+    val visibilityList = remember { loadVisibility("D")}
 
-////////////////////////////// UI container
+// UI container
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         Spacer(modifier = Modifier.height(15.dp))
-/////////////// Navi head
+// Navi head
         when (currentScreen) {
             is Navi.MainScn -> {
-/////////////// Creates boxes based on # of titles, and its visibility based on settings file
+// Creates boxes based on # of titles, and its visibility based on settings file
                 for (index in currentWeatherListA.indices) {
                     if (visibilityList[index]) {
                         Box(
@@ -72,7 +65,7 @@ fun weatherBoxesA(currentTempA: String, currentSkyA: String) {
                     }
                 }
             }
-/////////////// Navi tail
+// Navi tail
             Navi.SettingOnOffBxs -> settingOnOffBoxes()
             Navi.SettingPingBxs -> settingPingBoxes()
             Navi.SettingScn -> settingScreen()

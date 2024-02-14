@@ -35,7 +35,7 @@ fun settingScreen() {
     var currentScreen by remember { mutableStateOf<Navi>(Navi.SettingScn) }
     var currentScreenA by remember { mutableStateOf(false) }
     var currentScreenB by remember { mutableStateOf(false) }
-    // Navi set
+// Navi set
     if (currentScreenA) { settingPingBoxes() }
     else if (currentScreenB) { settingOnOffBoxes() }
     else {

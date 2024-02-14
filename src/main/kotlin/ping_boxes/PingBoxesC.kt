@@ -16,13 +16,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import custom_resources.*
 import engine_logic.*
-import engine_logic.read_and_write.SLOnOffObjectC.loadOnOffFileC
+import engine_logic.read_and_write.SLOnOffManager.loadVisibility
 import engine_logic.read_and_write.TiFileManager
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 import views.settingScreen
 
-////////////////////////////// Ping Boxes Shown in the Third Column of the Main Screen
+// Ping Boxes Shown in the Third Column of the Main Screen
 @Composable
 @Preview
 fun pingBoxesC(pingSuccessfulC8: Boolean, pingSuccessfulC9: Boolean, pingSuccessfulC10: Boolean, pingSuccessfulC11: Boolean) {
@@ -31,33 +31,26 @@ fun pingBoxesC(pingSuccessfulC8: Boolean, pingSuccessfulC9: Boolean, pingSuccess
 // Pass through ram for ping state
     val pingSuccessfulList = listOf(pingSuccessfulC8, pingSuccessfulC9, pingSuccessfulC10, pingSuccessfulC11)
 // Title
-    val ipTitleA0 by remember { mutableStateOf(TiFileManager.readTiFile(0)) }
-    val ipTitleA1 by remember { mutableStateOf(TiFileManager.readTiFile(1)) }
-    val ipTitleA2 by remember { mutableStateOf(TiFileManager.readTiFile(2)) }
-    val ipTitleA3 by remember { mutableStateOf(TiFileManager.readTiFile(3)) }
+    val ipTitleA0 by remember { mutableStateOf(TiFileManager.readTiFile(8)) }
+    val ipTitleA1 by remember { mutableStateOf(TiFileManager.readTiFile(9)) }
+    val ipTitleA2 by remember { mutableStateOf(TiFileManager.readTiFile(10)) }
+    val ipTitleA3 by remember { mutableStateOf(TiFileManager.readTiFile(11)) }
 
     val titleList = listOf(ipTitleA0, ipTitleA1, ipTitleA2, ipTitleA3)
 
-/////////////// Loads the last state of On/Off settings
-    val visibilityList = remember {
-        val currentState = loadOnOffFileC()
-        if (currentState.isNotEmpty()) {
-            currentState.split(",").map { it.toBoolean() }
-        } else {
-            listOf(true, true, true, true)
-        }
-    }
+// Load and save on/off state C
+    val visibilityList = remember { loadVisibility("C")}
 
-////////////////////////////// UI container
+// UI container
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         pbSpacerHTop()
-/////////////// Navi head
+// Navi head
         when (currentScreen) {
             is Navi.MainScn -> {
-/////////////// Creates boxes based on # of titles, and its visibility based on settings file
+// Creates boxes based on # of titles, and its visibility based on settings file
                 for (index in titleList.indices) {
                     if (visibilityList[index]) {
                         Box(

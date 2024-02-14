@@ -5,21 +5,24 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.AbsoluteRoundedCornerShape
 import androidx.compose.material.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import custom_resources.*
-import engine_logic.*
-import engine_logic.read_and_write.SLOnOffObjectA.loadOnOffFileA
+import engine_logic.Navi
+import engine_logic.read_and_write.SLOnOffManager.loadVisibility
 import engine_logic.read_and_write.TiFileManager
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 import views.settingScreen
 
-////////////////////////////// Ping boxes shown in the first column of the main screen
+// Ping boxes shown in the first column of the main screen
 @Composable
 @Preview
 fun pingBoxesA(pingSuccessfulA0: Boolean, pingSuccessfulA1: Boolean, pingSuccessfulA2: Boolean, pingSuccessfulA3: Boolean) {
@@ -35,25 +38,23 @@ fun pingBoxesA(pingSuccessfulA0: Boolean, pingSuccessfulA1: Boolean, pingSuccess
 
     val titleList = listOf(ipTitleA0, ipTitleA1, ipTitleA2, ipTitleA3)
 
-/////////////// Loads the last state of On/Off settings
+// Loads the last state of On/Off settings
     val visibilityList = remember {
-        val currentState = loadOnOffFileA()
-        if (currentState.isNotEmpty()) {
-            currentState.split(",").map { it.toBoolean() }
-        } else {
-            listOf(true, true, true, true)
+        val currentState = loadVisibility("A") // Change "A" to the appropriate suffix
+        currentState.ifEmpty {
+            listOf(true, true, true, true) // Default visibility list if the settings file is empty
         }
     }
-////////////////////////////// UI container
+// UI container
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         pbSpacerHTop()
-/////////////// Navi head
+// Navi head
         when (currentScreen) {
             is Navi.MainScn -> {
-/////////////// Creates boxes based on # of titles, and its visibility based on settings file
+// Creates boxes based on # of titles, and its visibility based on settings file
                 for (index in titleList.indices) {
                     if (visibilityList[index]) {
                         Box(
@@ -88,7 +89,7 @@ fun pingBoxesA(pingSuccessfulA0: Boolean, pingSuccessfulA1: Boolean, pingSuccess
                     }
                 }
             }
-/////////////// Navi tail
+// Navi tail
             Navi.SettingPingBxs -> settingPingBoxes()
             Navi.SettingScn -> settingScreen()
             Navi.SettingOnOffBxs -> settingOnOffBoxes()
