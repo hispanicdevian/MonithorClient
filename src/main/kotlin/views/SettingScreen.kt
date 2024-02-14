@@ -25,7 +25,6 @@ import custom_resources.ErgoGray
 import custom_resources.TurquoiseColor
 import custom_resources.smartText
 import engine_logic.Navi
-import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 
@@ -36,11 +35,9 @@ fun settingScreen() {
     var currentScreen by remember { mutableStateOf<Navi>(Navi.SettingScn) }
     var currentScreenA by remember { mutableStateOf(false) }
     var currentScreenB by remember { mutableStateOf(false) }
-    var currentScreenC by remember { mutableStateOf(false) }
-// Navi set
+    // Navi set
     if (currentScreenA) { settingPingBoxes() }
     else if (currentScreenB) { settingOnOffBoxes() }
-    else if (currentScreenC) { settingFontSize() }
     else {
 
 // UI container
@@ -115,9 +112,6 @@ fun settingScreen() {
                                             if (item == "On / Off") {
                                                 currentScreenB = true
                                             }
-                                            if (item == "Font Size") {
-                                                currentScreenC = true
-                                            }
                                         }
                                         .padding(28.dp)
                                         .fillMaxSize(),
@@ -130,7 +124,6 @@ fun settingScreen() {
                 }
 // Navi Tail
                 Navi.MainScn -> mainScreen()
-                Navi.SettingFontSz -> settingFontSize()
                 Navi.SettingOnOffBxs -> settingOnOffBoxes()
                 Navi.SettingPingBxs -> settingPingBoxes()
             }

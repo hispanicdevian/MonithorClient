@@ -56,7 +56,6 @@ fun settingPingBoxes() {
 // Navi tail
         Navi.MainScn -> mainScreen()
         Navi.SettingScn -> settingScreen()
-        Navi.SettingFontSz -> settingFontSize()
         Navi.SettingOnOffBxs -> settingOnOffBoxes()
     }
 }

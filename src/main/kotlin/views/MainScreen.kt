@@ -27,7 +27,6 @@ import ping_boxes.pingBoxesA
 import ping_boxes.pingBoxesB
 import ping_boxes.pingBoxesC
 import ping_boxes.weatherBoxesA
-import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 
@@ -206,7 +205,6 @@ fun mainScreen() {
             }
 // Navi tail
             Navi.MainScn -> mainScreen()
-            Navi.SettingFontSz -> settingFontSize()
             Navi.SettingOnOffBxs -> settingOnOffBoxes()
             Navi.SettingPingBxs -> settingPingBoxes()
             Navi.SettingScn -> settingScreen()

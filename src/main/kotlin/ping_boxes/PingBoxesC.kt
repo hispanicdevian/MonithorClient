@@ -14,13 +14,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import custom_resources.*
 import engine_logic.*
-import engine_logic.read_and_write.SLFObjectA.loadFontSizeA
 import engine_logic.read_and_write.SLOnOffObjectC.loadOnOffFileC
 import engine_logic.read_and_write.TiFileManager
-import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 import views.settingScreen
@@ -40,8 +37,6 @@ fun pingBoxesC(pingSuccessfulC8: Boolean, pingSuccessfulC9: Boolean, pingSuccess
     val ipTitleA3 by remember { mutableStateOf(TiFileManager.readTiFile(3)) }
 
     val titleList = listOf(ipTitleA0, ipTitleA1, ipTitleA2, ipTitleA3)
-// Font size ram
-    val fontSizedA by remember { mutableStateOf(loadFontSizeA().sp) }
 
 /////////////// Loads the last state of On/Off settings
     val visibilityList = remember {
@@ -80,7 +75,7 @@ fun pingBoxesC(pingSuccessfulC8: Boolean, pingSuccessfulC9: Boolean, pingSuccess
                                     text = titleList[index],
                                     color = ErgoGray,
                                     fontWeight = FontWeight.W900,
-                                    fontSize = fontSizedA,
+                                    fontSize = smartText(),
                                     textAlign = TextAlign.Center
                                 )
                                 Spacer(modifier = Modifier.height(8.dp))
@@ -88,7 +83,7 @@ fun pingBoxesC(pingSuccessfulC8: Boolean, pingSuccessfulC9: Boolean, pingSuccess
                                     text = if (pingSuccessfulList[index]) "On" else "Off",
                                     color = ErgoGray,
                                     fontWeight = FontWeight.W800,
-                                    fontSize = fontSizedA,
+                                    fontSize = smartText(),
                                     textAlign = TextAlign.Center
                                 )
                             }
@@ -98,7 +93,6 @@ fun pingBoxesC(pingSuccessfulC8: Boolean, pingSuccessfulC9: Boolean, pingSuccess
                 }
             }
 /////////////// Navi tail
-            Navi.SettingFontSz -> settingFontSize()
             Navi.SettingPingBxs -> settingPingBoxes()
             Navi.SettingScn -> settingScreen()
             Navi.SettingOnOffBxs -> settingOnOffBoxes()

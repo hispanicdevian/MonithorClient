@@ -12,13 +12,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import custom_resources.ErgoGray
 import custom_resources.TurquoiseColor
+import custom_resources.smartText
 import engine_logic.Navi
-import engine_logic.read_and_write.SLFObjectA.loadFontSizeA
 import engine_logic.read_and_write.SLOnOffObjectD.loadOnOffFileD
-import sub_views.settingFontSize
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 import views.settingScreen
@@ -29,13 +27,6 @@ fun weatherBoxesA(currentTempA: String, currentSkyA: String) {
     val currentWeatherListA = listOf(currentTempA, currentSkyA)
 // Ram for active View/Screen
     val currentScreen by remember { mutableStateOf<Navi>(Navi.MainScn) }
-// Font size ram
-    val loadedFontSize by remember { mutableStateOf(loadFontSizeA()) }
-    val fontSizedA = if (loadedFontSize < 1) { // adds 20 if value less than 1, but adds 20 if higher than 1
-        loadedFontSize
-    } else {
-        loadedFontSize + 12
-    }
 
 /////////////// Loads the last state of On/Off settings
     val visibilityList = remember {
@@ -73,7 +64,7 @@ fun weatherBoxesA(currentTempA: String, currentSkyA: String) {
                                 Text(
                                     text = currentWeatherListA[index],
                                     color = ErgoGray,
-                                    fontSize = fontSizedA.sp,
+                                    fontSize = smartText(),
                                     textAlign = TextAlign.Center
                                 )
                             }
@@ -82,7 +73,6 @@ fun weatherBoxesA(currentTempA: String, currentSkyA: String) {
                 }
             }
 /////////////// Navi tail
-            Navi.SettingFontSz -> settingFontSize()
             Navi.SettingOnOffBxs -> settingOnOffBoxes()
             Navi.SettingPingBxs -> settingPingBoxes()
             Navi.SettingScn -> settingScreen()

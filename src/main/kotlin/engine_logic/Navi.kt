@@ -8,6 +8,5 @@ sealed class Navi {
 
 // Secondary screens
     data object SettingPingBxs : Navi()
-    data object SettingFontSz : Navi()
     data object SettingOnOffBxs : Navi()
 }
