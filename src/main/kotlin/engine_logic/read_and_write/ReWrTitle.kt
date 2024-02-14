@@ -27,16 +27,8 @@ object TiFileManager {
     }
 }
 
+// This is the difference "Result<String>" but doesn't work yet
 /*
-    fun writeTiToFile(ipTitle: String, index: Int) {
-        val fileName = "rwTi0$index.hdi"
-        val file = File("$RWT_PATH/$fileName")
-        try { file.writeText(ipTitle)
-        } catch (e: IOException) {
-            println("Error writing file: ${e.message}")
-        }
-    }
-
     fun readTiFile(index: Int): Result<String> {
         val fileName = "rwTi0$index.hdi"
         val file = File("$RWT_PATH/$fileName")
