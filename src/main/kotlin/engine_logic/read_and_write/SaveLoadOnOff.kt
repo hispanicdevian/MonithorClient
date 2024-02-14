@@ -1,8 +1,8 @@
 package engine_logic.read_and_write
 
-import engine_logic.SLM_PATH
 import java.io.File
 
+const val SLM_PATH = "MTData/SLM"
 // Save and Load On/Off state A
 object SLOnOffObjectA {
     private const val FILEPATH0 = "$SLM_PATH/msStateA.hdi"
