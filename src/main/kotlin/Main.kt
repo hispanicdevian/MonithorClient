@@ -9,7 +9,7 @@ import views.mainScreen
 fun main() = application {
     Window(onCloseRequest = { pkillAPI() ; exitApplication() }) {
         mainScreen()
-        olrScn("\uD83C\uDF35olr")
+        olrScn("olr")
         launchAPI()
     }
 }
