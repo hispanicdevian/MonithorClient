@@ -16,7 +16,7 @@ import custom_resources.ErgoGray
 import custom_resources.TurquoiseColor
 import custom_resources.smartText
 import engine_logic.Navi
-import engine_logic.read_and_write.SLOnOffObjectD.loadOnOffFileD
+import engine_logic.read_and_write.SaveLoadOnOffD.loadOnOffFileD
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 import views.settingScreen

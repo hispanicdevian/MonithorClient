@@ -14,8 +14,8 @@ import custom_resources.ErgoGray
 import custom_resources.SeaColor
 import custom_resources.oosbSpacerHBot
 import custom_resources.smartText
-import engine_logic.read_and_write.SLOnOffObjectB.loadVisibilityB
-import engine_logic.read_and_write.SLOnOffObjectB.saveVisibilityB
+import engine_logic.read_and_write.SaveLoadOnOffB.loadVisibilityB
+import engine_logic.read_and_write.SaveLoadOnOffB.saveVisibilityB
 
 @Composable
 fun onOffSettingBoxesB() {

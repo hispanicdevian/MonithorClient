@@ -11,14 +11,13 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun doneButton(onDoneClick: () -> Unit) {
-    Box( modifier = Modifier.fillMaxSize().padding(4.dp)) {
-        Column( modifier = Modifier.fillMaxSize(),
+    Box(modifier = Modifier.fillMaxSize().padding(4.dp)) {
+        Column(modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Top) {
             Button(modifier = Modifier.fillMaxSize(),
                 colors = ButtonDefaults.buttonColors(ErgoGray),
-                onClick = { onDoneClick() }
-            ) { Text("Done", color = TurquoiseColor, fontSize = smartText(1f),
-                    fontWeight = FontWeight.Bold)
+                onClick = { onDoneClick() }) {
+                Text("Done", color = TurquoiseColor, fontSize = smartText(1f), fontWeight = FontWeight.Bold)
             }
         }
     }

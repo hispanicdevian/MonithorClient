@@ -16,7 +16,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import custom_resources.*
 import engine_logic.Navi
-import engine_logic.read_and_write.SLOnOffObjectB.loadOnOffFileB
+import engine_logic.read_and_write.SaveLoadOnOffB.loadOnOffFileB
 import engine_logic.read_and_write.ipTitle04
 import engine_logic.read_and_write.ipTitle05
 import engine_logic.read_and_write.ipTitle06

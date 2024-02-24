@@ -1,8 +1,7 @@
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
-import engine_logic.embedded_api.launchAPI
-import engine_logic.embedded_api.pkillAPI
 import custom_resources.olrScn
+import engine_logic.embedded_api.pkillAPI
 import views.mainScreen
 
 // Starts in default screen size
@@ -10,7 +9,7 @@ fun main() = application {
     Window(onCloseRequest = { pkillAPI() ; exitApplication() }) {
         mainScreen()
         olrScn("olr")
-        launchAPI()
+        // launchAPI()
     }
 }
 
