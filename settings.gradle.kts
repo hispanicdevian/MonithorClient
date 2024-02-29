@@ -10,4 +10,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "monithor-client"
+rootProject.name = "monithorkt"
