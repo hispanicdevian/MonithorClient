@@ -10,17 +10,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import custom_resources.ErgoGray
-import custom_resources.SeaColor
-import custom_resources.oosbSpacerHBot
-import custom_resources.smartText
-import engine_logic.read_and_write.SaveLoadOnOffB.loadVisibilityB
-import engine_logic.read_and_write.SaveLoadOnOffB.saveVisibilityB
+import custom_resources.misc.ErgoGray
+import custom_resources.misc.SeaColor
+import custom_resources.misc.onOffBoxesBotSpacer
+import custom_resources.misc.smartText
+import engine_logic.read_and_write.SaveLoadOnOff.loadVisibility
+import engine_logic.read_and_write.SaveLoadOnOff.saveVisibility
 
 @Composable
 fun onOffSettingBoxesB() {
 // Ram for active View/Screen
-    var visibilityList by remember { mutableStateOf(loadVisibilityB()) }
+    var visibilityList by remember { mutableStateOf(loadVisibility("B")) }
 
 // UI container
     Column(modifier = Modifier.fillMaxSize(),
@@ -36,16 +36,15 @@ fun onOffSettingBoxesB() {
                 .fillMaxSize()
                 .clickable {
                     visibilityList = visibilityList.toMutableList().apply {
-                        this[index] = !this[index]
-                    }
+                    this[index] = !this[index]
+                }
 // Saves the updated state when the box is clicked
-                    saveVisibilityB(visibilityList)
-                    },
-                contentAlignment = Alignment.Center
-            ) {
+                    saveVisibility("B", visibilityList)
+                },
+                contentAlignment = Alignment.Center) {
                 Text(text = if (isVisible) "ON" else "OFF", color = Color.White, fontSize = smartText(.8f))
             }
-            oosbSpacerHBot()
+            onOffBoxesBotSpacer()
         }
     }
 }

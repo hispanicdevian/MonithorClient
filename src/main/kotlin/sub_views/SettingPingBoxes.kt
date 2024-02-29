@@ -7,7 +7,10 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import custom_resources.*
+import custom_resources.buttons.doneButton
+import custom_resources.misc.ErgoGray
+import custom_resources.misc.TurquoiseColor
+import custom_resources.misc.settingPingBoxesSideSpacer
 import engine_logic.Navi
 import sub_settings.pingsetting_boxes.pingSettingBoxesA
 import sub_settings.pingsetting_boxes.pingSettingBoxesB
@@ -15,7 +18,6 @@ import sub_settings.pingsetting_boxes.pingSettingBoxesC
 import views.mainScreen
 import views.settingScreen
 
-// Screen/View for IP settings
 @Composable
 @Preview
 fun settingPingBoxes() {
@@ -24,7 +26,6 @@ fun settingPingBoxes() {
 // Navi head
     when (currentScreen) {
         is Navi.SettingPingBxs -> {
-
 // UI container
             Column(modifier = Modifier.fillMaxSize().background(ErgoGray),
                 horizontalAlignment = Alignment.CenterHorizontally) {
@@ -33,23 +34,20 @@ fun settingPingBoxes() {
                     doneButton { currentScreen = Navi.SettingScn
                     }
                 }
-                Row(modifier = Modifier.fillMaxWidth().weight(10f).padding(horizontal = 5.dp).padding(top = 5.dp, bottom = 5.dp),
+                Row(modifier = Modifier.fillMaxWidth().weight(10f).padding(horizontal = 5.dp).padding(top = 5.dp),
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically) {
 // Box set A
-                    Column( modifier = Modifier.weight(2f)) {
-                        pingSettingBoxesA()
-                    }
-                    spbSpacerW()
+                    Column( modifier = Modifier.weight(2f))
+                    { pingSettingBoxesA() }
+                    settingPingBoxesSideSpacer()
 // Box set B
-                    Column( modifier = Modifier.weight(2f)) {
-                        pingSettingBoxesB()
-                    }
-                    spbSpacerW()
+                    Column( modifier = Modifier.weight(2f))
+                    { pingSettingBoxesB() }
+                    settingPingBoxesSideSpacer()
 // Box set C
-                    Column( modifier = Modifier.weight(2f)) {
-                        pingSettingBoxesC()
-                    }
+                    Column( modifier = Modifier.weight(2f))
+                    { pingSettingBoxesC() }
                 }
             }
         }

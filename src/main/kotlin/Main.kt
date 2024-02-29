@@ -1,15 +1,13 @@
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
-import custom_resources.olrScn
-import engine_logic.embedded_api.pkillAPI
+import custom_resources.misc.olrScn
 import views.mainScreen
 
 // Starts in default screen size
 fun main() = application {
-    Window(onCloseRequest = { pkillAPI() ; exitApplication() }) {
+    Window(onCloseRequest = ::exitApplication) {
         mainScreen()
         olrScn("olr")
-        // launchAPI()
     }
 }
 
@@ -18,7 +16,7 @@ fun main() = application {
 fun main() {
     application {
         val windowState = rememberWindowState(size = DpSize.Unspecified)
-        Window(onCloseRequest = ::exitApplication, state = windowState) {
+        Window(onCloseRequest = ::exitApplication) {
             mainScreen()
             hdiScn("\uD83C\uDF35hdi\uD83C\uDF35")
         }

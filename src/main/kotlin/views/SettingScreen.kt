@@ -20,9 +20,9 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import custom_resources.ErgoGray
-import custom_resources.TurquoiseColor
-import custom_resources.smartText
+import custom_resources.misc.ErgoGray
+import custom_resources.misc.TurquoiseColor
+import custom_resources.misc.smartText
 import engine_logic.Navi
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
@@ -41,25 +41,24 @@ fun settingScreen() {
 // UI container
         Column( modifier = Modifier.fillMaxSize().background(ErgoGray),
             horizontalAlignment = Alignment.CenterHorizontally) {
-
             Row(modifier = Modifier.fillMaxSize().weight(1f).background(TurquoiseColor)) {
-
 // Home button
                 Box(modifier = Modifier.fillMaxSize().weight(1f)
+                    .size(24.dp)
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = rememberRipple(bounded = false, radius = 10.dp),
-                        onClick = { currentScreen = Navi.MainScn })
-                ) { Image(painter = painterResource("HomePng240.png"),
-                    contentDescription = "",
-                    modifier = Modifier.fillMaxSize().padding(5.dp)
-                    )
+                        onClick = { currentScreen = Navi.MainScn })) {
+                    Image(painter = painterResource("HomePng240.png"),
+                    contentDescription = "", modifier = Modifier.fillMaxSize().padding(5.dp))
                 }
-
-// Clickable Title
+// Clickable title
                 Box(modifier = Modifier.fillMaxSize().weight(1f)) {
-                    Text("Monithor Client", fontSize = smartText(1.2f),
-                        color = ErgoGray, fontWeight = FontWeight.W900,
+
+                    Text("Monithor Kt",
+                        fontSize = smartText(1.2f),
+                        color = ErgoGray,
+                        fontWeight = FontWeight.W900,
                         modifier = Modifier
                             .fillMaxSize()
                             .wrapContentSize(Alignment.Center)
@@ -70,36 +69,34 @@ fun settingScreen() {
                             )
                     )
                 }
-
 // Settings button
                 Box(modifier = Modifier.fillMaxSize().weight(1f)
+                    .size(24.dp)
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = rememberRipple(bounded = false, radius = 10.dp),
-                        onClick = { currentScreen = Navi.SettingScn })
-                ) { Image(painter = painterResource("SettingsPng240F.png"),
+                        onClick = { currentScreen = Navi.SettingScn })) {
+                    Image(painter = painterResource("SettingsPng240.png"),
                     contentDescription = "",
-                    modifier = Modifier.fillMaxSize().padding(6.5.dp))
+                        modifier = Modifier.fillMaxSize().padding(6.5.dp))
                 }
             }
 // Navi head
             when (currentScreen) {
                 is Navi.SettingScn -> {
-                    Row(
-                        modifier = Modifier.fillMaxWidth().weight(10f).padding(horizontal = 5.dp),
+                    Row(modifier = Modifier.fillMaxWidth().weight(10f).padding(horizontal = 5.dp),
                         horizontalArrangement = Arrangement.Center,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
+                        verticalAlignment = Alignment.CenterVertically) {
+
                         val itemsList = listOf("IP Settings", "On / Off")
                         LazyColumn(
                             modifier = Modifier.fillMaxHeight(),
                             state = rememberLazyListState(),
-                            verticalArrangement = Arrangement.Center
-                        ) {
+                            verticalArrangement = Arrangement.Center) {
                             items(itemsList) { item ->
+// Navi buttons
                                 Text(color = Color.White,
                                     text = item,
-// Navi buttons
                                     modifier = Modifier
                                         .clickable {
                                             if (item == "IP Settings") {
@@ -123,7 +120,6 @@ fun settingScreen() {
                 Navi.SettingOnOffBxs -> settingOnOffBoxes()
                 Navi.SettingPingBxs -> settingPingBoxes()
             }
-            Spacer(modifier = Modifier.height(20.dp))
         }
     }
 }

@@ -7,7 +7,10 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import custom_resources.*
+import custom_resources.buttons.doneButton
+import custom_resources.misc.ErgoGray
+import custom_resources.misc.TurquoiseColor
+import custom_resources.misc.settingOnOffBoxesSideSpacer
 import engine_logic.Navi
 import sub_settings.onoffsetting_boxes.onOffSettingBoxesA
 import sub_settings.onoffsetting_boxes.onOffSettingBoxesB
@@ -16,17 +19,14 @@ import sub_settings.onoffsetting_boxes.onOffSettingBoxesD
 import views.mainScreen
 import views.settingScreen
 
-// Screen/view for turning On/Off UI
 @Composable
 @Preview
 fun settingOnOffBoxes() {
 // Current screen ram
     var currentScreen by remember { mutableStateOf<Navi>(Navi.SettingOnOffBxs) }
-
 // Navi head
     when (currentScreen) {
         is Navi.SettingOnOffBxs -> {
-
 // UI Parent
             Column(modifier = Modifier.fillMaxSize().background(ErgoGray),
                 horizontalAlignment = Alignment.CenterHorizontally) {
@@ -41,26 +41,26 @@ fun settingOnOffBoxes() {
 // Box set A
                     Column(modifier = Modifier.weight(1f),
                         horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.Center
-                    ) { onOffSettingBoxesA() }
-                    soobSpacerW()
+                        verticalArrangement = Arrangement.Center)
+                    { onOffSettingBoxesA() }
+                    settingOnOffBoxesSideSpacer()
 // Box set B
                     Column(modifier = Modifier.weight(1f),
                         horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.Center
-                    ) { onOffSettingBoxesB() }
-                    soobSpacerW()
+                        verticalArrangement = Arrangement.Center)
+                    { onOffSettingBoxesB() }
+                    settingOnOffBoxesSideSpacer()
 // Box set C
                     Column(modifier = Modifier.weight(1f),
                         horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.Center
-                    ) { onOffSettingBoxesC() }
-                    soobSpacerW()
+                        verticalArrangement = Arrangement.Center)
+                    { onOffSettingBoxesC() }
+                    settingOnOffBoxesSideSpacer()
 // Box set D
                     Column(modifier = Modifier.weight(1.5f),
                         horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.Center
-                    ) { onOffSettingBoxesD() }
+                        verticalArrangement = Arrangement.Center)
+                    { onOffSettingBoxesD() }
                 }
             }
         }

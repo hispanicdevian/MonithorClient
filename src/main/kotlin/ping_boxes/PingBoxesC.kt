@@ -14,13 +14,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import custom_resources.*
-import engine_logic.Navi
-import engine_logic.read_and_write.SaveLoadOnOffC.loadOnOffFileC
-import engine_logic.read_and_write.ipTitle08
-import engine_logic.read_and_write.ipTitle09
-import engine_logic.read_and_write.ipTitle10
-import engine_logic.read_and_write.ipTitle11
+import custom_resources.misc.*
+import engine_logic.*
+import engine_logic.read_and_write.ReWrTitle.readTiFile
+import engine_logic.read_and_write.SaveLoadOnOff.loadVisibility
 import sub_views.settingOnOffBoxes
 import sub_views.settingPingBoxes
 import views.settingScreen
@@ -28,57 +25,47 @@ import views.settingScreen
 // Ping Boxes Shown in the Third Column of the Main Screen
 @Composable
 @Preview
-fun pingBoxesC(pingSuccessfulC8: Boolean, pingSuccessfulC9: Boolean, pingSuccessfulC10: Boolean, pingSuccessfulC11: Boolean) {
+fun pingBoxesC(subList: List<Boolean>) {
 // Ram for active View/Screen
     val currentScreen by remember { mutableStateOf<Navi>(Navi.MainScn) }
 // Pass through ram for ping state
-    val pingSuccessfulList = listOf(pingSuccessfulC8, pingSuccessfulC9, pingSuccessfulC10, pingSuccessfulC11)
+    val pingSuccessfulList = subList
 // Title
-    val titleList = listOf(ipTitle08, ipTitle09, ipTitle10, ipTitle11)
+    val ipTitleA0 by remember { mutableStateOf(readTiFile(8)) }
+    val ipTitleA1 by remember { mutableStateOf(readTiFile(9)) }
+    val ipTitleA2 by remember { mutableStateOf(readTiFile(10)) }
+    val ipTitleA3 by remember { mutableStateOf(readTiFile(11)) }
+
+    val titleList = listOf(ipTitleA0, ipTitleA1, ipTitleA2, ipTitleA3)
 
 // Load and save on/off state C
-    val visibilityList = remember {
-        val currentState = loadOnOffFileC()
-        if (currentState.isNotEmpty()) {
-            currentState.split(",").map { it.toBoolean() }
-        } else {
-            listOf(true, true, true, true)
-        }
-    }
+    val visibilityList = remember { loadVisibility("C")}
 
 // UI container
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        pbSpacerHTop()
+    Column(horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center) {
+        pingBoxesTopSpacer()
 // Navi head
         when (currentScreen) {
             is Navi.MainScn -> {
 // Creates boxes based on # of titles, and its visibility based on settings file
                 for (index in titleList.indices) {
                     if (visibilityList[index]) {
-                        Box(
-                            modifier = Modifier
+                        Box(modifier = Modifier
                                 .weight(1f)
                                 .aspectRatio(1.5f)
                                 .background((if (pingSuccessfulList[index]) TurquoiseColor else RedAlert), shape = AbsoluteRoundedCornerShape(8.dp)),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Column(
-                                horizontalAlignment = Alignment.CenterHorizontally,
-                                verticalArrangement = Arrangement.Center
-                            ) {
-                                Text(
-                                    text = titleList[index],
+                            contentAlignment = Alignment.Center) {
+                            Column(horizontalAlignment = Alignment.CenterHorizontally,
+                                verticalArrangement = Arrangement.Center) {
+                                Text(text = titleList[index],
                                     color = ErgoGray,
                                     fontWeight = FontWeight.W900,
                                     fontSize = smartText(.8f),
                                     textAlign = TextAlign.Center
                                 )
                                 Spacer(modifier = Modifier.height(8.dp))
-                                Text(
-                                    text = if (pingSuccessfulList[index]) "On" else "Off",
+                                Text(text = if (pingSuccessfulList[index]) "On" else "Off",
                                     color = ErgoGray,
                                     fontWeight = FontWeight.W800,
                                     fontSize = smartText(.8f),
@@ -86,11 +73,11 @@ fun pingBoxesC(pingSuccessfulC8: Boolean, pingSuccessfulC9: Boolean, pingSuccess
                                 )
                             }
                         }
-                        pbSpacerHBot()
+                        pingBoxesBotSpacer()
                     }
                 }
             }
-/////////////// Navi tail
+// Navi tail
             Navi.SettingPingBxs -> settingPingBoxes()
             Navi.SettingScn -> settingScreen()
             Navi.SettingOnOffBxs -> settingOnOffBoxes()
